@@ -15,6 +15,6 @@
 
     if (($stdid != "") && ($stdname != ""))
     {
-        $qry = 
+        $qry = "INSERT INTO user_table (stdid, stdname, phone, email, sem, course, batch) VALUES ('$stdid', '$stdname', '$phone', '$email', '$sem', '$course', '$batch')";
     }
 ?>

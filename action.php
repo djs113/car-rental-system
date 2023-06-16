@@ -17,4 +17,9 @@
     {
         $qry = "INSERT INTO user_table (stdid, stdname, phone, email, sem, course, batch) VALUES ('$stdid', '$stdname', '$phone', '$email', '$sem', '$course', '$batch')";
     }
+
+    $res = mysqli_query($conn, $qry);
+    
+    if ($res)
+    
 ?>

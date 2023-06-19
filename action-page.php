@@ -1,31 +1,34 @@
 <?php
+    $book_id = $_POST['book_id'];
+    $book_name = $_POST['book_name'];
+    $author = $_POST['author'];
+    $price = $_POST['price'];
+    $quantity = $_POST['quantity'];
+    $date_of_purchase = $_POST['date_of_purchase'];
+
     $dbhost = 'localhost';
     $dbuser = 'root';
-    $dbpass = "";
-    $dbname = "books";
-    
+    $dbpass = '';
+    $dbname = 'books';
+
     $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-    
-    if ($conn->connect_error)
+
+     if ($conn->connect_error)
     {
-        die("Connection error".$conn->connect_error);
+        die("Connection failed".$conn->connect_error);
     }
 
-    echo "Connection successful<br>";
-
-    // $sql = "INSERT INTO library VALUES (1, 'aaa', 'abc', 1000, 3, '2010-01-03')";
-    // $sql = "UPDATE library SET book_name = 'bbb' WHERE book_id = 1";
-    // $sql = "INSERT INTO library VALUES (2, 'aaa', 'cac', 3000, 6, '2020-05-03')";
+    // echo "Connection Successful<br>";
     
-    $sql = "DELETE FROM library WHERE book_id = 1";
+    $sql = "INSERT INTO books VALUES ('$book_id', '$book_name', '$author', '$price', '$quantity', '$date_of_purchase')";
 
     if ($conn->query($sql) === TRUE)
     {
-        echo "Successfully deleted record";
+        echo "Book successfully added to the database";
     } else
     {
-        echo "Error in record deletion";
+        echo "Error in addition of book";
     }
-    
+
     $conn->close();
 ?>

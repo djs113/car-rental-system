@@ -20,14 +20,14 @@
 
     // echo "Connection Successful<br>";
     
-    $sql = "INSERT INTO books VALUES ('$book_id', '$book_name', '$author', '$price', '$quantity', '$date_of_purchase')";
+    $sql = "INSERT INTO library VALUES ('$book_id', '$book_name', '$author', '$price', '$quantity', '$date_of_purchase')";
 
     if ($conn->query($sql) === TRUE)
     {
         echo "Book successfully added to the database";
     } else
     {
-        echo "Error in addition of book";
+        echo "Error in addition of book".$conn->error;
     }
 
     $conn->close();

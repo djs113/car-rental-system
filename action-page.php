@@ -10,6 +10,7 @@
     $dbuser = 'root';
     $dbpass = '';
     $dbname = 'books';
+<<<<<<< HEAD
 
     $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
@@ -20,10 +21,21 @@
 
     // echo "Connection Successful<br>";
     
+=======
+    
+    $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+
+    if ($conn->connect_error)
+    {
+        die("Connection error".$conn->connect_error);
+    }
+
+>>>>>>> refs/remotes/origin/main
     $sql = "INSERT INTO library VALUES ('$book_id', '$book_name', '$author', '$price', '$quantity', '$date_of_purchase')";
 
     if ($conn->query($sql) === TRUE)
     {
+<<<<<<< HEAD
         echo "Book successfully added to the database";
     } else
     {
@@ -31,4 +43,14 @@
     }
 
     $conn->close();
+=======
+        echo "Book successfully added<br>";
+    } else
+    {
+        echo "Error in addition of book<br>Error: ".$conn->error;
+    }
+
+    $conn->close();
+
+>>>>>>> refs/remotes/origin/main
 ?>

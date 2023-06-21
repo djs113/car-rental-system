@@ -1,11 +1,4 @@
 <?php
-    $username = $_POST[''];
-    $book_name = $_POST['book_name'];
-    $author = $_POST['author'];
-    $price = $_POST['price'];
-    $quantity = $_POST['quantity'];
-    $date_of_purchase = $_POST['date_of_purchase'];
-
     $dbhost = 'localhost';
     $dbuser = 'root';
     $dbpass = '';
@@ -18,7 +11,14 @@
         die("Connection error".$conn->connect_error);
     }
 
-    $sql = "INSERT INTO library VALUES ('$book_id', '$book_name', '$author', '$price', '$quantity', '$date_of_purchase')";
+    $username = $_POST['username'];
+    $passwd = $_POST['passwd'];
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $email = $_POST['email'];
+    $phone_number = $_POST['phone_number'];
+
+    $sql = "INSERT INTO user_details VALUES ('$username', '$oasswd', '$first_name', '$last_name')";
 
     if ($conn->query($sql) === TRUE)
     {

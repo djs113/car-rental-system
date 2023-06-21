@@ -2,9 +2,9 @@
     $dbhost = 'localhost';
     $dbuser = 'root';
     $dbpass = '';
-    $dbname = 'books';
+    $dbname = 'car_rental_system';
 
-    $conn = mysqli_connect($dbhost, $dbuser, $dbpass);
+    $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
     if ($conn->connect_error)
     {
@@ -13,8 +13,8 @@
 
     echo "Connection successful<br>";
 
-    $sql = "CREATE DATABASE car_rental_system";
-    // $sql = "CREATE TABLE library (book_id INT PRIMARY KEY, book_name VARCHAR(30) , author VARCHAR(30), book_price FLOAT, quantity INT, date_of_purchase DATE)"; 
+    // $sql = "CREATE DATABASE car_rental_system";
+    $sql = "CREATE TABLE user_details (username VARCHAR(20) PRIMARY KEY, passwd VARCHAR(20), first_name VARCHAR(20), last_name VARCHAR(20), is_admin TINYINT)"; 
     // $sql = "INSERT INTO library VALUES (1, 'dfsa', 'sdvsfvs', 1200, 3, '2020-02-04')";
     // $sql = "UPDATE library SET book_id = 2 WHERE book_id = 1";
     // $sql = "INSERT INTO library VALUES (1, 'kasdlksjf', 'slkalja', 3888, 5, '2010-04-11')";

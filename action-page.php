@@ -1,5 +1,5 @@
 <?php
-    $book_id = $_POST['book_id'];
+    $username = $_POST[''];
     $book_name = $_POST['book_name'];
     $author = $_POST['author'];
     $price = $_POST['price'];

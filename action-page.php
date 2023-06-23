@@ -11,6 +11,8 @@
         die("Connection error".$conn->connect_error);
     }
 
+    echo "Connection successful<br>";    
+
     $username = $_POST['username'];
     $passwd = $_POST['passwd'];
     $first_name = $_POST['first_name'];
@@ -18,11 +20,11 @@
     $email = $_POST['email'];
     $phone_number = $_POST['phone_number'];
     
-    //$sql = "INSERT INTO user_details VALUES ('$username', '$passwd', '$first_name', '$last_name')";
-    // $sql = "INSERT INTO user_emails VALUES ('$email', '$username')";
-    $sql = "INSERT INTO user_phone_numbers VALUES ('$phone_number', '$username')";
+    $sql = "INSERT INTO user_details (username, passwd, first_name, last_name) VALUES ('$username', '$passwd', '$first_name', '$last_name');";
+    $sql .= "INSERT INTO user_emails VALUES ('$email', '$username');";
+    $sql .= "INSERT INTO user_phone_numbers VALUES ('$phone_number', '$username');";
     
-    if ($conn->query($sql) === TRUE)
+    if ($conn->multi_query($sql) == TRUE)
     {
         echo "User successfully added<br>";
     } else

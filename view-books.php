@@ -2,7 +2,7 @@
     $dbhost = 'localhost';
     $dbuser = 'root';
     $dbpass = '';
-    $dbname = 'car-rental-system';
+    $dbname = 'car_rental_system';
    
     $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
@@ -11,9 +11,10 @@
    
     $sql = "SELECT * FROM user_details INNER JOIN user_emails ON user_details.username = user_emails.username 
             INNER JOIN user_phone_numbers ON user_details.username = user_phone_numbers.username";
+            
     $res_array = mysqli_query($conn, $sql);
 
-    echo '<table cellspacing="2" cellpadding="3">
+    echo '<table cellspacing="2" cellpadding="3" border="3">
         <tr>
             <th>Username</th>
             <th>Password</th> 
@@ -38,6 +39,5 @@
     }
 
     echo '</table>';
-
     $conn->close();
 ?>

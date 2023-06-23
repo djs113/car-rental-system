@@ -2,7 +2,7 @@
     $dbhost = 'localhost';
     $dbuser = 'root';
     $dbpass = '';
-    $dbname = 'books';
+    $dbname = 'car_rental_sytem';
     
     $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
@@ -18,14 +18,14 @@
     $email = $_POST['email'];
     $phone_number = $_POST['phone_number'];
 
-    $sql = "INSERT INTO user_details VALUES ('$username', '$oasswd', '$first_name', '$last_name')";
+    $sql = "INSERT INTO user_details VALUES ('$username', '$passwd', '$first_name', '$last_name')";
 
     if ($conn->query($sql) === TRUE)
     {
-        echo "Book successfully added<br>";
+        echo "User successfully added<br>";
     } else
     {
-        echo "Error in addition of book<br>Error: ".$conn->error;
+        echo "Error in addition of user<br>Error: ".$conn->error;
     }
 
     $conn->close();

@@ -26,8 +26,9 @@
     // $sql = "INSERT INTO library VALUES (1, 'kasdlksjf', 'slkalja', 3888, 5, '2010-04-11')";
     // $sql = "DELETE FROM library WHERE book_id = 2";
    
-    //$sql = "ALTER TABLE user_phone_numbers ADD CONSTRAINT FOREIGN KEY (username) REFERENCES user_details(username)";
-    $sql = "ALTER TABLE user_emails DROP username";
+    // $sql = "ALTER TABLE user_phone_numbers ADD CONSTRAINT FOREIGN KEY (username) REFERENCES user_details(username)";
+    // $sql = "ALTER TABLE user_emails ADD CONSTRAINT FOREIGN KEY (username) REFERENCES user_details(username)";
+
     if ($conn->query($sql) === TRUE)
     {
         echo "Query successful";

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 23, 2023 at 01:58 PM
+-- Generation Time: Jun 30, 2023 at 11:31 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -40,7 +40,8 @@ CREATE TABLE `user_details` (
 --
 
 INSERT INTO `user_details` (`username`, `passwd`, `first_name`, `last_name`, `is_admin`) VALUES
-('fsda', 'sdfdf', 'fsdafvxv', 'ergrwff', 0);
+('fsda', 'sdfdf', 'fsdafvxv', 'ergrwff', 0),
+('nbvnc', 'tyrtyrt', 'hnxvxxc', 'ytrhrth', 0);
 
 -- --------------------------------------------------------
 
@@ -58,7 +59,8 @@ CREATE TABLE `user_emails` (
 --
 
 INSERT INTO `user_emails` (`email`, `username`) VALUES
-('adfsf@gmail.com', 'fsda');
+('adfsf@gmail.com', 'fsda'),
+('vbnv@gmail.com', 'nbvnc');
 
 -- --------------------------------------------------------
 
@@ -76,7 +78,8 @@ CREATE TABLE `user_phone_numbers` (
 --
 
 INSERT INTO `user_phone_numbers` (`phone_number`, `username`) VALUES
-(1234567890, 'fsda');
+(1234567890, 'fsda'),
+(31234325534, 'nbvnc');
 
 --
 -- Indexes for dumped tables

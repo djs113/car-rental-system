@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 30, 2023 at 11:31 AM
+-- Generation Time: Jun 30, 2023 at 12:02 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -104,6 +104,22 @@ ALTER TABLE `user_emails`
 ALTER TABLE `user_phone_numbers`
   ADD PRIMARY KEY (`phone_number`),
   ADD UNIQUE KEY `username` (`username`);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `user_emails`
+--
+ALTER TABLE `user_emails`
+  ADD CONSTRAINT `user_emails_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user_details` (`username`);
+
+--
+-- Constraints for table `user_phone_numbers`
+--
+ALTER TABLE `user_phone_numbers`
+  ADD CONSTRAINT `user_phone_numbers_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user_details` (`username`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

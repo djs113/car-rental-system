@@ -27,11 +27,12 @@
     // $sql = "DELETE FROM library WHERE book_id = 2";
    
     //$sql = "ALTER TABLE user_phone_numbers ADD CONSTRAINT FOREIGN KEY (username) REFERENCES user_details(username)";
+    $sql = "ALTER TABLE user_emails DROP username";
     if ($conn->query($sql) === TRUE)
     {
         echo "Query successful";
     } else 
     {
-        echo "Error in executing query";
+        echo "Error in executing query".$conn->error;
     }
 ?>

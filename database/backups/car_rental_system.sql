@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 30, 2023 at 12:02 PM
+-- Generation Time: Jul 03, 2023 at 09:13 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -29,19 +29,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `user_details` (
   `username` varchar(20) NOT NULL,
-  `passwd` varchar(20) DEFAULT NULL,
+  `passwd` varchar(40) DEFAULT NULL,
   `first_name` varchar(20) DEFAULT NULL,
-  `last_name` varchar(20) DEFAULT NULL,
-  `is_admin` tinyint(4) DEFAULT 0
+  `last_name` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user_details`
 --
 
-INSERT INTO `user_details` (`username`, `passwd`, `first_name`, `last_name`, `is_admin`) VALUES
-('fsda', 'sdfdf', 'fsdafvxv', 'ergrwff', 0),
-('nbvnc', 'tyrtyrt', 'hnxvxxc', 'ytrhrth', 0);
+INSERT INTO `user_details` (`username`, `passwd`, `first_name`, `last_name`) VALUES
+('aa', '4124bc0a9335c27f086f24ba207a4912', 'aa', 'bb'),
+('fsda', 'd29aaa0b9cd402b4bfe2395a805f9ada', 'fsdafvxv', 'ergrwff'),
+('nbvnc', '5c56fc99fe03e32897a4b562b502cd81', 'hnxvxxc', 'ytrhrth'),
+('xcvvx', 'c2a82dd938f5d722f574e94f42f60bca', 'sdfa', 'bhgdbdf');
 
 -- --------------------------------------------------------
 
@@ -59,8 +60,10 @@ CREATE TABLE `user_emails` (
 --
 
 INSERT INTO `user_emails` (`email`, `username`) VALUES
+('a@gmail.com', 'aa'),
 ('adfsf@gmail.com', 'fsda'),
-('vbnv@gmail.com', 'nbvnc');
+('vbnv@gmail.com', 'nbvnc'),
+('sfsf@gmail.com', 'xcvvx');
 
 -- --------------------------------------------------------
 
@@ -78,8 +81,10 @@ CREATE TABLE `user_phone_numbers` (
 --
 
 INSERT INTO `user_phone_numbers` (`phone_number`, `username`) VALUES
+(2313312321323, 'aa'),
 (1234567890, 'fsda'),
-(31234325534, 'nbvnc');
+(31234325534, 'nbvnc'),
+(8008098934223, 'xcvvx');
 
 --
 -- Indexes for dumped tables

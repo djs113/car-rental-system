@@ -19,8 +19,9 @@
     $last_name = $_POST['last_name'];
     $email = $_POST['email'];
     $phone_number = $_POST['phone_number'];
-    
-    $sql = "INSERT INTO user_details (username, passwd, first_name, last_name) VALUES ('$username', '$passwd', '$first_name', '$last_name');";
+    $enc_passwd = md5($passwd);
+
+    $sql = "INSERT INTO user_details (username, passwd, first_name, last_name) VALUES ('$username', '$enc_passwd', '$first_name', '$last_name');";
     $sql .= "INSERT INTO user_emails VALUES ('$email', '$username');";
     $sql .= "INSERT INTO user_phone_numbers VALUES ('$phone_number', '$username');";
     

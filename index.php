@@ -5,7 +5,7 @@
         </title>
     </head>
     <body>
-        <form method="POST" action="login.php">
+        <form method="POST" action="registered-user/login.php">
             <label for="username">Username: </label><input type="text" name="username" id="username" />
             <br><br>
 

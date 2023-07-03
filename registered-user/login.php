@@ -1,6 +1,7 @@
 <?php
     $username = $_POST['username'];
     $passwd = $_POST['passwd'];
+    $enc_passwd = md5($passwd);
 
     $dbhost = 'localhost';
     $dbuser = 'root';
@@ -19,6 +20,9 @@
     
     while ($res = mysqli_fetch_array($res_array))
     {
-        if ($passwd)
+        if ($enc_passwd == $res['passwd']) 
+            echo "Successfully logged in";
+        else 
+            echo "Incorrect password or username"; 
     }
 ?>

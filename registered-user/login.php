@@ -19,6 +19,6 @@
     
     while ($res = mysqli_fetch_array($res_array))
     {
-        r
+        if ($passwd)
     }
 ?>

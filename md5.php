@@ -1,7 +1,7 @@
 <html>
         <head>
             <?php
-                echo md5("admin"); 
+                echo md5("sdfdf"); 
             ?>
         </head>
 </html>

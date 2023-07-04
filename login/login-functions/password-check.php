@@ -6,7 +6,7 @@
         
         $conn = mysqli_connect('localhost', 'root', '', 'car_rental_system');
         
-        $qry = "SELECT passwd FROM ".$table_name." WHERE username='$username'";
+        $qry = "SELECT passwd FROM $table_name WHERE username='$username'";
         $res_array = mysqli_query($conn, $qry);
            
         while ($res = mysqli_fetch_array($res_array))

@@ -28,7 +28,7 @@
         // $sql = "ALTER TABLE user_emails ADD CONSTRAINT FOREIGN KEY (username) REFERENCES user_details(username)";
 
     // Admin table 
-        // $sql = "CREATE TABLE user_details (username VARCHAR(20) PRIMARY KEY, passwd VARCHAR(40))"; 
+        // $sql = "CREATE TABLE admins (username VARCHAR(20) PRIMARY KEY, passwd VARCHAR(40))"; 
     
         if ($conn->query($sql) === TRUE)
     {

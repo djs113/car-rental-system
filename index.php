@@ -1,11 +1,11 @@
 <html>
     <head>
         <title>
-            Login Page
+            Registered User Login Page
         </title>
     </head>
     <body>
-        <form method="POST" action="registered-user/login.php">
+    <form action="login/registered-user/login.php" method="POST">
             <label for="username">Username: </label><input type="text" name="username" id="username" />
             <br><br>
 
@@ -13,6 +13,6 @@
             <br><br>
 
             <input type="submit" value="Login" />
-        </form>   
+        </form>
     </body>
 </html>

@@ -31,8 +31,11 @@
         // Table creation
             // $sql = "CREATE TABLE admins (username VARCHAR(20) PRIMARY KEY, passwd VARCHAR(40))"; 
         // Record insertion
-            $sql = "INSERT INTO admins VALUES ('admin', '21232f297a57a5a743894a0e4a801fc3')";
-
+            // $sql = "INSERT INTO admins VALUES ('admin', '21232f297a57a5a743894a0e4a801fc3')";
+    
+    // Vehicle tables
+        // $sql = "CREATE TABLE vehicle_models (model_id INT PRIMARY KEY AUTO_INCREMENT, brand_name VARCHAR(20), model_name VARCHAR(30), vehicle_type VARCHAR(20), hour_price INT, day_price INT, week_price INT, month_price INT)";
+        $sql = "CREATE TABLE vehicles (registration_number VARCHAR(11) PRIMARY KEY, vehicle_color VARCHAR(20), is_booked TINYINT DEFAULT 0, model_id int, FOREIGN KEY (model_id) REFERENCES vehicle_models(model_id))";
     if ($conn->query($sql) === TRUE)
     {
         echo "Query successful";

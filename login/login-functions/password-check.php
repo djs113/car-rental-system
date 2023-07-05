@@ -1,10 +1,8 @@
 <?php
-    function passwordCheck($table_name) {
+    function passwordCheck($table_name, $conn) {
         $username = $_POST['username'];
         $passwd = $_POST['passwd'];
         $enc_passwd = md5($passwd);
-        
-        $conn = mysqli_connect('localhost', 'root', '', 'car_rental_system');
         
         $qry = "SELECT passwd FROM $table_name WHERE username='$username'";
         $res_array = mysqli_query($conn, $qry);

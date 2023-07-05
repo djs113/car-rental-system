@@ -1,4 +1,7 @@
 <?php
     require '/opt/lampp/htdocs/car-rental-system/login/login-functions/password-check.php';
-    passwordCheck('user_details');
+    require '/opt/lampp/htdocs/car-rental-system/common-functions.php';
+    
+    $conn = dbConnection();
+    passwordCheck('user_details', $conn);
 ?>

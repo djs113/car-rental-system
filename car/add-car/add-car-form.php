@@ -5,13 +5,13 @@
         </title>
     </head>
     <?php
-            session_start();
+        session_start();
 
-            if (!isset($_SESSION['login_admin']))
-            {
-                header("location:/car-rental-system/admin/admin-login/admin-login.php");
-                exit;
-            }
+        if (!isset($_SESSION['login_admin']))
+        {
+            header("location:/car-rental-system/admin/admin-login/admin-login.php");
+            exit;
+        }
     ?>
     <body>
         <h2><u>Add Car</u></h2>

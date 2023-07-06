@@ -19,9 +19,7 @@
     if ($res)
     {
         $_SESSION['login_user'] = $res['username'];
-        // header("location:/car-rental-system/registered-user/view-user/view-all-users.php");
-        echo "You have successfully logged in";
+        header("location:/car-rental-system/registered-user/logged-in.php");
     } else
-    {
         header("location:/car-rental-system/iindex.php");
-    }
+?>

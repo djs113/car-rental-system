@@ -6,6 +6,7 @@
         header("location:/car-rental-system/admin/admin-login/admin-login.php");
         exit;
     }
+    
     $conn = mysqli_connect('localhost', 'root', '', 'car_rental_system');
 
     if ($conn->connect_error)

@@ -24,7 +24,7 @@
             <input type="hidden" name="username" value="<?php echo $username;?>" />
             <br><br>
 
-            Username: <?php echo $res['username'];?>
+            <label for="username">Username: <?php echo $res['username'];?>
             <br><br>
 
             <!--
@@ -39,6 +39,12 @@
             <br><br>
 
             <label for="passwd">Password Hash: </label><input type="text" name="passwd" id="passwd" value="<?php echo $res['passwd'];?>" />
+            <br><br>
+
+            <label for="email">Email: </label><input type="email" name="email" id="email" value="<?php echo $res['email'];?>" />
+            <br><br>
+
+            <label for="phone_number">Phone Number: </label><input type="text" name="phone_number" id="phone_number" value="<?php echo $res['phone_number'];?>" />
             <br><br>
 
             <input type="submit" value="Modify User" />

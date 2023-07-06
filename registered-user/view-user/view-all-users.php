@@ -20,7 +20,6 @@
                 <th>Password</th>  
                 <th>First Name</th>  
                 <th>Last Name</th>
-                <th>Is Admin</th>
                 <th>Email</th>  
                 <th>Phone Number</th>
             </tr>
@@ -35,7 +34,6 @@
         echo '<td>'.$res['passwd'].'</td>';
         echo '<td>'.$res['first_name'].'</td>';
         echo '<td>'.$res['last_name'].'</td>';
-        echo '<td>'.$res['is_admin'].'</td>';
         echo '<td>'.$res['email'].'</td>';
         echo '<td>'.$res['phone_number'].'</td>';
         echo '<td><a href="/car-rental-system/registered-user/modify-user/modify-user-form.php?username='.$username.'">Edit User</a></td>';    

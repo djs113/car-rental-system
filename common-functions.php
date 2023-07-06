@@ -8,17 +8,9 @@
         return $conn;
     }
 
-    function getData($labels, $label_for_vals, $names_and_ids, $title, $action_page) {
-        echo ' 
-            <html>
-            <head>
-                <title>
-                '.$title.'
-                </title>
-            </head>
-            <body>
-                <h2><u>'.$title.'</u></h2>
-                <form action="'.$action_page.'" method="POST">
+    function generateForm($labels, $label_for_vals, $names_and_ids, $action_page, $button_val) {
+        echo '
+            <form action="'.$action_page.'" method="POST">
         ';
 
         $arr_length = count($labels);
@@ -32,10 +24,8 @@
         }
 
         echo '
-                    <input type="submit" value="'.$title.'" />
-                </form>
-                </body>
-            </html> 
+                <input type="submit" value="'.$button_val.'" />
+            </form>
         ';
     }
 ?>

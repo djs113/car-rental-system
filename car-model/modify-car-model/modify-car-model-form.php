@@ -6,16 +6,16 @@
     </head>
     <body>
     <?php
-            $conn = mysqli_connect('localhost', 'root', '', 'car_rental_system');
+        $conn = mysqli_connect('localhost', 'root', '', 'car_rental_system');
 
-            if ($conn->connect_error)
-                die("Connection failed<br>Connection Error: ".$conn->connect_error);
+        if ($conn->connect_error)
+            die("Connection failed<br>Connection Error: ".$conn->connect_error);
 
-            $model_id = $_REQUEST['model_id'];
-    
-            $qry = "SELECT * FROM vehicle_models WHERE model_id=".$model_id;
-            $res_array = mysqli_query($conn, $qry);
-            $res = mysqli_fetch_array($res_array);
+        $model_id = $_REQUEST['model_id'];
+
+        $qry = "SELECT * FROM vehicle_models WHERE model_id=".$model_id;
+        $res_array = mysqli_query($conn, $qry);
+        $res = mysqli_fetch_array($res_array);
     ?>
 
         <h2><u>Modify Car Model</u></h2>

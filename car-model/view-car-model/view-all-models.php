@@ -71,7 +71,7 @@
                 ';
             }
 
-            echo '          <td><a href="edit-model.php?model_id="'.$model_id.'">Edit Model</a></td>    
+            echo '          <td><a href="/car-rental-system/car-model/modify-car-model/modify-car-model-form.php?model_id='.$model_id.'">Edit Model</a></td>    
                         </tr>
             ';
         }

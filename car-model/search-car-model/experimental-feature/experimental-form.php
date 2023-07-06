@@ -4,14 +4,19 @@
             Search Car Model
         </title>
         <script type="text/javascript">
-                localStorage.setItem("brand_name", "null");
-                function setBrandValue()
-                {
-                    var brand_name = document.getElementById("brand_name").value;
-                    localStorage.setItem("brand_name", brand_name);
+            function setBrandValue()
+            {
+                var brand_name = document.getElementById("brand_name").value;
+                const xmlhttp = new XMLHttpRequest();
+
+                xmlhttp.onload = function() {
+                    console.log(this.responseText);
                 }
-                
-            </script>
+
+                xmlhttp.open("POST", "/car-rental-system/car-model/search-car-model/get-model-data.php?q=" + brand_name);
+                xmlhttp.send();
+            }
+        </script>
     </head>
     <body>
         <form action="search-car-model.php" method="POST">
@@ -34,15 +39,7 @@
                 echo '</select>
                     <br><br>';
 
-                $brand_name = '<script>document.write(localStorage.getItem("brand_name"));</script>';
-
-                echo $brand_name;
-
-                if ($model_name == "null")
-                    $model_qry = "SELECT model_name FROM vehicle_models"; 
-                else
-                    $model_qry = "SELECT model_name FROM vehicle_models WHERE brand_name='$brand_name'";
-
+                $model_qry = "SELECT model_name FROM vehicle_models"; 
                 $res_array = mysqli_query($conn, $model_qry);
 
                 echo '<label for="model_name">Model Name: </label>

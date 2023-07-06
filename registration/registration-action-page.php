@@ -27,10 +27,15 @@
     
     if ($conn->multi_query($sql) == TRUE)
     {
-        echo "User successfully added<br>";
+       echo 'User successfully added<br>
+             <button><a href="/car-rental-system/index.php">Login</a></button>
+       ';
     } else
     {
-        echo "Error in addition of user<br>Error: ".$conn->error;
+        echo 'Error in addition of user<br>Error: '.$conn->error.'
+              <button><a href="/car-rental-system/registration/registration-form.html">Registration</a></button>
+             ';
+             
     }
 
     $conn->close();

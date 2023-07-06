@@ -6,21 +6,29 @@
     </head>
     <body>
         <?php
-                $conn = mysqli_connect('localhost', 'root', '', 'car_rental_system');
+            session_start();
 
-                if ($conn->connect_error)
-                    die("Connection failed<br>Connection Error: ".$conn->connect_error);
+            if (!isset($_SESSION['login_admin']))
+            {
+                header("location:/car-rental-system/admin/admin-login/admin-login.php");
+                exit;
+            }
 
-                $registration_number = $_REQUEST['registration_number'];
-                
-                $qry = "SELECT * FROM vehicles LEFT JOIN engine_numbers on vehicles.registration_number = engine_numbers.registration_number WHERE vehicles.registration_number='$registration_number'";
-                $res_array = mysqli_query($conn, $qry);
-                $res = mysqli_fetch_array($res_array);
+            $conn = mysqli_connect('localhost', 'root', '', 'car_rental_system');
 
-                $model_qry = "SELECT brand_name, model_name FROM vehicle_models WHERE model_id = ".$res['model_id'];
-                
-                $model_array = mysqli_query($conn, $model_qry);
-                $model_res = mysqli_fetch_array($model_array);
+            if ($conn->connect_error)
+                die("Connection failed<br>Connection Error: ".$conn->connect_error);
+
+            $registration_number = $_REQUEST['registration_number'];
+            
+            $qry = "SELECT * FROM vehicles LEFT JOIN engine_numbers on vehicles.registration_number = engine_numbers.registration_number WHERE vehicles.registration_number='$registration_number'";
+            $res_array = mysqli_query($conn, $qry);
+            $res = mysqli_fetch_array($res_array);
+
+            $model_qry = "SELECT brand_name, model_name FROM vehicle_models WHERE model_id = ".$res['model_id'];
+            
+            $model_array = mysqli_query($conn, $model_qry);
+            $model_res = mysqli_fetch_array($model_array);
         ?>
 
         <h2><u>Modify Car</u></h2>

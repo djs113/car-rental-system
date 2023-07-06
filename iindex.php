@@ -9,7 +9,7 @@
             <div style="width: 40%; float: left; min-height: 200px; background-color: #a0cdf9; margin-left: 30%;">
                 <h2>USER LOGIN</h2>
                 <p><strong>WELCOME TO THE LOGIN PAGE</strong></p>
-                <form action="login/registered-user/login.php" method="POST">
+                <form action="registered-user/user-login/login.php" method="POST">
                     <label for="username"><b>Username: </b></label><input type="text" name="username" id="username" />
                     <br><br>
 

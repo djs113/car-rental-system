@@ -4,6 +4,15 @@
             Add Car Model
         </title>
     </head>
+    <?php
+        session_start();
+
+        if (!isset($_SESSION['login_admin']))
+        {
+            header("location:/car-rental-system/admin/admin-login/admin-login.php");
+            exit;
+        }
+    ?>
     <body>
         <h2><u>Add Car Model</u></h2>
         <form action="add-car-model.php" method="POST">

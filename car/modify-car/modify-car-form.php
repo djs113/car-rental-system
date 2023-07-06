@@ -13,7 +13,7 @@
 
                 $registration_number = $_REQUEST['registration_number'];
                 
-                $qry = "SELECT * FROM vehicles WHERE registration_number='$registration_number'";
+                $qry = "SELECT * FROM vehicles LEFT JOIN engine_numbers on vehicles.registration_number = engine_numbers.registration_number WHERE vehicles.registration_number='$registration_number'";
                 $res_array = mysqli_query($conn, $qry);
                 $res = mysqli_fetch_array($res_array);
         ?>
@@ -23,6 +23,9 @@
             <br><br>
 
             Registration Number: <?php echo $res['registration_number'];?>
+            <br><br>
+
+            <label for="engine number">Engine Number: </label><input type="text" name="engine_number" id="engine_number" value="<?php echo $res['engine_number'];?>" />
             <br><br>
 
             <label for="vehicle color">Vehicle Color: </label><input type="text" name="vehicle_color" id="vehicle_color" value="<?php echo $res['vehicle_color'];?>" />

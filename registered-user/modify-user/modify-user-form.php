@@ -24,29 +24,24 @@
             <input type="hidden" name="username" value="<?php echo $username;?>" />
             <br><br>
 
-            <label for="registration number">Registration Number: </label><input type="text" name="registration_number" id="registration_number" value="<?php echo $res['registration_number'];?>" />
+            Username: <?php echo $res['username'];?>
             <br><br>
 
             <!--
-            <label for="brand name">Brand Name: </label><input type="text" name="brand_name" id="brand_name" value="<?php echo $res['brand_name'];?>" />
+            <label for="username">Username: </label><input type="text" name="username" id="username" value="<?php echo $res['username'];?>" />
+            <br><br>
+            -->
+
+            <label for="first_name">First Name: </label><input type="text" name="first_name" id="first_name" value="<?php echo $res['first_name'];?>" />
             <br><br>
 
-            <label for="model name">Model Name: </label><input type="text" name="model_name" id="model_name" value="<?php echo $res['model_name'];?>" />
-            <br><br>
-            
-            <label for="engine number">Engine Number: </label><input type="text" name="engine_number" id="engine_number" value="<?php echo $res['engine_number'];?>" />
-            <br><br>-->
-
-            <label for="vehicle color">Vehicle Color: </label><input type="text" name="vehicle_color" id="vehicle_color" value="<?php echo $res['vehicle_color'];?>" />
+            <label for="last_name">Last Name: </label><input type="text" name="last_name" id="last_name" value="<?php echo $res['last_name'];?>" />
             <br><br>
 
-            <label for="is_booked">Booking Status: </label><input type="text" name="is_booked" id="is_booked" value="<?php echo $res['is_booked'];?>" />
+            <label for="passwd">Password Hash: </label><input type="text" name="passwd" id="passwd" value="<?php echo $res['passwd'];?>" />
             <br><br>
 
-            <label for="model id">Model Id: </label><input type="text" name="model_id" id="model_id" value="<?php echo $res['model_id'];?>" />
-            <br><br>
-
-            <input type="submit" value="Modify Vehicle" />
+            <input type="submit" value="Modify User" />
         </form>
     </body>
 </html>

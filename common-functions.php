@@ -38,4 +38,64 @@
             </html>
         ';
     }
+
+    function displayData($table, $title, $headings) {
+        $conn = dbConnection();
+
+        $qry = "SELECT * FROM $table";
+
+        $res_array = mysqli_query($conn, $qry);
+
+        echo '
+            <html>
+                <head>
+                    <title>
+                        '.$title.'       
+                    </title>
+                </head>
+                <h2><u>'.$title.'</u></h2> 
+                <body>
+                    <table cellspacing="3" cellpadding="3" border="1">
+                        <tr> 
+        ';
+
+        $heading_length = count($headings);
+
+        for ($i = 0; $i < $heading_length; $i++)
+        {
+            echo '
+                            <th>'.$headings[$i].'</th>
+            ';
+        }
+
+        echo '
+                        </tr>
+        ';
+
+        $col_length = mysqli_num_fields($res_array);
+        
+        while ($res = mysqli_fetch_array($res_array))
+        {
+            echo '
+                        <tr>
+            ';
+        
+            for ($j = 0; $j < $col_length; $j++)
+            { 
+                echo '
+                            <td>'.$res[$j].'</td>
+                ';
+            }
+
+            echo '        
+                        </tr>
+            ';
+        }
+
+    echo '
+                    </table>
+                </body>
+            </html>
+    ';
+    }
 ?>

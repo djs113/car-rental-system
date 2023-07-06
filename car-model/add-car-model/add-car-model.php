@@ -1,6 +1,14 @@
 <?php
     require '/opt/lampp/htdocs/car-rental-system/common-functions.php';
 
+    session_start();
+
+    if (!isset($_SESSION['login_admin']))
+    {
+        header("location:/car-rental-system/admin/admin-login/admin-login.php");
+        exit;
+    }
+
     $brand_name = $_POST['brand_name'];
     $model_name = $_POST['model_name'];
     $vehicle_type = $_POST['vehicle_type'];

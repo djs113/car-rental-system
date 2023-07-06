@@ -23,6 +23,9 @@
             <input type="hidden" name="model_id" value="<?php echo $model_id;?>" />
             <br><br>
 
+            Model Id: <?php echo $res['model_id'];?>
+            <br><br>
+
             <label for="brand_name">Brand Name: </label><input type="text" name="brand_name" id="brand_name" value="<?php echo $res['brand_name'];?>" />
             <br><br>
 

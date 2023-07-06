@@ -22,6 +22,9 @@
             <input type="hidden" name="registration_number" value="<?php echo $registration_number;?>" />
             <br><br>
 
+            Registration Number: <?php echo $res['registration_number'];?>
+            <br><br>
+
             <label for="registration number">Registration Number: </label><input type="text" name="registration_number" id="registration_number" value="<?php echo $res['registration_number'];?>" />
             <br><br>
 

@@ -49,7 +49,7 @@
             // $sql = "CREATE TABLE booking_details (booking_id INT PRIMARY KEY, is_booked_for VARCHAR(20), booking_duration INT, pick_up_date DATE, pick_up_time TIME, payment_amount INT, payment_time DATETIME, card_number INT DEFAULT NULL, username VARCHAR(20), registration_number VARCHAR(11), FOREIGN KEY (username) REFERENCES user_details(username), FOREIGN KEY (registration_number) REFERENCES vehicles(registration_number))";
         
         // Record insertion
-            $sql = "INSERT INTO booking_details VALUES (22, 'hours', 5, '2023-06-09', '09:07:00', 1000, '2023:06:08:14:05:06', 2342453, 'aa', 'MN43LLJ23')";
+            // $sql = "INSERT INTO booking_details VALUES (22, 'hours', 5, '2023-06-09', '09:07:00', 1000, '2023:06:08:14:05:06', 2342453, 'aa', 'MN43LLJ23')";
             
     if ($conn->query($sql) === TRUE)
     {

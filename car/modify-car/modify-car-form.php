@@ -16,19 +16,32 @@
                 $qry = "SELECT * FROM vehicles LEFT JOIN engine_numbers on vehicles.registration_number = engine_numbers.registration_number WHERE vehicles.registration_number='$registration_number'";
                 $res_array = mysqli_query($conn, $qry);
                 $res = mysqli_fetch_array($res_array);
+
+                $model_qry = "SELECT brand_name, model_name FROM vehicle_models WHERE model_id = ".$res['model_id'];
+                echo $model_qry;
+                
+                $model_array = mysqli_query($conn, $model_qry);
+                $model_res = mysqli_fetch_array($model_array);
         ?>
+
         <h2><u>Modify Car</u></h2>
         <form action="modify-car.php" method="POST">
             <input type="hidden" name="registration_number" value="<?php echo $registration_number;?>" />
             <br><br>
 
-            Registration Number: <?php echo $res['registration_number'];?>
+            <label for="registration_number">Registration Number: <?php echo $res['registration_number'];?>
             <br><br>
 
-            <label for="engine number">Engine Number: </label><input type="text" name="engine_number" id="engine_number" value="<?php echo $res['engine_number'];?>" />
+            <label for="brand_name">Brand Name: </label><?php echo $model_res['brand_name'];?>
             <br><br>
 
-            <label for="vehicle color">Vehicle Color: </label><input type="text" name="vehicle_color" id="vehicle_color" value="<?php echo $res['vehicle_color'];?>" />
+            <label for="model_name">Model Name: </label><?php echo $model_res['model_name'];?>
+            <br><br>
+
+            <label for="engine_number">Engine Number: </label><input type="text" name="engine_number" id="engine_number" value="<?php echo $res['engine_number'];?>" />
+            <br><br>
+            
+            <label for="vehicle_color">Vehicle Color: </label><input type="text" name="vehicle_color" id="vehicle_color" value="<?php echo $res['vehicle_color'];?>" />
             <br><br>
 
             <label for="is_booked">Booking Status: </label><input type="text" name="is_booked" id="is_booked" value="<?php echo $res['is_booked'];?>" />

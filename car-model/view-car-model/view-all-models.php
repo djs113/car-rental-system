@@ -12,9 +12,10 @@
 
 <?php
 
-    require '/opt/lampp/htdocs/car-rental-system/common-functions.php';
+    $conn = mysqli_connect('localhost', 'root', '', 'car_rental_system');
 
-    $conn = dbConnection();
+    if ($conn->connect_error)
+        die("Connection failed<br>Connection Error: ".$conn->connect_error);
 
     $qry = "SELECT * FROM vehicle_models";
 

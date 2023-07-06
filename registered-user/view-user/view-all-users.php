@@ -9,12 +9,12 @@
     if ($conn->connect_error)
         die("Connection failed<br>Connection Error: ".$conn->connect_error);
   
-    $sql = "SELECT * FROM user_details LEFT JOIN user_emails ON user_details.username = user_emails.username 
+    $qry = "SELECT * FROM user_details LEFT JOIN user_emails ON user_details.username = user_emails.username 
     LEFT JOIN user_phone_numbers ON user_details.username = user_phone_numbers.username";
 
-    $res_array = mysqli_query($conn, $sql);
+    $res_array = mysqli_query($conn, $qry);
 
-    echo '<table cellspacing="2" cellpadding="2" border="1">
+    echo '<table cellspacing="3" cellpadding="3" border="1">
             <tr>
                 <th>Username</th>
                 <th>Password</th>  
@@ -28,6 +28,8 @@
     
     while ($res = mysqli_fetch_array($res_array))
     {
+        $username = $res['username'];
+
         echo '<tr>';
         echo '<td>'.$res['username'].'</td>';
         echo '<td>'.$res['passwd'].'</td>';
@@ -36,7 +38,7 @@
         echo '<td>'.$res['is_admin'].'</td>';
         echo '<td>'.$res['email'].'</td>';
         echo '<td>'.$res['phone_number'].'</td>';
-        echo '<td><a href="edit.php">Edit</a></td>';
+        echo '<td><a href="/car-rental-system/registered-user/modify-user/modify-user-form.php?username='.$username.'">Edit User</a></td>';    
         echo '</tr>';
     }
 

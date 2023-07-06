@@ -14,7 +14,17 @@
 
     $res_array = mysqli_query($conn, $qry);
 
-    echo '<table cellspacing="3" cellpadding="3" border="1">
+    echo '
+        <html?>
+            <head>
+                <title>
+                    View Users       
+                </title>
+            </head>
+            <body>
+            <h2><u>View Users</u></h2>
+            
+            <table cellspacing="3" cellpadding="3" border="1">
             <tr>
                 <th>Username</th>
                 <th>Password</th>  
@@ -40,7 +50,10 @@
         echo '</tr>';
     }
 
-    echo '</table>';
+    echo '</table>
+        </body>
+    </html>
+    ';
 
     $conn->close();
 ?>

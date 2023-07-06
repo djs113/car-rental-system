@@ -10,10 +10,10 @@
                 <h2>USER LOGIN</h2>
                 <p><strong>WELCOME TO THE LOGIN PAGE</strong></p>
                 <form action="login/registered-user/login.php" method="POST">
-                    <label for="username">Username: </label><input type="text" name="username" id="username" />
+                    <label for="username"><b>Username: </b></label><input type="text" name="username" id="username" />
                     <br><br>
 
-                    <label for="password">Password: </label><input type="text" name="passwd" id="passwd" />
+                    <label for="password"><b>Password: </b></label><input type="text" name="passwd" id="passwd" />
                     <br><br>
 
                     <input type="submit" value="Login" />

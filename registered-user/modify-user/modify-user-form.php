@@ -14,7 +14,7 @@
                 $username = $_REQUEST['username'];
                 
                 $qry = "SELECT * FROM user_details LEFT JOIN user_emails ON user_details.username = user_emails.username 
-                        LEFT JOIN user_phone_numbers ON user_details.username = user_phone_numbers.username";
+                        LEFT JOIN user_phone_numbers ON user_details.username = user_phone_numbers.username WHERE user_details.username='$username'";
                 
                 $res_array = mysqli_query($conn, $qry);
                 $res = mysqli_fetch_array($res_array);

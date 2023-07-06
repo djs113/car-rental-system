@@ -25,19 +25,6 @@
             Registration Number: <?php echo $res['registration_number'];?>
             <br><br>
 
-            <label for="registration number">Registration Number: </label><input type="text" name="registration_number" id="registration_number" value="<?php echo $res['registration_number'];?>" />
-            <br><br>
-
-            <!--
-            <label for="brand name">Brand Name: </label><input type="text" name="brand_name" id="brand_name" value="<?php echo $res['brand_name'];?>" />
-            <br><br>
-
-            <label for="model name">Model Name: </label><input type="text" name="model_name" id="model_name" value="<?php echo $res['model_name'];?>" />
-            <br><br>
-            
-            <label for="engine number">Engine Number: </label><input type="text" name="engine_number" id="engine_number" value="<?php echo $res['engine_number'];?>" />
-            <br><br>-->
-
             <label for="vehicle color">Vehicle Color: </label><input type="text" name="vehicle_color" id="vehicle_color" value="<?php echo $res['vehicle_color'];?>" />
             <br><br>
 
@@ -51,3 +38,19 @@
         </form>
     </body>
 </html>
+
+
+         <!--
+            <label for="registration number">Registration Number: </label><input type="text" name="registration_number" id="registration_number" value="<?php echo $res['registration_number'];?>" />
+            <br><br>
+
+
+            <label for="brand name">Brand Name: </label><input type="text" name="brand_name" id="brand_name" value="<?php echo $res['brand_name'];?>" />
+            <br><br>
+
+            <label for="model name">Model Name: </label><input type="text" name="model_name" id="model_name" value="<?php echo $res['model_name'];?>" />
+            <br><br>
+            
+            <label for="engine number">Engine Number: </label><input type="text" name="engine_number" id="engine_number" value="<?php echo $res['engine_number'];?>" />
+            <br><br>
+        -->

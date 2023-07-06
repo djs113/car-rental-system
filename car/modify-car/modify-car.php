@@ -12,8 +12,8 @@
     $qry = "UPDATE vehicles SET vehicle_color = '$vehicle_color', is_booked = '$is_booked', model_id = '$model_id' WHERE registration_number = '$registration_number';";
  
     if ($conn->query($qry) == TRUE)
-        echo "Car successfully modified<br>";
+        echo "Car successfully modified.<br>";
     else
-        echo "Error in modification of car<br>Error: ".$conn->error;
+        echo "Error in modification of car.<br>Error: ".$conn->error;
     
 ?>

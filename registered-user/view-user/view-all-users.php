@@ -10,7 +10,7 @@
         die("Connection failed<br>Connection Error: ".$conn->connect_error);
   
     $qry = "SELECT * FROM user_details LEFT JOIN user_emails ON user_details.username = user_emails.username 
-    LEFT JOIN user_phone_numbers ON user_details.username = user_phone_numbers.username";
+            LEFT JOIN user_phone_numbers ON user_details.username = user_phone_numbers.username";
 
     $res_array = mysqli_query($conn, $qry);
 

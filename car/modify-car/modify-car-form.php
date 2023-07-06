@@ -18,7 +18,6 @@
                 $res = mysqli_fetch_array($res_array);
 
                 $model_qry = "SELECT brand_name, model_name FROM vehicle_models WHERE model_id = ".$res['model_id'];
-                echo $model_qry;
                 
                 $model_array = mysqli_query($conn, $model_qry);
                 $model_res = mysqli_fetch_array($model_array);
@@ -40,7 +39,7 @@
 
             <label for="engine_number">Engine Number: </label><input type="text" name="engine_number" id="engine_number" value="<?php echo $res['engine_number'];?>" />
             <br><br>
-            
+
             <label for="vehicle_color">Vehicle Color: </label><input type="text" name="vehicle_color" id="vehicle_color" value="<?php echo $res['vehicle_color'];?>" />
             <br><br>
 

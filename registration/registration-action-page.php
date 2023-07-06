@@ -34,7 +34,7 @@
     {
         echo 'Error in addition of user<br>Error: '.$conn->error.'
               <button><a href="/car-rental-system/registration/registration-form.html">Registration</a></button>
-             ';
+        ';
              
     }
 

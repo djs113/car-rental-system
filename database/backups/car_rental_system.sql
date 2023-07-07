@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 04, 2023 at 07:17 AM
+-- Generation Time: Jul 07, 2023 at 06:17 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -40,8 +40,10 @@ CREATE TABLE `user_details` (
 
 INSERT INTO `user_details` (`username`, `passwd`, `first_name`, `last_name`) VALUES
 ('aa', '4124bc0a9335c27f086f24ba207a4912', 'aa', 'bb'),
-('fsda', 'd29aaa0b9cd402b4bfe2395a805f9ada', 'fsdafvxv', 'ergrwff'),
+('fsda', 'd29aaa0b9cd402b4bfe2395a805f9ada', 'klafvxv', 'ergrwff'),
 ('nbvnc', '5c56fc99fe03e32897a4b562b502cd81', 'hnxvxxc', 'ytrhrth'),
+('vcbcb', '4124bc0a9335c27f086f24ba207a4912', 'bcvbc', 'xcser'),
+('vnbvncbcb', '4124bc0a9335c27f086f24ba207a4912', 'rbtbbcvbc', 'xxczxcser'),
 ('xcvvx', 'c2a82dd938f5d722f574e94f42f60bca', 'sdfa', 'bhgdbdf');
 
 -- --------------------------------------------------------
@@ -62,7 +64,9 @@ CREATE TABLE `user_emails` (
 INSERT INTO `user_emails` (`email`, `username`) VALUES
 ('a@gmail.com', 'aa'),
 ('adfsf@gmail.com', 'fsda'),
-('vbnv@gmail.com', 'nbvnc'),
+('nbnv@gmail.com', 'nbvnc'),
+('yut@gmail.com', 'vcbcb'),
+('yerwewut@gmail.com', 'vnbvncbcb'),
 ('sfsf@gmail.com', 'xcvvx');
 
 -- --------------------------------------------------------
@@ -84,6 +88,8 @@ INSERT INTO `user_phone_numbers` (`phone_number`, `username`) VALUES
 (2313312321323, 'aa'),
 (1234567890, 'fsda'),
 (31234325534, 'nbvnc'),
+(5645223444, 'vcbcb'),
+(9845223444, 'vnbvncbcb'),
 (8008098934223, 'xcvvx');
 
 --

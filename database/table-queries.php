@@ -53,6 +53,9 @@
         // Table creation
             // $sql = "CREATE TABLE card_details (card_number BIGINT PRIMARY KEY, name_on_card VARCHAR(30), expiry_date DATE)"; 
             // $sql = "CREATE TABLE user_cards (card_id BIGINT PRIMARY KEY, card_name VARCHAR(20), username VARCHAR(20), card_number BIGINT, FOREIGN KEY (username) REFERENCES user_details(username), FOREIGN KEY (card_number) REFERENCES card_details(card_number))";    
+        // Record Insertion
+            // $sql = "INSERT INTO card_details VALUES (2343131231, 'abc', '2024-04-06')";
+            // $sql = "INSERT INTO user_cards VALUES (5643234, 'card', 'aa', 2343131231)";
 
     if ($conn->query($sql) === TRUE)
     {

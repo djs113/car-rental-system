@@ -48,7 +48,12 @@
         // Table creation
             // $sql = "CREATE TABLE card_booking_details (booking_id INT PRIMARY KEY, is_booked_for VARCHAR(20), booking_duration INT, pick_up_date DATE, pick_up_time TIME, payment_amount INT, payment_time DATETIME, card_id BIGINT, registration_number VARCHAR(11), FOREIGN KEY (registration_number) REFERENCES vehicles(registration_number), FOREIGN KEY (card_id) REFERENCES user_cards(card_id))";
             // $sql = "CREATE TABLE cash_booking_details (booking_id INT PRIMARY KEY, is_booked_for VARCHAR(20), booking_duration INT, pick_up_date DATE, pick_up_time TIME, payment_amount INT, payment_time DATETIME, username VARCHAR(20), registration_number VARCHAR(11), FOREIGN KEY (registration_number) REFERENCES vehicles(registration_number), FOREIGN KEY (username) REFERENCES user_details(username))";
-        
+
+    // Card tables
+        // Table creation
+            // $sql = "CREATE TABLE card_details (card_number BIGINT PRIMARY KEY, name_on_card VARCHAR(30), expiry_date DATE)"; 
+            // $sql = "CREATE TABLE user_cards (card_id BIGINT PRIMARY KEY, card_name VARCHAR(20), username VARCHAR(20), card_number BIGINT, FOREIGN KEY (username) REFERENCES user_details(username), FOREIGN KEY (card_number) REFERENCES card_details(card_number))";    
+
     if ($conn->query($sql) === TRUE)
     {
         echo "Query successful";

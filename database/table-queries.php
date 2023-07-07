@@ -45,9 +45,14 @@
             //$sql = "INSERT INTO engine_numbers VALUES ('343BDSN452', 'MN43LLJ23')";
     
     // Booking tables
+    
         // Table creation
             // $sql = "CREATE TABLE card_booking_details (booking_id INT PRIMARY KEY, is_booked_for VARCHAR(20), booking_duration INT, pick_up_date DATE, pick_up_time TIME, payment_amount INT, payment_time DATETIME, card_id BIGINT, registration_number VARCHAR(11), FOREIGN KEY (registration_number) REFERENCES vehicles(registration_number), FOREIGN KEY (card_id) REFERENCES user_cards(card_id))";
             // $sql = "CREATE TABLE cash_booking_details (booking_id INT PRIMARY KEY, is_booked_for VARCHAR(20), booking_duration INT, pick_up_date DATE, pick_up_time TIME, payment_amount INT, payment_time DATETIME, username VARCHAR(20), registration_number VARCHAR(11), FOREIGN KEY (registration_number) REFERENCES vehicles(registration_number), FOREIGN KEY (username) REFERENCES user_details(username))";
+        
+            // Record insertion
+                // $sql = "INSERT INTO card_booking_details VALUES (22, 'hours', 5, '2023-06-09', '09:07:00', 1000, '2023-06-08 14:05:06', 5643234, 'MN43LLJ23')";
+                // $sql = "INSERT INTO cash_booking_details VALUES (45, 'weeks', 2, '2023-03-05', '10:00:04', 5000, '2023-03-03 11:03:05', 'aa', 'MN43LLJ23')";
 
     // Card tables
         // Table creation

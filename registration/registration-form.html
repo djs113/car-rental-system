@@ -1,6 +1,50 @@
 <html>
 <head></head>
     <title>Library Management System</title>
+    <script type="text/javascript">
+        function form_validate()
+        {
+            var first_name = document.getElementById("first_name").value;
+            var last_name = document.getElementById("last_name").value;
+            var email = document.getElementById("email").value;
+            var phone_number = document.getElementById("phone_number").value;
+           
+            var email_reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+            
+            /*
+            if (first_name == "")
+            {
+                alert("Enter First Name");
+                return false;
+            }
+            if (last_name == "")
+            {
+                alert("Enter Last Name");
+                return false;
+            }
+            */
+
+            if ((phone_num == "") || (isNaN(phone_number)))
+            {
+                alert("Phone number cannot be empty and has to be a number");
+                return false;
+            }
+
+            /*
+            if (phone_number.length != 10)
+            {
+                alert("Phone number must be 10 digits");
+                return false;
+            }
+            */
+           
+            if ((email == "") || (!email.match(email_reg)))
+            {
+                alert("Enter email...field cannot be empty");
+                return false;
+            }
+        }
+    </script>
 </head>
 <body style="background-image: url(/car-rental-system/images/cars-background.webp); background-size: cover;">
     <div style="text-align: center; width: 100%; margin-top: 100px; float: left">
@@ -15,7 +59,7 @@
             <label for="last name"><b>Last Name: </b></label><input type="text" name="last_name" id="last_name" /><br><br>
             <label for="email"><b>Email: </b></label><input type="email" name="email" id="email" /><br><br>
             <label for="phone number"><b>Phone Number: </b></label><input type="text" name="phone_number" id="phone_number" /><br><br> 
-            <input type="submit" name="submit" id="submit" value="Register" />
+            <input type="submit" name="submit" id="submit" value="Register" onclick="form_validate()" />
             </form>
         </div>
     </div>

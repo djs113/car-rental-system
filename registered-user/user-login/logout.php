@@ -3,5 +3,5 @@
     session_unset();
     session_destroy();
 
-    header("location:/car-rental-system/iindex.php");
+    header("location:/car-rental-system/registered-user/user-login/user-login-page.html");
 ?>

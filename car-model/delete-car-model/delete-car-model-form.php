@@ -27,12 +27,11 @@
             $res_array = mysqli_query($conn, $qry);
             $res = mysqli_fetch_array($res_array);
 
-            $_POST['model_id'] = $model_id;
-
             echo '
                 Do you really want to delete this car model?
 
                 <form action="delete-car-model.php" method="POST">
+                    <input type="hidden" name="model_id" id="model_id" value="'.$model_id.'" />
                     <label for="model_id">Model Id: </label>'.$model_id.'
                     <br><br>
 

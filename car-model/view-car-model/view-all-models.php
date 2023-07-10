@@ -80,7 +80,9 @@
             }
 
             echo '          <td><a href="/car-rental-system/car-model/modify-car-model/modify-car-model-form.php?model_id='.$model_id.'">Edit Model</a></td>    
+                            <td><a href="/car-rental-system/car-model/delete-car-model/delete-car-model-form.php?model_id='.$model_id.'">Delete Model</a></td>    
                         </tr>
+
             ';
         }
 

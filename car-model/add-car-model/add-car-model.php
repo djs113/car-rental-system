@@ -1,6 +1,4 @@
 <?php
-    require '/opt/lampp/htdocs/car-rental-system/common-functions.php';
-
     session_start();
 
     if (!isset($_SESSION['login_admin']))
@@ -17,7 +15,10 @@
     $week_price = $_POST['week_price'];
     $month_price = $_POST['month_price'];
 
-    $conn = dbConnection();
+    $conn = mysqli_connect('localhost', 'root', '', 'car_rental_system');
+
+    if ($conn->connect_error)
+        die("Connection failed<br>Connection Error: ".$conn->connect_error);
 
     $qry = "INSERT INTO vehicle_models (brand_name, model_name, vehicle_type, hour_price, day_price, week_price, month_price) VALUES ('$brand_name', '$model_name', '$vehicle_type', $hour_price, $day_price, $week_price, $month_price)";
     

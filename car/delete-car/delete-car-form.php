@@ -6,6 +6,10 @@
     </head>
     <body>
         <h2><u>Delete Car</u></h2>
+        <?php
+           $registration_number = $_REQUEST['registration_number'];
+           
+        ?>
         <form action="delete-car.php" method="POST">
             <label for="brand name">Brand Name: </label><input type="text" name="brand_name" id="brand_name">
             <br><br>

@@ -61,7 +61,8 @@
                 ';
             }
 
-            echo '          <td><a href="/car-rental-system/car/modify-car/modify-car-form.php?registration_number='.$registration_number.'">Edit Car</a></td>    
+            echo '          <td><a href="/car-rental-system/car/modify-car/modify-car-form.php?registration_number='.$registration_number.'">Edit Car</a></td> 
+                            <td><a href="/car-rental-system/car/delete-car/delete-car-form.php?registration_number='.$registration_number.'">Delete Car</a></td>   
                         </tr>
             ';
         }

@@ -26,18 +26,21 @@
 
             $res_array = mysqli_query($conn, $qry);
             $res = mysqli_fetch_array($res_array);
+
+            echo '
+                <form action="delete-car.php" method="POST">
+                    <label for="brand name">Brand Name: </label>'.$res['brand_name'].'
+                    <br><br>
+
+                    <label for="model name">Model Name: </label><input type="text" name="model_name" id="model_name">
+                    <br><br>
+
+                    <label for="registration number">Registration Number: </label><input type="text" name="registration_number" id="registration_number">
+                    <br><br>
+
+                    <input type="submit" value="Delete Vehicle">
+                </form>
+            ';
         ?>
-        <form action="delete-car.php" method="POST">
-            <label for="brand name">Brand Name: </label>'.$res['brand_name].'
-            <br><br>
-
-            <label for="model name">Model Name: </label><input type="text" name="model_name" id="model_name">
-            <br><br>
-
-            <label for="registration number">Registration Number: </label><input type="text" name="registration_number" id="registration_number">
-            <br><br>
-
-            <input type="submit" value="Delete Vehicle">
-        </form>
     </body>
 </html>

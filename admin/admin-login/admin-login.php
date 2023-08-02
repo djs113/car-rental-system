@@ -22,6 +22,6 @@
         header("location:/car-rental-system/admin/admin-home/admin-home-page.php");
     } else
     {
-        header("location:/car-rental-system/admin/admin-login/admin-login-page.html");
+        header("location:/car-rental-system/index.php");
     }
 ?>

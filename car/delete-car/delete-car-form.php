@@ -9,23 +9,23 @@
         <?php
             session_start(); 
   
-             if (!isset($_SESSION['login_admin'])) 
-             { 
-                 header("location:/car-rental-system/admin/admin-login/admin-login.php"); 
-                 exit; 
-             } 
-  
-             $conn = mysqli_connect('localhost', 'root', '', 'car_rental_system'); 
-  
-             if ($conn->connect_error) 
-                 die("Connection failed<br>Connection Error: ".$conn->connect_error);
-                 
-                 $registration_number = $_REQUEST['registration_number'];
+            if (!isset($_SESSION['login_admin'])) 
+            { 
+                header("location:/car-rental-system/admin/admin-login/admin-login.php"); 
+                exit; 
+            } 
 
-                 $qry = "SELECT model_id FROM vehicles WHERE registration_number = $registration_number";
-    
-                 $res_array = mysqli_query($conn, $qry);
-                 $res = mysqli_fetch_array($res_array);
+            $conn = mysqli_connect('localhost', 'root', '', 'car_rental_system'); 
+
+            if ($conn->connect_error) 
+                die("Connection failed<br>Connection Error: ".$conn->connect_error);
+                
+            $registration_number = $_REQUEST['registration_number'];
+
+            $qry = "SELECT model_id FROM vehicles WHERE registration_number = $registration_number";
+
+            $res_array = mysqli_query($conn, $qry);
+            $res = mysqli_fetch_array($res_array);
         ?>
         <form action="delete-car.php" method="POST">
             <label for="brand name">Brand Name: </label>'.$res['brand_name].'

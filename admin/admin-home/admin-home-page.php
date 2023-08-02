@@ -20,9 +20,9 @@
         <a href="/car-rental-system/car-model/view-car-model/view-all-models.php">View car models</a>
         <br><br>
 
-        <a href="/car-rental-system/registered-user/view-user/view-all-users.php">View users</a>
+        <a href="/car-rental-system/admin/view-user/view-all-users.php">View users</a>
         <br><br>
-
+        
         <button><a href="/car-rental-system/admin/admin-login/admin-logout.php">Logout</a></button>
     ';
 ?>

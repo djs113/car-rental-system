@@ -46,7 +46,7 @@
         echo '<td>'.$res['last_name'].'</td>';
         echo '<td>'.$res['email'].'</td>';
         echo '<td>'.$res['phone_number'].'</td>';
-        echo '<td><a href="/car-rental-system/registered-user/modify-user/modify-user-form.php?username='.$username.'">Edit User</a></td>';    
+        echo '<td><a href="/car-rental-system/admin/modify-user/modify-user-form.php?username='.$username.'">Edit User</a></td>';    
         echo '</tr>';
     }
 

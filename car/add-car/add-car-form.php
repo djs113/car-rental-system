@@ -3,6 +3,27 @@
         <title>
             Add Car
         </title>
+        <script type="text/javascript">
+            var xhr = new XMLHttpRequest();
+            
+            xhr.open('POST', '/car-rental-system/car/add-car/get-model-data.php');
+            xhr.send();
+
+            xhr.onload() = function () {
+                var data = xhr.response;
+            }
+
+            function selectModels()
+            {
+                var model_select_box = document.getElementById("model_name");
+                model_select_box.disabled = 0;
+
+                var brand_name = document.getElementById("brand_name").value;
+                
+                
+
+            }
+        </script>
     </head>
     <?php
         session_start();
@@ -35,7 +56,7 @@
             echo '
                 <form action="add-car-script.php" method="POST">
                     <label for="brand name">Brand Name: </label>
-                    <select name="brand_name" id="brand_name">      
+                    <select name="brand_name" id="brand_name" onchange="selectModels()">      
             ';
 
             while ($res = mysqli_fetch_array($res_array))
@@ -49,7 +70,7 @@
                 <br><br>
 
                 <label for="model name">Model Name: </label>
-                <select name="model_name" id="model_name"> 
+                <select name="model_name" id="model_name" disabled> 
             ';
             
             while ($res = mysqli_fetch_array($res_array))

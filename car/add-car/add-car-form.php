@@ -23,12 +23,8 @@
                 var brand_name = document.getElementById("brand_name").value;
                 var model_data = data[brand_name];
 
-                console.log(model_data);
-
                 while (model_select_box.firstChild)
-                {
                     model_select_box.removeChild(model_select_box.firstChild);
-                }
 
                 for (var model_number in model_data)
                 {
@@ -37,7 +33,6 @@
                     model_option.innerText = model_data[model_number];
                     model_select_box.appendChild(model_option);
                 }
-                
             }
         </script>
     </head>
@@ -82,25 +77,16 @@
             $res_array = mysqli_query($conn, $qry);
 
             echo '
-                </select>
-                <br><br>
+                    </select>
+                    <br><br>
 
-                <label for="model name">Model Name: </label>
-                <select name="model_name" id="model_name" disabled> 
-            ';
-            
-            /*
-            $count = 0;
-            while ($res = mysqli_fetch_array($res_array))
-                echo '<option id="model_option_'.$count.'" value="'.$res['model_name'].'">'.$res['model_name'].'</option>';
-                $count++;
-            */
-            echo '  
+                    <label for="model name">Model Name: </label>
+                    <select name="model_name" id="model_name" disabled> 
                     </select>
                     <br><br>
 
                     <label for="registration number">Registration Number: </label><input type="text" name="registration_number" id="registration_number" />
-                        <br><br>
+                    <br><br>
 
                     <label for="engine number">Engine Number: </label><input type="text" name="engine_number" id="engine_number" />
                     <br><br>

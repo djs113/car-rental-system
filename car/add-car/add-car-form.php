@@ -5,12 +5,14 @@
         </title>
         <script type="text/javascript">
             var xhr = new XMLHttpRequest();
+            var data;
+            var model_data = {};
             
             xhr.open('POST', '/car-rental-system/car/add-car/get-model-data.php');
             xhr.send();
 
-            xhr.onload() = function () {
-                var data = xhr.response;
+            xhr.onload = function () {
+                data = JSON.parse(xhr.response);
             }
 
             function selectModels()
@@ -19,9 +21,23 @@
                 model_select_box.disabled = 0;
 
                 var brand_name = document.getElementById("brand_name").value;
-                
-                
+                var model_data = data[brand_name];
 
+                console.log(model_data);
+
+                while (model_select_box.firstChild)
+                {
+                    model_select_box.removeChild(model_select_box.firstChild);
+                }
+
+                for (var model_number in model_data)
+                {
+                    var model_option = document.createElement("option");
+                    model_option.id = model_option.value = model_data[model_number];
+                    model_option.innerText = model_data[model_number];
+                    model_select_box.appendChild(model_option);
+                }
+                
             }
         </script>
     </head>
@@ -73,9 +89,12 @@
                 <select name="model_name" id="model_name" disabled> 
             ';
             
+            /*
+            $count = 0;
             while ($res = mysqli_fetch_array($res_array))
-                echo '<option value="'.$res['model_name'].'">'.$res['model_name'].'</option>';
-            
+                echo '<option id="model_option_'.$count.'" value="'.$res['model_name'].'">'.$res['model_name'].'</option>';
+                $count++;
+            */
             echo '  
                     </select>
                     <br><br>

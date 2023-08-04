@@ -17,19 +17,7 @@
 
     
     // currently booked vehicle details (that satisfies time period given by user)
-
-    $qry = "SELECT vehicle_models.model_name, vehicle_models.brand_name FROM vehicles LEFT JOIN vehicle_models ON 
-            vehicles.model_id = vehicle_models.model_id WHERE vehicles.is_booked = 0 GROUP BY vehicle_models.model_id
-            UNION
-            SELECT DISTINCT vehicle_models.model_name, vehicle_models.brand_name from vehicles LEFT JOIN cash_booking_details 
-            ON vehicles.registration_number = cash_booking_details.registration_number LEFT JOIN vehicle_models ON 
-            vehicles.model_id = vehicle_models.model_id WHERE ('$given_drop_off_date' < cash_booking_details.pick_up_date OR 
-            '$given_pick_up_date' > cash_booking_details.drop_off_date) 
-            UNION 
-            SELECT DISTINCT vehicle_models.model_name, 
-            vehicle_models.brand_name from cash_booking_details WHERE '$given_drop_off_date' < pick_up_date OR 
-            '$given_pick_up_date' > drop_off_date;";
-
+    
     $qry = "SELECT vehicle_models.model_name, vehicle_models.brand_name FROM vehicles LEFT JOIN vehicle_models ON 
             vehicles.model_id = vehicle_models.model_id WHERE vehicles.is_booked = 0 GROUP BY vehicle_models.model_id
             UNION
@@ -72,7 +60,7 @@
                 ';
             }
     }
-    
+
     echo '
         </table>
     ';

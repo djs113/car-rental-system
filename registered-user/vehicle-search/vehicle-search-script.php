@@ -55,7 +55,16 @@
                     <tr>
                         <td>'.$res[0].'</td>
                         <td>'.$res[1].'</td>
-                        <td><a href="book-individual-vehicle.php?model_id='.$res[2].'">Book</a></td>
+                        <td>
+                            <form action="/car-rental-system/registered-user/booking/confirm-booking.php" method="POST">
+                                <input type="hidden" name="model_id" id="model_id" value="'.$res[2].'" />
+                                <input type="hidden" name="pick_up_date" id="pick_up_date" value="'.$given_pick_up_date.'" />
+                                <input type="hidden" name="pick_up_time" id="pick_up_time" value="'.$given_pick_up_time.'" />
+                                <input type="hidden" name="drop_off_date" id="drop_off_date" value="'.$given_drop_off_date.'" />
+                                <input type="hidden" name="drop_off_time" id="drop_off_time" value="'.$given_drop_off_time.'" />
+                                <input type="submit" value="Book" />
+                            </form>
+                        </td>
                     </tr>
                 ';
             }

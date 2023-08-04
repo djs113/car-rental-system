@@ -18,15 +18,15 @@
     
     // currently booked vehicle details (that satisfies time period given by user)
     
-    $qry = "SELECT DISTINCT vehicle_models.model_name, vehicle_models.brand_name FROM vehicles LEFT JOIN vehicle_models ON 
+    $qry = "SELECT DISTINCT vehicle_models.model_name, vehicle_models.brand_name, vehicle_models.model_id FROM vehicles LEFT JOIN vehicle_models ON 
             vehicles.model_id = vehicle_models.model_id WHERE vehicles.is_booked = 0 GROUP BY vehicle_models.model_id
             UNION
-            SELECT DISTINCT vehicle_models.model_name, vehicle_models.brand_name FROM vehicles LEFT JOIN card_booking_details
+            SELECT DISTINCT vehicle_models.model_name, vehicle_models.brand_name, vehicle_models.model_id FROM vehicles LEFT JOIN card_booking_details
             ON vehicles.registration_number = card_booking_details.registration_number LEFT JOIN vehicle_models ON 
             vehicles.model_id = vehicle_models.model_id WHERE ('$given_drop_off_date' < card_booking_details.pick_up_date OR 
             '$given_pick_up_date' > card_booking_details.drop_off_date) 
             UNION 
-            SELECT DISTINCT vehicle_models.model_name, vehicle_models.brand_name from vehicles LEFT JOIN 
+            SELECT DISTINCT vehicle_models.model_name, vehicle_models.brand_name, vehicle_models.model_id FROM vehicles LEFT JOIN 
             card_booking_details ON vehicles.registration_number = card_booking_details.registration_number LEFT JOIN 
             vehicle_models ON vehicles.model_id = vehicle_models.model_id WHERE 
             ('$given_drop_off_date' < card_booking_details.pick_up_date OR 
@@ -38,7 +38,7 @@
     {
         echo 'No available vehicles for this time period
               <br><br>
-              <button><a href="/car-rental-system/registered-user/booking/vehicle-search/vehicle-search-form.php">Search again</a></button>
+              <button><a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Search again</a></button>
         ';
 
     } else
@@ -55,7 +55,7 @@
                     <tr>
                         <td>'.$res[0].'</td>
                         <td>'.$res[1].'</td>
-                        <td><a href="book-individual-vehicle.php">Book</a></td>
+                        <td><a href="book-individual-vehicle.php?model_id='.$res[2].'">Book</a></td>
                     </tr>
                 ';
             }

@@ -72,19 +72,7 @@
                 ';
             }
     }
-    /*
-    while ($res = mysqli_fetch_row($unbooked_vehicles_array))
-        {
-            echo '
-                <tr>
-                    <td>'.$res[0].'</td>
-                    <td>'.$res[1].'</td>
-                    <td><a href="book-individual-vehicle.php">Book</a></td>
-                </tr>
-            ';
-        }
-    */
-
+    
     echo '
         </table>
     ';

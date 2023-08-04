@@ -18,7 +18,7 @@
     
     // currently booked vehicle details (that satisfies time period given by user)
     
-    $qry = "SELECT vehicle_models.model_name, vehicle_models.brand_name FROM vehicles LEFT JOIN vehicle_models ON 
+    $qry = "SELECT DISTINCT vehicle_models.model_name, vehicle_models.brand_name FROM vehicles LEFT JOIN vehicle_models ON 
             vehicles.model_id = vehicle_models.model_id WHERE vehicles.is_booked = 0 GROUP BY vehicle_models.model_id
             UNION
             SELECT DISTINCT vehicle_models.model_name, vehicle_models.brand_name FROM vehicles LEFT JOIN card_booking_details

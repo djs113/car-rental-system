@@ -65,7 +65,7 @@
         }
 
         echo '
-            <button><a href="add-card.php">Add new card</a></button> 
+            <button><a href="/car-rental-system/registered-user/payment/cards/add-card.php">Add new card</a></button> 
         ';
     }
 ?>

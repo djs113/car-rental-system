@@ -53,6 +53,12 @@
         $payable_amount += $res['hour_price'] * $hour_diff;
     }
 
+    $_SESSION['model_id'] = $_POST['model_id'];
+    $_SESSION['pick_up_date'] = $_POST['pick_up_date'];
+    $_SESSION['pick_up_time'] = $_POST['pick_up_time'];
+    $_SESSION['drop_off_date'] = $_POST['drop_off_date'];
+    $_SESSION['drop_off_time'] = $_POST['drop_off_time'];
+
     echo '
         <label for="brand_name">Brand Name: </label>'.$res[0].'
         <br><br>
@@ -72,7 +78,9 @@
         <label for="drop_off_time">Drop off time: </label>'.$_POST['drop_off_time'].'
         <br><br>
 
-        <label for="payable_amount">Payable amount: </label>'.$payable_amount.'
+        <label for="payable_amount">Payable amount: </label>Rs.'.$payable_amount.'
         <br><br>
+
+        <button><a href="/car-rental-system/registered-user/payment/payment-form.php?payable_amount='.$payable_amount.'">Proceed to payment</a></button>
     ';
 ?>

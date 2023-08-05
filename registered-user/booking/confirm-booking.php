@@ -17,7 +17,7 @@
     $pick_up_date = new DateTime($_POST['pick_up_date']);
     $pick_up_time = strtotime($_POST['pick_up_date']." ".$_POST['pick_up_time'].":00");
     $drop_off_date = new DateTime($_POST['drop_off_date']);
-    $drop_off_time = strtotime($_POST['drop_off_date']." ".$_POST['drop_off_time'].":");
+    $drop_off_time = strtotime($_POST['drop_off_date']." ".$_POST['drop_off_time'].":00");
 
     $qry = "SELECT brand_name, model_name, hour_price, day_price, week_price, month_price FROM vehicle_models WHERE model_id = $model_id";
     
@@ -31,7 +31,7 @@
     $date_diff = $drop_off_date->diff($pick_up_date);
     
     $month_diff = $date_diff->m;
-    $day_diff = $day_diff->d;
+    $day_diff = $date_diff->d;
 
     if ($month_diff != 0)
         $payable_amount += $res['month_price'] * $month_diff;

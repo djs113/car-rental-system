@@ -38,7 +38,15 @@
     ('$card_name', '$username', $card_number)";
 
     if ($conn->query($qry) == TRUE)
-        echo 'Card successfully added';
+    {
+        echo '
+            Card successfully added
+            <br><br>
+        ';
+
+        if (isset($_SESSION['ongoing_payment']))
+            echo '<button><a href="/car-rental-system/registered-user/payment/payment-script.php">Return to payment</a></button>';
+    } 
     else
         echo 'Error in addition of card';
 ?>

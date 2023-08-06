@@ -57,7 +57,7 @@
 
         // Table creation
             $sql .= "CREATE TABLE card_details (card_number BIGINT PRIMARY KEY, name_on_card VARCHAR(30), expiry_date DATE);"; 
-            $sql .= "CREATE TABLE user_cards (card_id BIGINT PRIMARY KEY, card_name VARCHAR(20), username VARCHAR(20), card_number BIGINT, FOREIGN KEY (username) REFERENCES user_details(username), FOREIGN KEY (card_number) REFERENCES card_details(card_number));";    
+            $sql .= "CREATE TABLE user_cards (card_id BIGINT PRIMARY KEY AUTO_INCREMENT, card_name VARCHAR(20), username VARCHAR(20), card_number BIGINT, FOREIGN KEY (username) REFERENCES user_details(username), FOREIGN KEY (card_number) REFERENCES card_details(card_number));";    
         
             // Record Insertion
             $sql .= "INSERT INTO card_details VALUES (2343131231, 'abc', '2024-04-06');";
@@ -66,18 +66,17 @@
     // Booking tables
 
         // Table creation
-            $sql .= "CREATE TABLE card_booking_details (booking_id INT PRIMARY KEY, pick_up_date DATE, pick_up_time TIME, drop_off_date date, drop_off_time time, payment_amount INT, payment_time DATETIME, card_id BIGINT, registration_number VARCHAR(11), FOREIGN KEY (registration_number) REFERENCES vehicles(registration_number), FOREIGN KEY (card_id) REFERENCES user_cards(card_id));";
+            $sql = "CREATE TABLE card_booking_details (booking_id INT PRIMARY KEY, pick_up_date DATE, pick_up_time TIME, drop_off_date date, drop_off_time time, payment_amount INT, payment_time DATETIME, card_id BIGINT, registration_number VARCHAR(11), FOREIGN KEY (registration_number) REFERENCES vehicles(registration_number), FOREIGN KEY (card_id) REFERENCES user_cards(card_id));";
             $sql .= "CREATE TABLE cash_booking_details (booking_id INT PRIMARY KEY, pick_up_date DATE, pick_up_time TIME, drop_off_date date, drop_off_time time, payment_amount INT, payment_time DATETIME, username VARCHAR(20), registration_number VARCHAR(11), FOREIGN KEY (registration_number) REFERENCES vehicles(registration_number), FOREIGN KEY (username) REFERENCES user_details(username));";
         
             // Record insertion
-                $sql .= "INSERT INTO card_booking_details VALUES (22, 'hours', 5, '2023-06-09', '09:07:00', 1000, '2023-06-08 14:05:06', 5643234, 'MN43LLJ23');";
-                $sql .= "INSERT INTO cash_booking_details VALUES (45, 'weeks', 2, '2023-03-05', '10:00:04', 5000, '2023-03-03 11:03:05', 'aa', 'MN43LLJ23');";
-
-    if ($conn->multi_query($sql) === TRUE)
-    {
+                $qry = "CREATE TABLE card_booking_details (booking_id INT PRIMARY KEY, pick_up_date DATE, pick_up_time TIME, drop_off_date date, drop_off_time time, payment_amount INT, payment_time DATETIME, card_id BIGINT, registration_number VARCHAR(11), FOREIGN KEY (registration_number) REFERENCES vehicles(registration_number), FOREIGN KEY (card_id) REFERENCES user_cards(card_id));";
+                $qry .= "INSERT INTO card_booking_details VALUES (22,  '2023-06-09', '09:07:00', '2023-06-13', '19:07:00', 1000, '2023-06-08 14:05:06', 5643234, 'MN43LLJ23');";
+                $qry .= "INSERT INTO cash_booking_details VALUES (45, '2023-06-05', '10:00:04', '2023-06-15', '15:07:00', 5000, '2023-06-04 11:03:00', 'aa', 'MN43LLJ23');";
+     
+    if ($conn->multi_query($qry) === TRUE)
         echo "Query successful";
-    } else 
-    {
+    else  
         echo "Error in executing query".$conn->error;
-    }
+    
 ?>

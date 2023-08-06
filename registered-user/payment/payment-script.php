@@ -15,6 +15,14 @@
     $_SESSION['ongoing_payment'] = TRUE;
 
     $payment_method = $_POST['payment_method'];
+    
+    // to retain value of payment method after leaving this page to add a new card
+    
+    if (!isset($_SESSION['payment_method']))
+        $_SESSION['payment_method'] = $payment_method;
+    else
+        $payment_method = $_SESSION['payment_method'];
+
     $username = $_SESSION['login_user'];
 
     if ($payment_method == 'card')
@@ -64,7 +72,8 @@
                     </form>  
                 ';
             }
-        }
+        } else
+            echo 'No saved cards.';
 
         echo '
             <button><a href="/car-rental-system/registered-user/payment/cards/add-card.php">Add new card</a></button> 

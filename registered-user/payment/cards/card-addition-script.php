@@ -21,20 +21,24 @@
 
     $card_count = mysqli_num_rows($res_array);
 
-    if ($card_count == 1)
+    if ($card_count == 0)
     {
+        $name_on_card = $_POST['name_on_card'];
+        $expiry_date = $_POST['expiry_date'];
+        
+        $qry = "INSERT INTO card_details VALUES ($card_number, '$name_on_card', '$expiry_date')";
+
+        mysqli_query($conn, $qry);
+    }
+
         $card_name = $_POST['card_name'];
         $username = $_SESSION['login_user'];
         
         $qry = "INSERT INTO user_cards (card_name, username, card_number) VALUES 
-        ('$card_name', '$username', '$card_number')";
+        ('$card_name', '$username', $card_number)";
 
         if ($conn->query($qry) == TRUE)
             echo 'Card successfully added';
         else
             echo 'Error in addition of card';
-    } else
-    {
-        $qry = "INSERT INTO";
-    }
 ?>

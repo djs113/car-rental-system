@@ -12,6 +12,8 @@
     if ($conn->connect_error)
         die("Connection error".$conn->connect_error);
 
+    $_SESSION['ongoing_payment'] = TRUE;
+
     $payment_method = $_POST['payment_method'];
     $username = $_SESSION['login_user'];
 

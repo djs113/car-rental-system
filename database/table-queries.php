@@ -62,7 +62,7 @@
             // Record Insertion
             $sql .= "INSERT INTO card_details VALUES (2343131231, 'abc', '2024-04-06');";
             $sql .= "INSERT INTO user_cards VALUES (5643234, 'card', 'aa', 2343131231);";
-            $qry = "INSERT INTO user_cards VALUES ('dsfafwerw', 'aa',  6757345)";
+            $sql .= "INSERT INTO user_cards VALUES ('dsfafwerw', 'aa',  6757345)";
 
     // Booking tables
 

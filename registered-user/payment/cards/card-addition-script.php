@@ -31,14 +31,14 @@
         mysqli_query($conn, $qry);
     }
 
-        $card_name = $_POST['card_name'];
-        $username = $_SESSION['login_user'];
-        
-        $qry = "INSERT INTO user_cards (card_name, username, card_number) VALUES 
-        ('$card_name', '$username', $card_number)";
+    $card_name = $_POST['card_name'];
+    $username = $_SESSION['login_user'];
+    
+    $qry = "INSERT INTO user_cards (card_name, username, card_number) VALUES 
+    ('$card_name', '$username', $card_number)";
 
-        if ($conn->query($qry) == TRUE)
-            echo 'Card successfully added';
-        else
-            echo 'Error in addition of card';
+    if ($conn->query($qry) == TRUE)
+        echo 'Card successfully added';
+    else
+        echo 'Error in addition of card';
 ?>

@@ -62,6 +62,7 @@
             // Record Insertion
             $sql .= "INSERT INTO card_details VALUES (2343131231, 'abc', '2024-04-06');";
             $sql .= "INSERT INTO user_cards VALUES (5643234, 'card', 'aa', 2343131231);";
+            $qry = "INSERT INTO user_cards VALUES ('dsfafwerw', 'aa',  6757345)";
 
     // Booking tables
 
@@ -73,7 +74,7 @@
                 $qry .= "INSERT INTO card_booking_details VALUES (22,  '2023-06-09', '09:07:00', '2023-06-13', '19:07:00', 1000, '2023-06-08 14:05:06', 5643234, 'MN43LLJ23');";
                 $qry .= "INSERT INTO cash_booking_details VALUES (45, '2023-06-05', '10:00:04', '2023-06-15', '15:07:00', 5000, '2023-06-04 11:03:00', 'aa', 'MN43LLJ23');";
     
-    $qry = "INSERT INTO user_cards VALUES ('dsfafwerw', 'aa',  6757345)";
+    
 
     if ($conn->multi_query($qry) === TRUE)
         echo "Query successful";

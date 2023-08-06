@@ -35,6 +35,6 @@
             echo 'Error in addition of card';
     } else
     {
-        
+        $qry = "INSERT INTO";
     }
 ?>

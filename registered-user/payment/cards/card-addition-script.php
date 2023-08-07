@@ -17,9 +17,11 @@
     $card_number = $_POST['card_number'];
 
     $qry = "SELECT count(*) FROM card_details WHERE card_number = $card_number";
+    
     $res_array = mysqli_query($conn, $qry);
+    $res = mysqli_fetch_array($res_array);
 
-    $card_count = mysqli_num_rows($res_array);
+    $card_count = $res[0];
 
     if ($card_count == 0)
     {
@@ -48,5 +50,6 @@
             echo '<button><a href="/car-rental-system/registered-user/payment/payment-script.php">Return to payment</a></button>';
     } 
     else
-        echo 'Error in addition of card';
+        echo 'Error in addition of card<br>
+              Error: '.$conn->error;
 ?>

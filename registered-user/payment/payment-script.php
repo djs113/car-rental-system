@@ -14,7 +14,8 @@
 
     $_SESSION['ongoing_payment'] = TRUE;
 
-    $payment_method = $_POST['payment_method'];
+    if ($_POST['payment_method'])
+        $payment_method = $_POST['payment_method'];
     
     // to retain value of payment method after leaving this page to add a new card
     
@@ -40,7 +41,7 @@
                 $masked_card_number = "XXXXX".substr($res[1], -4);
                 
                 echo '
-                    <form action="process-payment.php" method="POST">
+                    <form action="process-payment-form.php" method="POST">
                         <label for="card_name">Card Name: '.$res[0].'</label>
                         <br><br>
 
@@ -55,7 +56,7 @@
             {
                 echo '
                     <h2>Card Name (Card Number)</h2>
-                    <form action="process-payment.php" method="POST"> 
+                    <form action="process-payment-form.php" method="POST"> 
                 ';
 
                 while ($res = mysqli_fetch_array($res_array))
@@ -68,7 +69,7 @@
                 }
 
                 echo '
-                        <input type="submit" value="Pay"
+                        <input type="submit" value="Pay" />
                     </form>  
                 ';
             }

@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    if (!isset($_SESSION['login_admin']))
+    if (!isset($_SESSION['login_user']))
     {
         header("location:/car-rental-system/registered-user/user-login/user-login-page.html");
         exit;
@@ -12,9 +12,15 @@
     if ($conn->connect_error)
         die("Connection error".$conn->connect_error);
 
-    $model_id = $_REQUEST['model_id'];
+    $model_id = $_SESSION['model_id'];
     
-    // check for unbooked vehicles
+    if (!isset($_SESSION['payment_success']))
+    {
+        header("location:/car-rental-system/registered-user/vehicle-search-form.php");
+        exit;
+    }
+
+    // retreive unbooked vehicles
 
     $qry = "SELECT ";
 ?>

@@ -12,7 +12,7 @@
     if ($conn->connect_error)
         die("Connection error".$conn->connect_error);
 
-    if (isset($_SESSION['booking_ongoing']) && ($_SESSION['booking_ongoing'] == TRUE))
+    if ($_POST['model_id'] && $_POST['pick_up_date'] && $_POST['pick_up_time'] && $_POST['drop_off_date'] && $_POST['drop_off_time'])
     {
         $model_id = $_POST['model_id'];
 

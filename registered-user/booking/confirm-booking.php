@@ -55,8 +55,6 @@
             $payable_amount += $res['hour_price'] * $hour_diff;
         }
 
-        $_SESSION['booking_confirmation'] = TRUE;
-
         $_SESSION['model_id'] = $_POST['model_id'];
         $_SESSION['pick_up_date'] = $_POST['pick_up_date'];
         $_SESSION['pick_up_time'] = $_POST['pick_up_time'];

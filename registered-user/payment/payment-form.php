@@ -11,8 +11,8 @@
         
     if ($conn->connect_error)
         die("Connection error".$conn->connect_error);
-    
-    if ((isset($_SESSION['booking_confirmation'])) && ($_SESSION['booking_confirmation'] == TRUE))
+
+    if ($_REQUEST['payable_amount'])
     {
         $payable_amount = $_REQUEST['payable_amount'];
 
@@ -32,6 +32,10 @@
                 <input type="submit" value="Next" />
             </form>
         ';
+    } else
+    {
+        sleep(3);
+        header("location:/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php");
     }
 
 ?>

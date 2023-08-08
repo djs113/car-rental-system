@@ -1,4 +1,6 @@
 <?php
+    session_start();
+    
     $conn = mysqli_connect('localhost', 'root', '', 'car_rental_system');
 
     if ($conn->connect_error)
@@ -41,7 +43,7 @@
         if (mysqli_num_rows($vehicles_array) == 0)
         {
             $_SESSION['booking_ongoing'] = FALSE;
-            
+
             echo 'No available vehicles for this time period
                   <br><br>
                   <button><a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Search again</a></button>

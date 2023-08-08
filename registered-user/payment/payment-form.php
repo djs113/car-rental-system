@@ -12,23 +12,26 @@
     if ($conn->connect_error)
         die("Connection error".$conn->connect_error);
     
-    $payable_amount = $_REQUEST['payable_amount'];
+    if ((isset($_SESSION['booking_confirmation'])) && ($_SESSION['booking_confirmation'] == TRUE))
+    {
+        $payable_amount = $_REQUEST['payable_amount'];
 
-    echo '
-        <form action="payment-script.php" method="POST">
-            <label for="payable_amount">Payable amount: </label>Rs.'.$payable_amount.'
-            <br><br>
+        echo '
+            <form action="payment-script.php" method="POST">
+                <label for="payable_amount">Payable amount: </label>Rs.'.$payable_amount.'
+                <br><br>
 
-            <input type="radio" id="card" name="payment_method" value="card" />
-            <label for="card">card</label>
-            <br><br>
+                <input type="radio" id="card" name="payment_method" value="card" />
+                <label for="card">card</label>
+                <br><br>
 
-            <input type="radio" id="cash" name="payment_method" value="cash" />
-            <label for="cash">cash</label>
-            <br><br>
+                <input type="radio" id="cash" name="payment_method" value="cash" />
+                <label for="cash">cash</label>
+                <br><br>
 
-            <input type="submit" value="Next" />
-        </form>
-    ';
+                <input type="submit" value="Next" />
+            </form>
+        ';
+    }
 
 ?>

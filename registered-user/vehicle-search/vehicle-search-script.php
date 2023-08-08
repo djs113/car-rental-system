@@ -6,6 +6,8 @@
 
     if ($_POST['pick_up_date'] && $_POST['pick_up_time'] && $_POST['drop_off_date'] && $_POST['drop_off_time'])
     {
+        $_SESSION['booking_ongoing'] = TRUE;
+
         $given_pick_up_date = $_POST['pick_up_date'];
         $given_pick_up_time = $_POST['pick_up_time'];
     
@@ -38,6 +40,8 @@
     
         if (mysqli_num_rows($vehicles_array) == 0)
         {
+            $_SESSION['booking_ongoing'] = FALSE;
+            
             echo 'No available vehicles for this time period
                   <br><br>
                   <button><a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Search again</a></button>

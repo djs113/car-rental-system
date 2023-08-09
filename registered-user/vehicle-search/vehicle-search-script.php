@@ -89,7 +89,7 @@
         }
 
         $number_of_available_models = count($available_models);
-        echo $available_models[0];
+
         if ($number_of_available_models == 0)
         {
             $_SESSION['booking_ongoing'] = FALSE;

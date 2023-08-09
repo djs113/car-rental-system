@@ -12,14 +12,14 @@
     if ($conn->connect_error)
         die("Connection error".$conn->connect_error);
 
-    if ($_REQUEST['payable_amount'])
+    if ($_REQUEST['payment_amount'])
     {
-        $payable_amount = $_REQUEST['payable_amount'];
-        $_SESSION['payable_amount'] = $payable_amount;
+        $payment_amount = $_REQUEST['payment_amount'];
+        $_SESSION['payment_amount'] = $payment_amount;
 
         echo '
             <form action="payment-script.php" method="POST">
-                <label for="payable_amount">Payable amount: </label>Rs.'.$payable_amount.'
+                <label for="payment_amount">Payable amount: </label>Rs.'.$payment_amount.'
                 <br><br>
 
                 <input type="radio" id="card" name="payment_method" value="card" />

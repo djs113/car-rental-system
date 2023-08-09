@@ -28,7 +28,7 @@
 
         // price calculation
         
-        $payable_amount = 0;
+        $payment_amount = 0;
 
         $date_diff = $drop_off_date->diff($pick_up_date);
         
@@ -36,23 +36,23 @@
         $day_diff = $date_diff->d;
 
         if ($month_diff != 0)
-            $payable_amount += $res['month_price'] * $month_diff;
+            $payment_amount += $res['month_price'] * $month_diff;
         
         if ($day_diff != 0)
         {
             if ($day_diff >= 7)
             {
                 $week_diff = $day_diff / 7;
-                $payable_amount += $res['week_price'] * $week_diff;
+                $payment_amount += $res['week_price'] * $week_diff;
                 
                 $day_diff = $day_diff % 7;
             }
 
-            $payable_amount += $res['day_price'] * $day_diff;
+            $payment_amount += $res['day_price'] * $day_diff;
         } else 
         {
             $hour_diff = ($drop_off_time - $pick_up_time) / 3600;
-            $payable_amount += $res['hour_price'] * $hour_diff;
+            $payment_amount += $res['hour_price'] * $hour_diff;
         }
 
         $_SESSION['model_id'] = $_POST['model_id'];
@@ -80,10 +80,10 @@
             <label for="drop_off_time">Drop off time: </label>'.$_POST['drop_off_time'].'
             <br><br>
 
-            <label for="payable_amount">Payable amount: </label>Rs.'.$payable_amount.'
+            <label for="payment_amount">Payable amount: </label>Rs.'.$payment_amount.'
             <br><br>
 
-            <button><a href="/car-rental-system/registered-user/payment/payment-form.php?payable_amount='.$payable_amount.'">Proceed to payment</a></button>
+            <button><a href="/car-rental-system/registered-user/payment/payment-form.php?payment_amount='.$payment_amount.'">Proceed to payment</a></button>
         ';
     } else
     {

@@ -28,7 +28,7 @@
 
         if ($payment_method == 'card')
         {
-            $qry = "SELECT card_name, card_number FROM user_cards WHERE username='$username'";
+            $qry = "SELECT card_name, card_number, card_id FROM user_cards WHERE username='$username'";
             $res_array = mysqli_query($conn, $qry);
             
             $num_of_cards = mysqli_num_rows($res_array);
@@ -39,6 +39,8 @@
                 {
                     $res = mysqli_fetch_array($res_array);
                     $masked_card_number = "XXXXX".substr($res[1], -4);
+                    
+                    $_SESSION['card_id'] = $res[2];
                     
                     echo '
                         <form action="process-payment-form.php" method="POST">
@@ -61,7 +63,9 @@
 
                     while ($res = mysqli_fetch_array($res_array))
                     {
+                        $_SESSION['card_id'] = $res[2];
                         $masked_card_number = "XXXXX".substr($res[1], -4);
+                        
                         echo '
                             <input type="radio" name="card_number" value="'.$res[1].'" />
                             <label for="card">'.$res[0].' ('.$masked_card_number.')</label>

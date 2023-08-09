@@ -15,9 +15,12 @@
             </p>
         ';
 
+        $payment_time = date("Y-m-d h:i:s");
+        $_SESSION['payment_time'] = $payment_time;
+
         sleep(3);
 
-        header('location:/car-rental-system/registered-user/booking/booking-processing-script?payment_success="TRUE".php');
+        header('location:/car-rental-system/registered-user/booking/booking-processing-script.php?payment_success="TRUE"');
     } else
     {
         sleep(3);

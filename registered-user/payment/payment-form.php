@@ -15,6 +15,7 @@
     if ($_REQUEST['payable_amount'])
     {
         $payable_amount = $_REQUEST['payable_amount'];
+        $_SESSION['payable_amount'] = $payable_amount;
 
         echo '
             <form action="payment-script.php" method="POST">

@@ -9,8 +9,6 @@
 
     if ($_POST['otp'])
     {
-        $_SESSION['payment_success'] = TRUE;
-
         echo '
             <p>
                 Payment is successful.
@@ -19,7 +17,7 @@
 
         sleep(3);
 
-        header("location:/car-rental-system/registered-user/booking/booking-processing-script.php");
+        header('location:/car-rental-system/registered-user/booking/booking-processing-script?payment_success="TRUE".php');
     } else
     {
         sleep(3);

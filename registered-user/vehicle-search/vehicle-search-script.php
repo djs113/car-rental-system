@@ -65,7 +65,6 @@
                     if (!(in_array($registration_number, $unbookable_vehicles)))
                         array_push($unbookable_vehicles, $registration_number);
                 }
-                
             }
 
             $vehicles_array = mysqli_query($conn, $qry);

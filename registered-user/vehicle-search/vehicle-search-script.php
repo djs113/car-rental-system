@@ -35,8 +35,8 @@
                 SELECT DISTINCT vehicle_models.model_name, vehicle_models.brand_name, vehicle_models.model_id FROM vehicles LEFT JOIN 
                 card_booking_details ON vehicles.registration_number = card_booking_details.registration_number LEFT JOIN 
                 vehicle_models ON vehicles.model_id = vehicle_models.model_id WHERE 
-                ('$given_drop_off_date' < card_booking_details.pick_up_date OR 
-                '$given_pick_up_date' > card_booking_details.drop_off_date)";
+                (('$given_drop_off_date' < card_booking_details.pick_up_date) OR 
+                ('$given_pick_up_date' > card_booking_details.drop_off_date))";
     
         $vehicles_array = mysqli_query($conn, $qry);
     

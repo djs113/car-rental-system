@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 06, 2023 at 08:19 PM
+-- Generation Time: Aug 09, 2023 at 10:55 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -80,6 +80,7 @@ CREATE TABLE `card_details` (
 -- Dumping data for table `card_details`
 --
 
+INSERT INTO `card_details` (`card_number`, `name_on_card`, `expiry_date`) VALUES(6757345, 'vxvdvgdf', '2024-09-04');
 INSERT INTO `card_details` (`card_number`, `name_on_card`, `expiry_date`) VALUES(2343131231, 'abc', '2024-04-06');
 
 -- --------------------------------------------------------
@@ -143,6 +144,7 @@ CREATE TABLE `user_cards` (
 --
 
 INSERT INTO `user_cards` (`card_id`, `card_name`, `username`, `card_number`) VALUES(5643234, 'card', 'aa', 2343131231);
+INSERT INTO `user_cards` (`card_id`, `card_name`, `username`, `card_number`) VALUES(5643237, 'dsfafwerw', 'aa', 6757345);
 
 -- --------------------------------------------------------
 
@@ -342,10 +344,16 @@ ALTER TABLE `vehicle_models`
 --
 
 --
+-- AUTO_INCREMENT for table `card_booking_details`
+--
+ALTER TABLE `card_booking_details`
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
 -- AUTO_INCREMENT for table `user_cards`
 --
 ALTER TABLE `user_cards`
-  MODIFY `card_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5643236;
+  MODIFY `card_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5643238;
 
 --
 -- AUTO_INCREMENT for table `vehicle_models`

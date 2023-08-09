@@ -149,7 +149,7 @@
                     ';
                 }
             }
-            
+
             echo '
                 </table>
             ';
@@ -159,5 +159,4 @@
         sleep(3);
         header("location:/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php");
     }
-
 ?>

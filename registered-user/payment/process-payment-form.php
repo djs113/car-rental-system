@@ -12,12 +12,19 @@
     if ($conn->connect_error)
         die("Connection error".$conn->connect_error);
 
-    echo '
+    if ($_POST['card_number'])
+    {
+        echo '
         <form action="confirm-payment.php" method="POST">
             <label for="otp">Enter the otp: </label><input type="text" id="otp" name="otp" />
             <br><br>
             
             <input type="submit" value="Submit" />
         </form>
-    '; 
+        '; 
+    } else
+    {
+        sleep(3);
+        header("location:/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php");
+    } 
 ?>

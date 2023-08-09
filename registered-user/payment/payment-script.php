@@ -63,7 +63,7 @@
                     {
                         $masked_card_number = "XXXXX".substr($res[1], -4);
                         echo '
-                            <input type="radio" name="card" value="'.$res[1].'" />
+                            <input type="radio" name="card_number" value="'.$res[1].'" />
                             <label for="card">'.$res[0].' ('.$masked_card_number.')</label>
                         ';
                     }

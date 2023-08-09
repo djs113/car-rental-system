@@ -34,11 +34,13 @@
             $payment_time = $_SESSION['payment_time'];
             $card_id = $_SESSION['card_id'];
             $payment_method = $_SESSION['payment_method'];
+            $registration_number;
 
             if ($unbooked_vehicle_count != 0)
             {
                 $res = mysqli_fetch_array($res_array);
 
+                $_GLOBALS['registration_number'] = $res[0];
                 $registration_number = $res[0];
 
                 $qry = "UPDATE vehicles SET is_booked = 1 WHERE registration_number = '$registration_number';";
@@ -57,41 +59,62 @@
                         Error: ".$conn->error;
                 }
             } else
+            {
+                $qry = "SELECT card_booking_details.registration_number, card_booking_details.pick_up_date, 
+                        card_booking_details.pick_up_time, card_booking_details.drop_off_date, 
+                        card_booking_details.drop_off_time FROM card_booking_details LEFT JOIN vehicles 
+                        ON card_booking_details.registration_number = vehicles.registration_number 
+                        WHERE vehicles.model_id = $model_id
+                        UNION
+                        SELECT cash_booking_details.registration_number, cash_booking_details.pick_up_date, 
+                        cash_booking_details.pick_up_time, cash_booking_details.drop_off_date, 
+                        cash_booking_details.drop_off_time FROM cash_booking_details LEFT JOIN vehicles 
+                        ON cash_booking_details.registration_number = vehicles.registration_number WHERE 
+                        vehicles.model_id = $model_id";
+                
+                $res_array = mysqli_query($conn, $qry);
+                $booked_vehicle_count = mysqli_num_rows($res_array);
+
+                if ($booked_vehicle_count != 0)
                 {
-                    $qry = "SELECT DISTINCT card_booking_details.registration_number FROM card_booking_details 
-                            LEFT JOIN vehicles ON card_booking_details.registration_number = 
-                            vehicles.registration_number WHERE (vehicles.model_id = $model_id) AND 
-                            (('$given_drop_off_date' < card_booking_details.pick_up_date) OR 
-                            ('$given_pick_up_date' >  card_booking_details.drop_off_date)) 
-                            UNION
-                            SELECT DISTINCT cash_booking_details.registration_number FROM cash_booking_details 
-                            LEFT JOIN vehicles ON cash_booking_details.registration_number = 
-                            vehicles.registration_number WHERE (vehicles.model_id = $model_id) AND 
-                            (('$given_drop_off_date' < cash_booking_details.pick_up_date) OR 
-                            ('$given_pick_up_date' > cash_booking_details.drop_off_date))";
+                    $unbookable_vehicles = [];
+
+                    while ($res = mysqli_fetch_array($res_array))
+                    {   
+                        $registration_number = $res[0];
+                        $pick_up_date = $res[1];
+                        $pick_up_time = $res[2];
+                        $drop_off_date = $res[3];
+                        $drop_off_time = $res[4];
+
+                        if (!(($given_drop_off_date < $pick_up_date) || ($given_pick_up_date > $drop_off_date)))
+                        {
+                            if (!(in_array($registration_number, $unbookable_vehicles)))
+                                array_push($unbookable_vehicles, $registration_number);
+                        } 
+                    }
 
                     $res_array = mysqli_query($conn, $qry);
-                    $booked_vehicle_count = mysqli_num_rows($res_array);
 
-                    if ($booked_vehicle_count != 0)
+                    while ($res = mysqli_fetch_array($res_array))
                     {
-                        $res = mysqli_fetch_array($res_array);
+                        $registration_number = $res[0];
+                        $pick_up_date = $res[1];
+                        $pick_up_time = $res[2];
+                        $drop_off_date = $res[3];
+                        $drop_off_time = $res[4];
 
-                        $qry = "INSERT INTO card_booking_details (pick_up_date, pick_up_time, drop_off_date, drop_off_time, 
-                               payment_amount, payment_time, card_id, registration_number) VALUES ('$given_pick_up_date', 
-                               '$given_pick_up_time', '$given_drop_off_date', '$given_drop_off_time', '$payment_amount', 
-                               '$payment_time', '$card_id', '$res[0]')";
-
-                        if ($conn->query($qry) == TRUE)
-                            echo "Booking successful";
-                        else
+                        if (($given_drop_off_date < $pick_up_date) || ($given_pick_up_date > $drop_off_date))
                         {
-                            echo "
-                                Error in booking vehicle<br>
-                                Error: ".$conn->error;
-                        }
+                            if (!(in_array($registration_number, $unbookable_vehicles)))
+                            {
+                                $_GLOBALS['registration_number'] = $registration_number;
+                                break;
+                            }        
+                        } 
                     }
                 }
+            }
         }
         else 
         {

@@ -52,7 +52,7 @@
             $vehicles_array = mysqli_query($conn, $qry);
             $flag = 1;
             
-            while (($vehicles_res = mysqli_fetch_row($vehicles_array)) && ($flag == 1))
+            while ($vehicles_res = mysqli_fetch_row($vehicles_array))
             {
                 $registration_number = $vehicles_res[0];
                 $pick_up_date = $vehicles_res[1];
@@ -62,21 +62,28 @@
                 
                 if (!(($given_drop_off_date < $pick_up_date) || ($given_pick_up_date > $drop_off_date)))
                     array_push($unbookable_vehicles, $registration_number);
-                else
+                
+            }
+
+            $vehicles_array = mysqli_query($conn, $qry);
+
+            while (($vehicles_res = mysqli_fetch_row($vehicles_array)))
+            {
+                $registration_number = $vehicles_res[0];
+                $pick_up_date = $vehicles_res[1];
+                $pick_up_time = $vehicles_res[2];
+                $drop_off_date = $vehicles_res[3];
+                $drop_off_time = $vehicles_res[4];
+
+                if (($given_drop_off_date < $pick_up_date) || ($given_pick_up_date > $drop_off_date))
                 {
-                    foreach ($unbookable_vehicles as $unbookable_vehicle)
+                    if (!(in_array($registration_number, $unbookable_vehicles)))
                     {
-                        if ($registration_number != $unbookable_vehicle)
-                        {
-                            if (!(in_array($model_id, $available_models)))    
-                                array_push($available_models, $model_id);
-                        
-                            $flag = 0;
-                            break;
-                        }
+                        array_push($available_models, $model_id);
+                        break;
                     }
                 }
-            }
+            }  
         }
 
         $number_of_available_models = count($available_models);

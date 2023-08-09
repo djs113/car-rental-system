@@ -44,20 +44,8 @@
                 $registration_number = $res[0];
 
                 $qry = "UPDATE vehicles SET is_booked = 1 WHERE registration_number = '$registration_number';";
-                $qry .= "INSERT INTO card_booking_details (pick_up_date, pick_up_time, drop_off_date, drop_off_time, 
-                        payment_amount, payment_time, card_id, registration_number) VALUES ('$given_pick_up_date', 
-                        '$given_pick_up_time', '$given_drop_off_date', '$given_drop_off_time', $payment_amount, 
-                        '$payment_time', $card_id, '$registration_number')";
                 
-                if ($conn->multi_query($qry))
-                {
-                    echo "Booking successful";
-                } else
-                {
-                    echo "
-                        Error while booking vehicle<br>
-                        Error: ".$conn->error;
-                }
+                mysqli_query($conn, $qry);
             } else
             {
                 $qry = "SELECT card_booking_details.registration_number, card_booking_details.pick_up_date, 
@@ -114,6 +102,23 @@
                         } 
                     }
                 }
+            }
+
+            $registration_number = $_GLOBALS['registration_number'];
+
+            $qry = "INSERT INTO card_booking_details (pick_up_date, pick_up_time, drop_off_date, drop_off_time, 
+                    payment_amount, payment_time, card_id, registration_number) VALUES ('$given_pick_up_date', 
+                    '$given_pick_up_time', '$given_drop_off_date', '$given_drop_off_time', $payment_amount, 
+                    '$payment_time', $card_id, '$registration_number')";
+            
+            if ($conn->multi_query($qry))
+            {
+                echo "Booking successful";
+            } else
+            {
+                echo "
+                    Error while booking vehicle<br>
+                    Error: ".$conn->error;
             }
         }
         else 

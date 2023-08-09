@@ -26,10 +26,10 @@
         
             $unbooked_vehicle_count = mysqli_num_rows($res_array);
 
-            $pick_up_date = $_SESSION['pick_up_date'];
-            $pick_up_time = $_SESSION['pick_up_time'];
-            $drop_off_date = $_SESSION['drop_off_date'];
-            $drop_off_time = $_SESSION['drop_off_time'];
+            $given_pick_up_date = $_SESSION['pick_up_date'];
+            $given_pick_up_time = $_SESSION['pick_up_time'];
+            $given_drop_off_date = $_SESSION['drop_off_date'];
+            $given_drop_off_time = $_SESSION['drop_off_time'];
             $payment_amount = $_SESSION['payment_amount'];
             $payment_time = $_SESSION['payment_time'];
             $card_id = $_SESSION['card_id'];
@@ -42,7 +42,7 @@
                 $registration_number = $res[0];
 
                 $qry = "UPDATE vehicles SET is_booked = 1 WHERE registration_number = '$registration_number';";
-                $qry .= "INSERT INTO card_booking_details (pick_up_date, pick_up_time, drop_off_date, drop_off_time, payment_amount, payment_time, card_id, registration_number) VALUES ('$pick_up_date', '$pick_up_time', '$drop_off_date', '$drop_off_time', $payment_amount, '$payment_time', $card_id, '$registration_number')";
+                $qry .= "INSERT INTO card_booking_details (pick_up_date, pick_up_time, drop_off_date, drop_off_time, payment_amount, payment_time, card_id, registration_number) VALUES ('$given_pick_up_date', '$given_pick_up_time', '$given_drop_off_date', '$given_drop_off_time', $payment_amount, '$payment_time', $card_id, '$registration_number')";
                 
                 if ($conn->multi_query($qry))
                 {
@@ -53,7 +53,6 @@
                         Error while booking vehicle<br>
                         Error: ".$conn->error;
                 }
-            }
         }
         else 
         {

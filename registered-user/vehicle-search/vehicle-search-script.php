@@ -61,7 +61,10 @@
                 $drop_off_time = $vehicles_res[4];
                 
                 if (!(($given_drop_off_date < $pick_up_date) || ($given_pick_up_date > $drop_off_date)))
-                    array_push($unbookable_vehicles, $registration_number);
+                {
+                    if (!(in_array($registration_number, $unbookable_vehicles)))
+                        array_push($unbookable_vehicles, $registration_number);
+                }
                 
             }
 

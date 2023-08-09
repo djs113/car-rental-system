@@ -81,7 +81,8 @@
                 {
                     if (!(in_array($registration_number, $unbookable_vehicles)))
                     {
-                        array_push($available_models, $model_id);
+                        if (!(in_array($model_id, $available_models)))
+                            array_push($available_models, $model_id);
                         break;
                     }
                 }

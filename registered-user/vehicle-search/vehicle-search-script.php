@@ -37,10 +37,60 @@
                 vehicle_models ON vehicles.model_id = vehicle_models.model_id WHERE 
                 (('$given_drop_off_date' < card_booking_details.pick_up_date) OR 
                 ('$given_pick_up_date' > card_booking_details.drop_off_date))";
-    
-        $vehicles_array = mysqli_query($conn, $qry);
-    
-        if (mysqli_num_rows($vehicles_array) == 0)
+            
+        $model_qry = "SELECT model_id FROM vehicle_models";
+        $model_res_array = mysqli_query($conn, $qry);
+
+        $available_models = [];
+        
+
+        while ($model_res = mysqli_fetch_array($model_res_array))
+        {
+            $unbookable_vehicles = [];
+            $model_id = $model_res['model_id'];
+
+            $qry = "SELECT vehicles.registration_number, card_booking_details.pick_up_date, 
+                card_booking_details.pick_up_time, card_booking_details.drop_off_date, card_booking_details.drop_off_time FROM 
+                card_booking_details LEFT JOIN vehicles ON card_booking_details.registration_number = vehicles.registration_number 
+                WHERE vehicles.model_id = $model_id 
+                UNION
+                SELECT vehicles.registration_number, cash_booking_details.pick_up_date, 
+                cash_booking_details.pick_up_time, cash_booking_details.drop_off_date, cash_booking_details.drop_off_time FROM 
+                cash_booking_details LEFT JOIN vehicles ON cash_booking_details.registration_number = vehicles.registration_number
+                WHERE vehicles.model_id = $model_id 
+                ";
+                
+            $vehicles_array = mysqli_query($conn, $qry);
+            $flag = 1;
+            
+            while (($vehicles_res = mysqli_fetch_row($vehicles_array)) && ($flag == 1))
+            {
+                $registration_number = $vehicles_res[0];
+                $pick_up_date = $vehicles_res[1];
+                $pick_up_time = $vehicles_res[2];
+                $drop_off_date = $vehicles_res[3];
+                $drop_off_time = $vehicles_res[4];
+
+                if (!(($given_drop_off_date < $pick_up_date) || ($given_pick_up_date > $drop_off_date)))
+                    array_push($unbookable_vehicles, $registration_number);
+                else
+                    {
+                        foreach ($unbookable_vehicles as $unbookable_vehicle)
+                        {
+                            if ($registration_number != $unbookable_vehicle)
+                            {
+                                array_push($available_models, $model_id);
+                                $flag = 0;
+                                break;
+                            }
+                        }
+                    }
+            }
+        }
+
+        $number_of_available_models = count($available_models);
+        echo $available_models[0];
+        if ($number_of_available_models == 0)
         {
             $_SESSION['booking_ongoing'] = FALSE;
 

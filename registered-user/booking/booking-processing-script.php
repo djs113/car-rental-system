@@ -68,7 +68,7 @@
                             LEFT JOIN vehicles ON cash_booking_details.registration_number = 
                             vehicles.registration_number WHERE (vehicles.model_id = $model_id) AND 
                             (('$given_drop_off_date' < cash_booking_details.pick_up_date) OR 
-                            ('$given_pick_up_date' >  cash_booking_details.drop_off_date))";
+                            ('$given_pick_up_date' > cash_booking_details.drop_off_date))";
 
                     $res_array = mysqli_query($conn, $qry);
                     $booked_vehicle_count = mysqli_num_rows($res_array);
@@ -77,7 +77,7 @@
                     {
                         $res = mysqli_fetch_array($res_array);
 
-                        $qry = "INSERT INTO card_book_details (pick_up_date, pick_up_time, drop_off_date, drop_off_time, 
+                        $qry = "INSERT INTO card_booking_details (pick_up_date, pick_up_time, drop_off_date, drop_off_time, 
                                payment_amount, payment_time, card_id, registration_number) VALUES ('$given_pick_up_date', 
                                '$given_pick_up_time', '$given_drop_off_date', '$given_drop_off_time', '$payment_amount', 
                                '$payment_time', '$card_id', '$res[0]')";

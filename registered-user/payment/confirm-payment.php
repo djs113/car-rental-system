@@ -7,15 +7,22 @@
         exit;
     }
 
-    $_SESSION['payment_success'] = TRUE;
+    if ($_POST['otp'])
+    {
+        $_SESSION['payment_success'] = TRUE;
 
-    echo '
-        <p>
-            Payment is successful.
-        </p>
-    ';
+        echo '
+            <p>
+                Payment is successful.
+            </p>
+        ';
 
-    sleep(3);
+        sleep(3);
 
-    header("location:/car-rental-system/registered-user/booking/booking-processing-script.php");
+        header("location:/car-rental-system/registered-user/booking/booking-processing-script.php");
+    } else
+    {
+        sleep(3);
+        header("location:/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php");
+    }
 ?>

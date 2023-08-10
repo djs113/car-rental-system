@@ -83,6 +83,10 @@
             echo '
                 <button><a href="/car-rental-system/registered-user/payment/cards/add-card.php">Add new card</a></button> 
             ';
+        } else 
+        {
+            sleep(3);
+            header('location:/car-rental-system/registered-user/payment/process-payment-form.php?payment_method="'.$payment_method.'"');
         }
     } else
     {

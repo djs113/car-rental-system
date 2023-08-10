@@ -86,7 +86,7 @@
         } else 
         {
             sleep(3);
-            header('location:/car-rental-system/registered-user/payment/process-payment-form.php?payment_method="'.$payment_method.'"');
+            header('location:/car-rental-system/registered-user/booking/booking-processing-script.php?cash_payment="TRUE"');
         }
     } else
     {

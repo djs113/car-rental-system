@@ -77,6 +77,5 @@
     if ($conn->multi_query($qry) === TRUE)
         echo "Query successful";
     else  
-        echo "Error in executing query".$conn->error;
-    
+        echo "Error in executing query".$conn->error; 
 ?>

@@ -30,7 +30,7 @@
         $given_drop_off_time = $_SESSION['drop_off_time'];
         
         $payment_method = $_SESSION['payment_method'];
-        $registration_number;
+        $payment_amount = $_SESSION['payment_amount'];
 
         if ($unbooked_vehicle_count != 0)
         {
@@ -38,10 +38,6 @@
 
             $_GLOBALS['registration_number'] = $res[0];
             $registration_number = $res[0];
-
-            $qry = "UPDATE vehicles SET is_booked = 1 WHERE registration_number = '$registration_number';";
-            
-            mysqli_query($conn, $qry);
         } else
         {
             $qry = "SELECT card_booking_details.registration_number, card_booking_details.pick_up_date, 
@@ -101,47 +97,57 @@
         }
 
         $registration_number = $_GLOBALS['registration_number'];
+
         if ($_REQUEST['cash_payment'])
         {
             // cash on delivery bookings
-            $cash_payment = $_REQUEST['cash_payment'];
 
-            if ($cash_payment == "TRUE")
+            $username = $_SESSION['login_user'];
+        
+            $qry = "UPDATE vehicles SET is_booked = 1 WHERE registration_number = '$registration_number';";
+
+            $qry .= "INSERT INTO cash_booking_details (pick_up_date, pick_up_time, drop_off_date, drop_off_time, 
+            payment_amount, username, registration_number) VALUES ('$given_pick_up_date', 
+            '$given_pick_up_time', '$given_drop_off_date', '$given_drop_off_time', $payment_amount, 
+            '$username', '$registration_number');";
+
+            if ($conn->multi_query($qry))
             {
-                $username = $_SESSION['login_user'];
-                
-                $qry = "INSERT INTO cash_booking_details (pick_up_date, pick_up_time, drop_off_date, drop_off_time, 
-                payment_amount, payment_time, username, registration_number) VALUES ('$given_pick_up_date', 
+                echo "Booking successful";
+            } else
+            {
+                echo "
+                    Error while booking vehicle<br>
+                    Error: ".$conn->error;
+            }
+            
+        } else if ($_REQUEST['payment_success'])
+        {
+            // card bookings
+
+            $card_id = $_SESSION['card_id'];
+            $payment_time = $_SESSION['payment_time'];
+
+            $qry = "UPDATE vehicles SET is_booked = 1 WHERE registration_number = '$registration_number';";
+
+            $qry .= "INSERT INTO card_booking_details (pick_up_date, pick_up_time, drop_off_date, drop_off_time, 
+                payment_amount, payment_time, card_id, registration_number) VALUES ('$given_pick_up_date', 
                 '$given_pick_up_time', '$given_drop_off_date', '$given_drop_off_time', $payment_amount, 
-                '$payment_time', $username, '$registration_number')";
+                '$payment_time', $card_id, '$registration_number');";
 
-            }
-            } else if ($_REQUEST['payment_success'])
+            if ($conn->multi_query($qry))
             {
-                $card_id = $_SESSION['card_id'];
-                $payment_amount = $_SESSION['payment_amount'];
-                $payment_time = $_SESSION['payment_time'];
-
-                $qry = "INSERT INTO card_booking_details (pick_up_date, pick_up_time, drop_off_date, drop_off_time, 
-                    payment_amount, payment_time, card_id, registration_number) VALUES ('$given_pick_up_date', 
-                    '$given_pick_up_time', '$given_drop_off_date', '$given_drop_off_time', $payment_amount, 
-                    '$payment_time', $card_id, '$registration_number')";
-            } else 
+                echo "Booking successful";
+            } else
             {
-                header("location:/car-rental-system/registered-user/vehicle-search-form.php");
-                exit;
+                echo "
+                    Error while booking vehicle<br>
+                    Error: ".$conn->error;
             }
-        
-        
-        if ($conn->query($qry))
+        } else 
         {
-            echo "Booking successful";
-        } else
-        {
-            echo "
-                Error while booking vehicle<br>
-                Error: ".$conn->error;
+            header("location:/car-rental-system/registered-user/vehicle-search-form.php");
+            exit;
         }
     }
-    
 ?>

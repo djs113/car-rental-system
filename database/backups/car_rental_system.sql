@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 09, 2023 at 10:55 AM
+-- Generation Time: Aug 10, 2023 at 01:44 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -348,6 +348,12 @@ ALTER TABLE `vehicle_models`
 --
 ALTER TABLE `card_booking_details`
   MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `cash_booking_details`
+--
+ALTER TABLE `cash_booking_details`
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `user_cards`

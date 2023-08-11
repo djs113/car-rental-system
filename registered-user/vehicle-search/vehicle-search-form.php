@@ -43,5 +43,8 @@
 
         <input type="submit" value="Search Vehicles" onclick="return validate_booking_period()"/>
     </form>
+    
+    <br><br>
+    <button><a href="/car-rental-system/registered-user/profile-management/view-bookings.php">View Bookings</a></button>
 </body>
 </html>

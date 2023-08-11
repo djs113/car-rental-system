@@ -16,7 +16,7 @@
         $given_drop_off_date = $_POST['drop_off_date'];
         $given_drop_off_time = $_POST['drop_off_time'];
 
-        $available_models = [];
+        $available_models = array();
     
         // unbooked vehicle details
     
@@ -35,7 +35,7 @@
 
         while ($model_res = mysqli_fetch_array($model_res_array))
         {
-            $unbookable_vehicles = [];
+            $unbookable_vehicles = array();
             $model_id = $model_res[0];
 
             $qry = "SELECT vehicles.registration_number, card_booking_details.pick_up_date, 

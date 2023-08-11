@@ -74,6 +74,12 @@
                 <br>
                 <br>
             ';
+        } else
+        {
+            $qry = "SELECT cash_booking_details.*, vehicles.registration_number, vehicle_models.brand_name, 
+                    vehicle_models.model_name FROM cash_booking_detaials LEFT JOIN vehicles ON 
+                    cash_booking_details.registration_number = vehicles.registration_number LEFT JOIN 
+                    vehicle_models ON vehicles.model_id = vehicle_models.model_id WHERE booking_id = $booking_id";
         }
     }
 ?>

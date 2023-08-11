@@ -57,7 +57,7 @@
 
             if ($booked_vehicle_count != 0)
             {
-                $unbookable_vehicles = [];
+                $unbookable_vehicles = array();
 
                 while ($res = mysqli_fetch_array($res_array))
                 {   
@@ -98,7 +98,7 @@
 
         $registration_number = $_GLOBALS['registration_number'];
 
-        if ($_REQUEST['cash_payment'])
+        if (isset($_REQUEST['cash_payment']))
         {
             // cash on delivery bookings
 
@@ -120,8 +120,7 @@
                     Error while booking vehicle<br>
                     Error: ".$conn->error;
             }
-            
-        } else if ($_REQUEST['payment_success'])
+        } else if (isset($_REQUEST['payment_success']))
         {
             // card bookings
 

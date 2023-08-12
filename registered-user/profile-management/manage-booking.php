@@ -137,5 +137,11 @@
     
     echo '
         <button><a href="/car-rental-system/registered-user/profile-management/view-bookings.php">Go back</a></button> 
-    ';
+        <br>
+        
+        <form action="cancel-booking.php" method="POST">
+            <input type="hidden" id="booking_id" name="booking_id" value="'.$res['booking_id'].'" />
+            <input type="submit" value="Cancel Booking" />
+        </form>
+        ';
 ?>

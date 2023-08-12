@@ -68,11 +68,11 @@
 
         // Table creation
             $sql = "CREATE TABLE card_booking_details (booking_id INT PRIMARY KEY AUTO_INCREMENT, pick_up_date DATE, pick_up_time TIME, drop_off_date date, drop_off_time time, payment_amount INT, payment_time DATETIME, card_id BIGINT, registration_number VARCHAR(11), FOREIGN KEY (registration_number) REFERENCES vehicles(registration_number), FOREIGN KEY (card_id) REFERENCES user_cards(card_id));";
-            $sql .= "CREATE TABLE cash_booking_details (booking_id INT PRIMARY KEY AUTO_INCREMENT, pick_up_date DATE, pick_up_time TIME, drop_off_date date, drop_off_time time, payment_amount INT, payment_time DATETIME, username VARCHAR(20), registration_number VARCHAR(11), FOREIGN KEY (registration_number) REFERENCES vehicles(registration_number), FOREIGN KEY (username) REFERENCES user_details(username));";
+            $sql .= "CREATE TABLE cash_booking_details (booking_id INT PRIMARY KEY AUTO_INCREMENT, pick_up_date DATE, pick_up_time TIME, drop_off_date date, drop_off_time time, payment_amount INT, payment_time DATETIME, username VARCHAR(20), registration_number VARCHAR(11), FOREIGN KEY (registration_number) REFERENCES vehicles(registration_number), FOREIGN KEY (username) REFERENCES user_details(username)) AUTO_INCREMENT = 2000000000;";
         
             // Record insertion
-                $qry = "INSERT INTO card_booking_details VALUES (22,  '2023-06-09', '09:07:00', '2023-06-13', '19:07:00', 1000, '2023-06-08 14:05:06', 5643234, 'MN43LLJ23');";
-                $qry .= "INSERT INTO cash_booking_details VALUES (45, '2023-06-05', '10:00:04', '2023-06-15', '15:07:00', 5000, '2023-06-04 11:03:00', 'aa', 'MN43LLJ23');";
+                $qry .= "INSERT INTO card_booking_details (pick_up_date, pick_up_time, drop_off_date, drop_off_time, payment_amount, payment_time, card_id, registration_number) VALUES ('2023-06-09', '09:07:00', '2023-06-13', '19:07:00', 1000, '2023-06-08 14:05:06', 5643234, 'MN43LLJ23');";
+                $qry .= "INSERT INTO cash_booking_details (pick_up_date, pick_up_time, drop_off_date, drop_off_time, payment_amount, payment_time, username, registration_number) VALUES ('2023-06-05', '10:00:04', '2023-06-15', '15:07:00', 5000, '2023-06-04 11:03:00', 'aa', 'MN43LLJ23');";
 
     if ($conn->multi_query($qry) === TRUE)
         echo "Query successful";

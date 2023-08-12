@@ -133,5 +133,9 @@
                 ';
             }
         } 
-    } 
+    }
+    
+    echo '
+        <button><a href="/car-rental-system/registered-user/profile-management/view-bookings.php">Go back</a></button> 
+    ';
 ?>

@@ -15,14 +15,31 @@
     if (isset($_POST['booking_id']))
     {
         $booking_id = $_POST['booking_id'];
-
-        $qry = "SELECT registration_number FROM card_booking_details WHERE booking_id = $booking_id";
-            
-        $res_array = mysqli_query($conn, $qry);
-        $res = mysqli_fetch_array($res_array);
-
-        $booking_count = mysqli_num_rows($res_array);
         
+        if ($booking_id < 2000000000)
+        {
+            $qry = "SELECT registration_number FROM card_booking_details WHERE booking_id = $booking_id";
+            
+            $res_array = mysqli_query($conn, $qry);
+            $res = mysqli_fetch_array($res_array);
+
+            $booking_count = mysqli_num_rows($res_array);
+            
+            if ($booking_count == 1)
+                $deletion_qry = "DELETE FROM card_booking_details WHERE booking_id = $booking_id";
+        } else 
+        {
+            $qry = "SELECT registration_number FROM cash_booking_details WHERE booking_id = $booking_id";
+
+            $res_array = mysqli_query($conn, $qry);
+            $res = mysqli_fetch_array($res_array);
+
+            $booking_count = mysqli_num_rows($res_array);
+            
+            if ($booking_count == 1)
+                $deletion_qry = "DELETE FROM cash_booking_details WHERE booking_id = $booking_id";
+        }
+
         $card_qry = "SELECT COUNT(*) FROM card_booking_details WHERE registration_number = 
         '$res[0]'";
 
@@ -39,23 +56,11 @@
 
         if ($total_bookings == 1)
         {
-            $qry = "UPDATE vehicles SET is_booked = 0 WHERE registration_number = 
-                    ".$res['registration_number'];
-
-            mysqli_query($conn, $qry);
+            $updation_qry = "UPDATE vehicles SET is_booked = 0 WHERE registration_number = '$res[0]'";
+            mysqli_query($conn, $updation_qry);
         }
 
-        if ($booking_id < 2000000000)
-        {
-            if ($booking_count == 1)
-                $qry = "DELETE FROM card_booking_details WHERE booking_id = $booking_id";
-        } else 
-        {
-            if ($booking_count == 1)
-                $qry = "DELETE FROM cash_booking_details WHERE booking_id = $booking_id";
-        }
-
-        if ($conn->query($qry) == TRUE)
+        if ($conn->query($deletion_qry) == TRUE)
             echo 'Successfully deleted booking';
         else
         {
@@ -64,6 +69,10 @@
                 <br>
                 Error: '.$conn->error;  
         }
+
+        echo '
+            <button><a href="/car-rental-system/registered-user/profile-management/view-bookings.php">Go back</a></button> 
+        ';
     } else
         header("location:/car-rental-system/registered-user/profile-management/view-bookings.php"); 
 ?>

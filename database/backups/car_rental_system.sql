@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 10, 2023 at 01:44 PM
+-- Generation Time: Aug 12, 2023 at 09:06 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -62,7 +62,7 @@ CREATE TABLE `card_booking_details` (
 -- Dumping data for table `card_booking_details`
 --
 
-INSERT INTO `card_booking_details` (`booking_id`, `pick_up_date`, `pick_up_time`, `drop_off_date`, `drop_off_time`, `payment_amount`, `payment_time`, `card_id`, `registration_number`) VALUES(22, '2023-06-09', '09:07:00', '2023-06-13', '19:07:00', 1000, '2023-06-08 14:05:06', 5643234, 'MN43LLJ23');
+INSERT INTO `card_booking_details` (`booking_id`, `pick_up_date`, `pick_up_time`, `drop_off_date`, `drop_off_time`, `payment_amount`, `payment_time`, `card_id`, `registration_number`) VALUES(1, '2023-06-09', '09:07:00', '2023-06-13', '19:07:00', 1000, '2023-06-08 14:05:06', 5643234, 'MN43LLJ23');
 
 -- --------------------------------------------------------
 
@@ -93,19 +93,19 @@ CREATE TABLE `cash_booking_details` (
   `booking_id` int(11) NOT NULL,
   `pick_up_date` date DEFAULT NULL,
   `pick_up_time` time DEFAULT NULL,
+  `drop_off_date` date DEFAULT NULL,
+  `drop_off_time` time DEFAULT NULL,
   `payment_amount` int(11) DEFAULT NULL,
   `payment_time` datetime DEFAULT NULL,
   `username` varchar(20) DEFAULT NULL,
-  `registration_number` varchar(11) DEFAULT NULL,
-  `drop_off_date` date DEFAULT NULL,
-  `drop_off_time` time DEFAULT NULL
+  `registration_number` varchar(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `cash_booking_details`
 --
 
-INSERT INTO `cash_booking_details` (`booking_id`, `pick_up_date`, `pick_up_time`, `payment_amount`, `payment_time`, `username`, `registration_number`, `drop_off_date`, `drop_off_time`) VALUES(45, '2023-03-05', '10:00:04', 5000, '2023-03-03 11:03:05', 'aa', 'MN43LLJ23', NULL, NULL);
+INSERT INTO `cash_booking_details` (`booking_id`, `pick_up_date`, `pick_up_time`, `drop_off_date`, `drop_off_time`, `payment_amount`, `payment_time`, `username`, `registration_number`) VALUES(2000000000, '2023-06-05', '10:00:04', '2023-06-15', '15:07:00', 5000, '2023-06-04 11:03:00', 'aa', 'MN43LLJ23');
 
 -- --------------------------------------------------------
 
@@ -347,13 +347,13 @@ ALTER TABLE `vehicle_models`
 -- AUTO_INCREMENT for table `card_booking_details`
 --
 ALTER TABLE `card_booking_details`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `cash_booking_details`
 --
 ALTER TABLE `cash_booking_details`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2000000001;
 
 --
 -- AUTO_INCREMENT for table `user_cards`

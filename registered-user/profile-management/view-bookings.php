@@ -23,6 +23,7 @@
                 <th>Booking ID</th>
                 <th>Brand Name</th>
                 <th>Model Name</th>
+                <th>Pick up date</th>
             </tr>    
     ';
     
@@ -31,15 +32,15 @@
         $card_id = $res[0];
 
         $qry = "SELECT card_booking_details.booking_id, vehicle_models.brand_name, 
-                vehicle_models.model_name FROM card_booking_details LEFT JOIN vehicles ON 
+                vehicle_models.model_name, card_booking_details.pick_up_date FROM card_booking_details LEFT JOIN vehicles ON 
                 card_booking_details.registration_number = vehicles.registration_number LEFT JOIN 
                 vehicle_models ON vehicles.model_id = vehicle_models.model_id WHERE 
                 card_booking_details.card_id = $card_id
                 UNION
-                SELECT cash_booking_details.booking_id, vehicle_models.brand_name, vehicle_models.model_name
-                FROM cash_booking_details LEFT JOIN vehicles ON cash_booking_details.registration_number = 
-                vehicles.registration_number LEFT JOIN vehicle_models ON vehicles.model_id = vehicle_models.model_id WHERE 
-                username = '$username'";
+                SELECT cash_booking_details.booking_id, vehicle_models.brand_name, vehicle_models.model_name, 
+                cash_booking_details.pick_up_date FROM cash_booking_details LEFT JOIN vehicles ON 
+                cash_booking_details.registration_number = vehicles.registration_number LEFT JOIN 
+                vehicle_models ON vehicles.model_id = vehicle_models.model_id WHERE username = '$username'";
         
         $res_array = mysqli_query($conn, $qry);
 
@@ -50,6 +51,7 @@
                     <td>'.$res[0].'</td>
                     <td>'.$res[1].'</td>
                     <td>'.$res[2].'</td>
+                    <td>'.$res[3].'</td>
                     <td><a href="/car-rental-system/registered-user/profile-management/manage-booking.php?booking_id='.$res[0].'">View Booking</a></td>
                 </tr> 
             ';

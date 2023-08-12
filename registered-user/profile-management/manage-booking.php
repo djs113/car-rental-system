@@ -14,6 +14,7 @@
 
     if (isset($_REQUEST['booking_id']))
     {
+        $booking_flag = 0;
         $booking_id = $_REQUEST['booking_id'];
 
         $qry = "SELECT card_booking_details.*, vehicles.registration_number, vehicle_models.brand_name, 
@@ -29,6 +30,8 @@
 
         if ($booking_count != 0)
         {
+            $booking_flag = 1;
+
             echo '
                 <label for="booking_id">Booking Id: </label> '.$res['booking_id'].'
                 <br>
@@ -88,6 +91,8 @@
 
             if ($booking_count != 0)
             {
+                $booking_flag = 1;
+
                 echo '
                     <label for="booking_id">Booking Id: </label> '.$res['booking_id'].'
                     <br>
@@ -128,20 +133,25 @@
             } else
             {
                 echo '
-                    No bookings
+                    Invalid booking id
                     <br><br>    
+                    <button><a href="/car-rental-system/registered-user/profile-management/view-bookings.php></a>Go back</button>
                 ';
             }
         } 
-    }
+    } else
+        header("location:/car-rental-system/registered-user/profile-management/view-bookings.php");
     
-    echo '
-        <button><a href="/car-rental-system/registered-user/profile-management/view-bookings.php">Go back</a></button> 
-        <br>
-        
-        <form action="cancel-booking.php" method="POST">
-            <input type="hidden" id="booking_id" name="booking_id" value="'.$res['booking_id'].'" />
-            <input type="submit" value="Cancel Booking" />
-        </form>
-        ';
+    if ($booking_flag == 1)
+    {
+            echo '
+                <button><a href="/car-rental-system/registered-user/profile-management/view-bookings.php">Go back</a></button> 
+                <br>
+                
+                <form action="cancel-booking.php" method="POST">
+                    <input type="hidden" id="booking_id" name="booking_id" value="'.$res['booking_id'].'" />
+                    <input type="submit" value="Cancel Booking" />
+                </form>
+            ';
+    }
 ?>

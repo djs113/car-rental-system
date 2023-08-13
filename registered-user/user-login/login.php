@@ -10,16 +10,16 @@
     $passwd = $_POST['passwd'];
     $enc_passwd = md5($passwd);
     
-    $qry = "SELECT * FROM user_details WHERE username='$username' AND passwd='$enc_passwd'";
+    $qry = "SELECT passwd FROM user_details WHERE username='$username'";
     $res_array = mysqli_query($conn, $qry);
 
     $row_count = mysqli_num_rows($res_array);
     $res = mysqli_fetch_array($res_array);
 
-    if ($res)
+    if (($row_count == 1) && ($res['passwd'] == $enc_passwd))
     {
-        $_SESSION['login_user'] = $res['username'];
+        $_SESSION['login_user'] = $username;
         header("location:/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php");
     } else
-        header("location:/car-rental-system/index.php");
+        header("location:/car-rental-system/registered-user/user-login/user-login-page.html");
 ?>

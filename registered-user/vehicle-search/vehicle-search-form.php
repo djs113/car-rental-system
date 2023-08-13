@@ -47,5 +47,6 @@
     <br><br>
     <button><a href="/car-rental-system/registered-user/profile-management/view-bookings.php">View Bookings</a></button>
     <button><a href="/car-rental-system/registered-user/profile-management/view-profile.php">View profile</a></button>
+    <button><a href="/car-rental-system/registered-user/user-login/logout.php">Logout</a></button>
 </body>
 </html>

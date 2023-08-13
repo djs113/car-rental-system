@@ -19,7 +19,7 @@
     if ($res)
     {
         $_SESSION['login_user'] = $res['username'];
-        header("location:/car-rental-system/registered-user/user-login/logged-in.php");
+        header("location:/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php");
     } else
-        header("location:/car-rental-system/iindex.php");
+        header("location:/car-rental-system/index.php");
 ?>

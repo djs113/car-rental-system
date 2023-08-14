@@ -76,8 +76,8 @@
 
     // Contact tables
         // Table creation
-            $sql .= "CREATE TABLE contact_details_1 (contact_email varchar(20) PRIMARY KEY, contact_number_1 INT);";
-            $sql .= "CREATE TABLE contact_details_2 (contact_number_2 INT PRIMARY KEY, address VARCHAR(50));";
+            $sql .= "CREATE TABLE contact_details_1 (contact_email varchar(20) PRIMARY KEY, contact_number_1 BIGINT);";
+            $sql .= "CREATE TABLE contact_details_2 (contact_number_2 BIGINT PRIMARY KEY, address VARCHAR(50));";
 
     if ($conn->multi_query($sql) === TRUE)
         echo "Query successful";

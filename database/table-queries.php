@@ -74,7 +74,12 @@
                 $qry .= "INSERT INTO card_booking_details (pick_up_date, pick_up_time, drop_off_date, drop_off_time, payment_amount, payment_time, card_id, registration_number) VALUES ('2023-06-09', '09:07:00', '2023-06-13', '19:07:00', 1000, '2023-06-08 14:05:06', 5643234, 'MN43LLJ23');";
                 $qry .= "INSERT INTO cash_booking_details (pick_up_date, pick_up_time, drop_off_date, drop_off_time, payment_amount, payment_time, username, registration_number) VALUES ('2023-06-05', '10:00:04', '2023-06-15', '15:07:00', 5000, '2023-06-04 11:03:00', 'aa', 'MN43LLJ23');";
 
-    if ($conn->multi_query($qry) === TRUE)
+    // Contact tables
+        // Table creation
+            $sql = "CREATE TABLE contact_details_1 (contact_email varchar(20) PRIMARY KEY, contact_number_1 INT);";
+            $sql .= "CREATE TABLE contact_details_2 (contact_number_2 INT PRIMARY KEY, address VARCHAR(50));";
+
+    if ($conn->multi_query($sql) === TRUE)
         echo "Query successful";
     else  
         echo "Error in executing query".$conn->error; 

@@ -11,32 +11,29 @@
            
             var email_reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
             
-            /*
             if (first_name == "")
             {
                 alert("Enter First Name");
                 return false;
             }
+
             if (last_name == "")
             {
                 alert("Enter Last Name");
                 return false;
             }
-            */
 
             if ((phone_num == "") || (isNaN(phone_number)))
             {
                 alert("Phone number cannot be empty and has to be a number");
                 return false;
             }
-
-            /*
+        
             if (phone_number.length != 10)
             {
                 alert("Phone number must be 10 digits");
                 return false;
             }
-            */
 
             if ((email == "") || (!email.match(email_reg)))
             {
@@ -52,14 +49,14 @@
             <h2>USER REGISTRATION</h2>
             <p><strong>WELCOME TO THE REGISTRATION PAGE</strong></p>
 
-            <form action="registration-action-page.php" method="POST">
-            <label for="username"><b>Username: </b></label><input type="text" name="username" id="username" /><br><br>
-            <label for="password"><b>Password: </b></label><input type="text" name="passwd" id="passwd" /><br><br>
-            <label for="first name"><b>First Name: </b></label><input type="text" name="first_name" id="first_name" /><br><br>
-            <label for="last name"><b>Last Name: </b></label><input type="text" name="last_name" id="last_name" /><br><br>
-            <label for="email"><b>Email: </b></label><input type="email" name="email" id="email" /><br><br>
-            <label for="phone number"><b>Phone Number: </b></label><input type="text" name="phone_number" id="phone_number" /><br><br> 
-            <input type="submit" name="submit" id="submit" value="Register" onclick="form_validate()" />
+            <form action="registration-action-page.php" method="POST" onsubmit="return form_validate()">
+                <label for="username"><b>Username: </b></label><input type="text" name="username" id="username" /><br><br>
+                <label for="password"><b>Password: </b></label><input type="password" name="passwd" id="passwd" /><br><br>
+                <label for="first name"><b>First Name: </b></label><input type="text" name="first_name" id="first_name" /><br><br>
+                <label for="last name"><b>Last Name: </b></label><input type="text" name="last_name" id="last_name" /><br><br>
+                <label for="email"><b>Email: </b></label><input type="email" name="email" id="email" /><br><br>
+                <label for="phone number"><b>Phone Number: </b></label><input type="text" name="phone_number" id="phone_number" /><br><br> 
+                <input type="submit" name="submit" id="submit" value="Register" />
             </form>
         </div>
     </div>

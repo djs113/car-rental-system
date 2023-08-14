@@ -47,6 +47,13 @@
     <br><br>
     <button><a href="/car-rental-system/registered-user/profile-management/view-bookings.php">View Bookings</a></button>
     <button><a href="/car-rental-system/registered-user/profile-management/view-profile.php">View profile</a></button>
-    <button><a href="/car-rental-system/registered-user/user-login/logout.php">Logout</a></button>
+    <?php
+        session_start();
+
+        if (isset($_SESSION['login_user']))
+            echo '<button><a href="/car-rental-system/registered-user/user-login/logout.php">Logout</a></button>';
+        else
+            echo '<button><a href="/car-rental-system/registered-user/user-login/user-login-page.html">Login</a></button>';
+    ?>
 </body>
 </html>

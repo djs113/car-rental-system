@@ -54,6 +54,26 @@
             echo '<button><a href="/car-rental-system/registered-user/user-login/logout.php">Logout</a></button>';
         else
             echo '<button><a href="/car-rental-system/registered-user/user-login/user-login-page.html">Login</a></button>';
+        
+        $conn = mysqli_connect('localhost', 'root', '', 'car_rental_system');
+
+        if ($conn->connect_error)
+            die("Connection failed<br>Connection Error: ".$conn->connect_error);
+
+        $qry = "SELECT * FROM contact_details_1";
+
+        $res_array_1 = mysqli_query($conn, $qry);
+        $contact_1_count = mysqli_num_rows($res_array_1);
+
+        $qry = "SELECT * FROM contact_details_2";
+
+        $res_array_2 = mysqli_query($conn, $qry);
+        $contact_2_count = mysqli_num_rows($res_array_2);
+
+        $details_count = $contact_1_count + $contact_2_count;
+
+        if ($details_count == 2)
+            echo '<button><a href="/car-rental-system/admin/contact-management/contact-details-display.php">Contact us</a></button>'
     ?>
 </body>
 </html>

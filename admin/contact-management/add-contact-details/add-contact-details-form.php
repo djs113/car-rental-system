@@ -48,7 +48,7 @@
                         {
                             alert("Enter email");
                             return false;
-                        } else if (!contact_email.match(email_reg))
+                        } else if (!(contact_email.match(email_reg)))
                         {
                             alert("Enter valid email");
                             return false

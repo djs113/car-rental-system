@@ -25,10 +25,8 @@
     $details_count = $res_1[0] + $res_2[0];
 
     if ($details_count != 0)
-    {
         header("location:/car-rental-system/admin/admin-home/admin-home-page.php");
-    }
-
+    
     echo '
         <html>
             <head>

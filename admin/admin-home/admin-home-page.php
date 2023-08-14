@@ -34,7 +34,7 @@
     } else 
     {
         echo '
-            <a href="/car-rental-system/admin/contact-management/modify-contact-details-form.php">
+            <a href="/car-rental-system/admin/contact-management/modify-contact-details/modify-contact-details-form.php">
             Modify contact details</a>
             <br><br> 
         ';

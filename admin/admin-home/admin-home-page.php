@@ -27,7 +27,7 @@
     if ($details_count == 0)
     {
         echo '
-            <a href="/car-rental-system/admin/contact-management/add-contact-details-form.php">
+            <a href="/car-rental-system/admin/contact-management/add-contact-details/add-contact-details-form.php">
             Add contact details</a> 
             <br><br>
         ';

@@ -7,6 +7,28 @@
         exit;
     }
 
+    $conn = mysqli_connect('localhost', 'root', '', 'car_rental_system');
+
+    if ($conn->connect_error)
+        die("Connection error".$conn->connect_error);
+
+    $qry = "SELECT COUNT(*) FROM contact_details_1";
+
+    $res_array_1 = mysqli_query($conn, $qry);
+    $res_1 = mysqli_fetch_array($res_array_1);
+
+    $qry = "SELECT COUNT(*) FROM contact_details_2";
+    
+    $res_array_2 = mysqli_query($conn, $qry);
+    $res_2 = mysqli_fetch_array($res_array_2);
+
+    $details_count = $res_1[0] + $res_2[0];
+
+    if ($details_count != 0)
+    {
+        header("location:/car-rental-system/admin/admin-home/admin-home-page.php");
+    }
+
     echo '
         <html>
             <head>

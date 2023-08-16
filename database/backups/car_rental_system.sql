@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 12, 2023 at 09:06 AM
+-- Generation Time: Aug 16, 2023 at 11:48 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -106,6 +106,40 @@ CREATE TABLE `cash_booking_details` (
 --
 
 INSERT INTO `cash_booking_details` (`booking_id`, `pick_up_date`, `pick_up_time`, `drop_off_date`, `drop_off_time`, `payment_amount`, `payment_time`, `username`, `registration_number`) VALUES(2000000000, '2023-06-05', '10:00:04', '2023-06-15', '15:07:00', 5000, '2023-06-04 11:03:00', 'aa', 'MN43LLJ23');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact_details_1`
+--
+
+CREATE TABLE `contact_details_1` (
+  `contact_email` varchar(20) NOT NULL,
+  `contact_number_1` bigint(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `contact_details_1`
+--
+
+INSERT INTO `contact_details_1` (`contact_email`, `contact_number_1`) VALUES('sfas@gmail.com', 1234567890);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact_details_2`
+--
+
+CREATE TABLE `contact_details_2` (
+  `contact_number_2` bigint(20) NOT NULL,
+  `address` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `contact_details_2`
+--
+
+INSERT INTO `contact_details_2` (`contact_number_2`, `address`) VALUES(1234523453, 'fsfvvxcvdfv');
 
 -- --------------------------------------------------------
 
@@ -290,6 +324,18 @@ ALTER TABLE `cash_booking_details`
   ADD PRIMARY KEY (`booking_id`),
   ADD KEY `registration_number` (`registration_number`),
   ADD KEY `username` (`username`);
+
+--
+-- Indexes for table `contact_details_1`
+--
+ALTER TABLE `contact_details_1`
+  ADD PRIMARY KEY (`contact_email`);
+
+--
+-- Indexes for table `contact_details_2`
+--
+ALTER TABLE `contact_details_2`
+  ADD PRIMARY KEY (`contact_number_2`);
 
 --
 -- Indexes for table `engine_numbers`

@@ -21,8 +21,6 @@
         
         if (!isset($_SESSION['payment_method']))
             $_SESSION['payment_method'] = $payment_method;
-        else
-            $payment_method = $_SESSION['payment_method'];
 
         $username = $_SESSION['login_user'];
 

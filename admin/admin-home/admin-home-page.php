@@ -41,6 +41,11 @@
     }
     
     echo '
+
+        <a href="/car-rental-system/admin/vehicle-return/returning-vehicles-display.php">View returning 
+        vehicles</a>
+        <br><br>
+        
         <a href="/car-rental-system/car/add-car/add-car-form.php">Add car</a>
         <br><br>
 

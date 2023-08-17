@@ -27,6 +27,7 @@
 
                 <input type="submit" value="Add card" />
         </form> 
-    ';
 
+        <button><a href="/car-rental-system/registered-user/profile-management/view-profile.php">Go back</a></button>
+    ';
 ?>

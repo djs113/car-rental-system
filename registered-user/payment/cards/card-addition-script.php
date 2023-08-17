@@ -56,6 +56,11 @@
 
                 </form>
             ';
+        } else
+        {
+            echo '
+                <button><a href="/car-rental-system/registered-user/profile-management/view-profile.php">Go back</a></button> 
+            ';
         }
     } else
     {
@@ -63,7 +68,7 @@
             Error in addition of card<br>
             Error: '.$conn->error.'
 
-            <button><a href="/car-rental-system/registered-user/payment/add-card.php">Try again</a></button>    
+            <button><a href="/car-rental-system/registered-user/payment/cards/add-card.php">Try again</a></button>    
         ';        
     }
 ?>

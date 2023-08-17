@@ -1,12 +1,4 @@
 <?php
-    session_start();
-
-    if (!isset($_SESSION['login_admin']))
-    {
-        header("location:/car-rental-system/admin/admin-login/admin-login-form.php");
-        exit;
-    }
-
     $conn = mysqli_connect('localhost', 'root', '', 'car_rental_system');
 
     if ($conn->connect_error)
@@ -50,5 +42,5 @@
             <button><a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go back</a></button>
         ';
     } else
-        header("location:/car-rental-system/admin/admin-home/admin-home-page.php");    
+        header("location:/car-rental-system/registered-user/user-login/user-login-page.html");
 ?>

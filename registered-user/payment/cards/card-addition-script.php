@@ -46,10 +46,24 @@
             <br><br>
         ';
 
-        if (isset($_SESSION['ongoing_payment']))
-            echo '<button><a href="/car-rental-system/registered-user/payment/payment-script.php">Return to payment</a></button>';
-    } 
-    else
-        echo 'Error in addition of card<br>
-              Error: '.$conn->error;
+        if ((isset($_SESSION['ongoing_payment'])) && ($_SESSION['ongoing_payment'] == TRUE))
+        {
+            echo '
+                <form action="/car-rental-system/registered-user/payment/payment-script.php" method="POST">
+
+                    <input type="hidden" id="payment_method" name="payment_method" value="card"/>
+                    <input type="submit" value="Return to payment" />
+
+                </form>
+            ';
+        }
+    } else
+    {
+        echo'
+            Error in addition of card<br>
+            Error: '.$conn->error.'
+
+            <button><a href="/car-rental-system/registered-user/payment/add-card.php">Try again</a></button>    
+        ';        
+    }
 ?>

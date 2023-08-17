@@ -15,6 +15,9 @@
             </p>
         ';
 
+        if (isset($_SESSION['ongoing_payment']) && ($_SESSION['ongoing_payment'] == TRUE))
+            $_SESSION['ongoing_payment'] = FALSE;
+
         $payment_time = date("Y-m-d h:i:s");
         $_SESSION['payment_time'] = $payment_time;
 

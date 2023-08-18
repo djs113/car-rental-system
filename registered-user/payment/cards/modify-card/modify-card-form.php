@@ -39,8 +39,11 @@
                 <label for="card_name">Card name: </label><input type="text" id="card_name" name="card_name" value="'.$res['card_name'].'" />
                 <br><br>
 
+                <input type="hidden" id="card_id" name="card_id" value="'.$res['card_id'].'" />
+
                 <input type="submit" value="Modify" />
             </form>
         ';
-    }
+    } else
+        header("location:/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php");
 ?>

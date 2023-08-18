@@ -44,7 +44,7 @@
                     <td>
                         <form action="/car-rental-system/registered-user/payment/cards/modify-card/modify-card-form.php" method="POST">
                             
-                            <input type="hidden" id="card_number" name="card_number" value="'.$res['card_number'].'" />
+                            <input type="hidden" id="card_id" name="card_id" value="'.$res['card_id'].'" />
                             <input type="submit" value="Modify card" />
                             
                         </form>

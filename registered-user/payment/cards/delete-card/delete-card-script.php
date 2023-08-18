@@ -12,5 +12,61 @@
     if ($conn->connect_error)
         die("Connection error".$conn->connect_error);
 
-    $qry = "";
+    if (isset($_POST['card_id']))
+    {
+        $card_id = $_POST['card_id'];
+
+        $qry = "SELECT card_number FROM user_cards WHERE card_id = $card_id";
+        
+        $res_array = mysqli_query($conn, $qry);
+        $res = mysqli_fetch_array($res_array);
+
+        $card_number = $res['card_number'];
+
+        $qry = "SELECT COUNT(*) FROM card_booking_details WHERE card_id = $card_id";
+
+        $res_array = mysqli_query($conn, $qry);
+        $res = mysqli_fetch_array($res_array);
+
+        $booking_count = $res[0];
+
+        if ($booking_count == 0)
+        {
+            $qry = "SELECT COUNT(*) FROM user_cards WHERE card_number = $card_number";
+
+            $res_array = mysqli_query($conn, $qry);
+            $res = mysqli_fetch_array($res_array);
+
+            $card_count = $res[0];
+
+            $qry = "DELETE FROM user_cards WHERE card_id = $card_id";
+
+            if ($conn->query($qry) == TRUE)
+            {
+                if ($card_count == 1)
+                {
+                    $qry = "DELETE FROM card_details WHERE card_number = $card_number";
+                    mysqli_query($conn, $qry);
+                }
+
+                echo 'Card successfully deleted';
+            } else 
+            {
+                echo '
+                    Error in deletion of card<br>
+                    Error: '.$conn->error;
+            }
+            
+        } else
+        {
+            echo 'There are currently open bookings using this card, please close those bookings to
+                 delete this card';
+        }       
+        
+        echo '
+            <br><br>
+            <button><a href="/car-rental-system/registered-user/profile-management/view-cards.php">Go back</a></button>
+        ';
+    } else
+        header("location:/car-rental-system/registered-user/profile-management/view-cards.php");
 ?>

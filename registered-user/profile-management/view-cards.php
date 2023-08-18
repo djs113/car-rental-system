@@ -64,9 +64,11 @@
             </table>
         ';
     } else
+    {
         echo '
             No saved cards
             <br><br>
             <button><a href="/car-rental-system/registered-user/payment/cards/add-card.php">Add card</a></button> 
         ';
+    }
 ?>

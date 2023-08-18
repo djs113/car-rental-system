@@ -24,23 +24,22 @@
     
         echo '
             <form action="/car-rental-system/registered-user/payment/cards/modify-card/modify-card-script.php" method="POST">
-                <label for="card_id">: </label>'.$res['card_id'].'
+                <label for="card_id">Card Id: </label>'.$res['card_id'].'
                 <br><br>
                 
-                <label for="card_number">: </label>'.$res['card_number'].'
+                <label for="card_number">Card number: </label>'.$res['card_number'].'
                 <br><br>
 
-                <label for="name_on_card">: </label>'.$res['name_on_card'].'
+                <label for="name_on_card">Name on card: </label>'.$res['name_on_card'].'
                 <br><br>
 
-                <label for="expiry_date">: </label>'.$res['expiry_date'].'
+                <label for="expiry_date">Expiry date: </label>'.$res['expiry_date'].'
                 <br><br>
 
-                <label for="card_name">: </label><input type="text" id="card_name" name="card_name" value="'.$res['card_name'].'" />
+                <label for="card_name">Card name: </label><input type="text" id="card_name" name="card_name" value="'.$res['card_name'].'" />
                 <br><br>
 
-                <label for="">: </label><input type="text" id="" name="" value="'.$res[''].'" />
-                <br><br>
+                <input type="submit" value="Modify" />
             </form>
         ';
     }

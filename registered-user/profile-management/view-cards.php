@@ -71,4 +71,9 @@
             <button><a href="/car-rental-system/registered-user/payment/cards/add-card.php">Add card</a></button> 
         ';
     }
+
+    echo '
+        <br><br>
+        <button><a href="/car-rental-system/registered-user/profile-management/view-profile.php">Go back</a></button>
+    ';
 ?>

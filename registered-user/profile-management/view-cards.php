@@ -49,6 +49,13 @@
                             
                         </form>
                     </td>
+                    <td>
+                        <form action="/car-rental-system/registered-user/payment/cards/delete-card/delete-card-form.php" method="POST">
+                        
+                            <input type="hidden" id="card_id" name="card_id" value="'.$res['card_id'].'" />
+                            <input type="submit" value="Delete" />
+                        </form>
+                    </td>
                 </tr>
             ';
         }

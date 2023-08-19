@@ -48,8 +48,6 @@
     <body>
         <h2><u>Add Car</u></h2>
         <?php
-            session_start();
-
             if (!isset($_SESSION['login_admin']))
             {
                 header("location:/car-rental-system/admin/admin-login/admin-login.php");

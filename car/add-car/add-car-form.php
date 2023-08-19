@@ -34,6 +34,31 @@
                     model_select_box.appendChild(model_option);
                 }
             }
+
+            function form_validate()
+            {
+                var registration_number = document.getElementById("registration_number").value;
+                var engine_number = document.getElementById("engine_number").value;
+                var vehicle_color = document.getElementById("vehicle_color").value;
+
+                if (registration_number == "")
+                {
+                    alert("Enter registration number");
+                    return false;
+                }
+
+                if (engine_number == "")
+                {
+                    alert("Enter engine number");
+                    return false;
+                }
+
+                if (vehicle_color == "")
+                {
+                    alert("Enter vehicle color");
+                    return false;
+                }
+            }
         </script>
     </head>
     <?php
@@ -63,7 +88,7 @@
             $res_array = mysqli_query($conn, $qry);
 
             echo '
-                <form action="add-car-script.php" method="POST">
+                <form action="add-car-script.php" method="POST" onsubmit="return form_validate()">
                     <label for="brand name">Brand Name: </label>
                     <select name="brand_name" id="brand_name" onchange="selectModels()">      
             ';

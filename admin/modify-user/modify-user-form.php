@@ -6,18 +6,18 @@
     </head>
     <body>
         <?php
-                $conn = mysqli_connect('localhost', 'root', '', 'car_rental_system');
+            $conn = mysqli_connect('localhost', 'root', '', 'car_rental_system');
 
-                if ($conn->connect_error)
-                    die("Connection failed<br>Connection Error: ".$conn->connect_error);
+            if ($conn->connect_error)
+                die("Connection failed<br>Connection Error: ".$conn->connect_error);
 
-                $username = $_REQUEST['username'];
-                
-                $qry = "SELECT * FROM user_details LEFT JOIN user_emails ON user_details.username = user_emails.username 
-                        LEFT JOIN user_phone_numbers ON user_details.username = user_phone_numbers.username WHERE user_details.username='$username'";
-                
-                $res_array = mysqli_query($conn, $qry);
-                $res = mysqli_fetch_array($res_array);
+            $username = $_REQUEST['username'];
+            
+            $qry = "SELECT * FROM user_details LEFT JOIN user_emails ON user_details.username = user_emails.username 
+                    LEFT JOIN user_phone_numbers ON user_details.username = user_phone_numbers.username WHERE user_details.username='$username'";
+            
+            $res_array = mysqli_query($conn, $qry);
+            $res = mysqli_fetch_array($res_array);
         ?>
         <h2><u>Modify User</u></h2>
         <form action="modify-user.php" method="POST">

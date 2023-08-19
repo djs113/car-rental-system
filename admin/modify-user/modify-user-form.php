@@ -27,11 +27,6 @@
             <label for="username">Username: <?php echo $res['username'];?>
             <br><br>
 
-            <!--
-            <label for="username">Username: </label><input type="text" name="username" id="username" value="<?php echo $res['username'];?>" />
-            <br><br>
-            -->
-
             <label for="first_name">First Name: </label><input type="text" name="first_name" id="first_name" value="<?php echo $res['first_name'];?>" />
             <br><br>
 

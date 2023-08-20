@@ -18,8 +18,7 @@
             function selectModels()
             {
                 var model_select_box = document.getElementById("model_name");
-                model_select_box.disabled = 0;
-
+    
                 var brand_name = document.getElementById("brand_name").value;
                 var model_data = data[brand_name];
 
@@ -96,7 +95,12 @@
             while ($res = mysqli_fetch_array($res_array))
                 echo '<option value="'.$res['brand_name'].'">'.$res['brand_name'].'</option>';
             
-            $qry = "SELECT model_name FROM vehicle_models";
+            $qry = "SELECT brand_name FROM vehicle_models LIMIT 1";
+            
+            $res_array = mysqli_query($conn, $qry);
+            $res = mysqli_fetch_array($res_array);
+
+            $qry = "SELECT model_name FROM vehicle_models WHERE brand_name = '$res[0]'";
             $res_array = mysqli_query($conn, $qry);
 
             echo '
@@ -104,7 +108,13 @@
                     <br><br>
 
                     <label for="model name">Model Name: </label>
-                    <select name="model_name" id="model_name" disabled> 
+                    <select name="model_name" id="model_name"> 
+            ';
+
+            while ($res = mysqli_fetch_array($res_array))
+                echo '<option id="'.$res['model_name'].'" value="'.$res['model_name'].'">'.$res['model_name'].'</option>';
+            
+            echo '
                     </select>
                     <br><br>
 

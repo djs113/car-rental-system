@@ -28,8 +28,8 @@
                 for (var model_number in model_data)
                 {
                     var model_option = document.createElement("option");
-                    model_option.id = model_option.value = model_data[model_number];
-                    model_option.innerText = model_data[model_number];
+                    model_option.id = model_option.value = model_data[model_number][0];
+                    model_option.innerText = model_data[model_number][0];
                     model_select_box.appendChild(model_option);
                 }
             }

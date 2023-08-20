@@ -104,7 +104,7 @@
                     {
                         alert("Enter booking status");
                         return false;
-                    } else if (isNaN(is_booked))
+                    } else if (isNaN(is_booked) || ((is_booked != "1") && (is_booked != "0")))
                     {
                         alert("Booking status must be 0 or 1");
                         return false;

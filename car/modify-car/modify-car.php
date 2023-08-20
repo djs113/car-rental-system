@@ -15,7 +15,7 @@
     $registration_number = $_POST['registration_number'];
     $vehicle_color = $_POST['vehicle_color'];
     $is_booked = $_POST['is_booked'];
-    $model_id = $_POST['model_id'];
+    $model_id = $_POST['model_id_val'];
     $engine_number = $_POST['engine_number'];
 
     $qry = "UPDATE vehicles SET vehicle_color = '$vehicle_color', is_booked = '$is_booked', model_id = '$model_id' WHERE registration_number = '$registration_number';";

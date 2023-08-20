@@ -23,11 +23,11 @@
     {
         $models = [];
 
-        $qry = "SELECT model_name FROM vehicle_models WHERE brand_name = '$brand_res[0]'";
+        $qry = "SELECT model_name, model_id FROM vehicle_models WHERE brand_name = '$brand_res[0]'";
         $model_res_array = mysqli_query($conn, $qry);
 
         while ($model_res = mysqli_fetch_array($model_res_array))
-            array_push($models, $model_res[0]);
+            array_push($models, [$model_res['model_name'], $model_res['model_id']]);
         
         $model_data[$brand_res[0]] = $models;
     }

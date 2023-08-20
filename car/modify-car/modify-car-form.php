@@ -13,108 +13,106 @@
         die("Connection failed<br>Connection Error: ".$conn->connect_error);
 
     echo '
-    <html>
-    <head>
-        <title>
-            Modify Car
-        </title>
-        <script type="text/javascript">
-            var xhr = new XMLHttpRequest();
-            var data;
+        <html>
+        <head>
+            <title>
+                Modify Car
+            </title>
+            <script type="text/javascript">
+                var xhr = new XMLHttpRequest();
+                var data;
 
-            xhr.open("POST", "/car-rental-system/car/add-car/get-model-data.php");
-            xhr.send();
+                xhr.open("POST", "/car-rental-system/car/add-car/get-model-data.php");
+                xhr.send();
 
-            xhr.onload = function () {
-                data = JSON.parse(xhr.response);
-            }
-
-            function selectModels()
-            {
-                var model_select_box = document.getElementById("model_name");
-                var model_id = document.getElementById("model_id");
-
-                var brand_name = document.getElementById("brand_name").value;
-                var model_data = data[brand_name];
-
-                
-                
-                while (model_select_box.firstChild)
-                    model_select_box.removeChild(model_select_box.firstChild);
-
-                for (var model_number in model_data)
-                {
-                    var model_option = document.createElement("option");
-                    model_option.id = model_option.value = model_data[model_number][0];
-                    model_option.innerText = model_data[model_number][0];
-                    model_select_box.appendChild(model_option);
+                xhr.onload = function () {
+                    data = JSON.parse(xhr.response);
                 }
-            }
 
-            function getModelId()
-            {
-                var model_id = document.getElementById("model_id");
-                var model_id_val = document.getElementById("model_id_val");
-                
-                var brand_name = document.getElementById("brand_name").value;
-                var model_name = document.getElementById("model_name").value;
-                
-                var model_data = data[brand_name];
-
-                console.log(model_data);
-
-                for (var model_number in model_data)
+                function selectModels()
                 {
-                    if (model_data[model_number][0] == model_name)
-                    {   
-                        model_id.innerText = model_data[model_number][1];
-                        model_id_val.value = model_data[model_number][1];
-                        break;
+                    var model_select_box = document.getElementById("model_name");
+                    var model_id = document.getElementById("model_id");
+
+                    var brand_name = document.getElementById("brand_name").value;
+                    var model_data = data[brand_name];
+
+                    while (model_select_box.firstChild)
+                        model_select_box.removeChild(model_select_box.firstChild);
+
+                    for (var model_number in model_data)
+                    {
+                        var model_option = document.createElement("option");
+                        model_option.id = model_option.value = model_data[model_number][0];
+                        model_option.innerText = model_data[model_number][0];
+                        model_select_box.appendChild(model_option);
                     }
                 }
-            }
 
-            function formValidate()
-            {
-                var registration_number = document.getElementById("registration_number").value;
-                var engine_number = document.getElementById("engine_number").value;
-                var vehicle_color = document.getElementById("vehicle_color").value;
-                var is_booked = document.getElementById("is_booked").value;
-                var model_id_val = document.getElementById("model_id_val").value;
-
-                console.log(typeof(model_id_val));
-                
-                if (registration_number == "")
+                function getModelId()
                 {
-                    alert("Enter registration number");
-                    return false;
+                    var model_id = document.getElementById("model_id");
+                    var model_id_val = document.getElementById("model_id_val");
+                    
+                    var brand_name = document.getElementById("brand_name").value;
+                    var model_name = document.getElementById("model_name").value;
+                    
+                    var model_data = data[brand_name];
+
+                    console.log(model_data);
+
+                    for (var model_number in model_data)
+                    {
+                        if (model_data[model_number][0] == model_name)
+                        {   
+                            model_id.innerText = model_data[model_number][1];
+                            model_id_val.value = model_data[model_number][1];
+                            break;
+                        }
+                    }
                 }
 
-                if (engine_number == "")
+                function formValidate()
                 {
-                    alert("Enter engine number");
-                    return false;
-                }
+                    var registration_number = document.getElementById("registration_number").value;
+                    var engine_number = document.getElementById("engine_number").value;
+                    var vehicle_color = document.getElementById("vehicle_color").value;
+                    var is_booked = document.getElementById("is_booked").value;
+                    var model_id_val = document.getElementById("model_id_val").value;
 
-                if (vehicle_color == "")
-                {
-                    alert("Enter vehicle color");
-                    return false;
+                    console.log(typeof(model_id_val));
+                    
+                    if (registration_number == "")
+                    {
+                        alert("Enter registration number");
+                        return false;
+                    }
+
+                    if (engine_number == "")
+                    {
+                        alert("Enter engine number");
+                        return false;
+                    }
+
+                    if (vehicle_color == "")
+                    {
+                        alert("Enter vehicle color");
+                        return false;
+                    }
+                    
+                    if (is_booked == "")
+                    {
+                        alert("Enter booking status");
+                        return false;
+                    } else if (isNaN(is_booked))
+                    {
+                        alert("Booking status must be 0 or 1");
+                        return false;
+                    }
                 }
-                
-                if (is_booked == "")
-                {
-                    alert("Enter booking status");
-                    return false;
-                } else if (isNaN(is_booked))
-                {
-                    alert("Booking status must be 0 or 1");
-                    return false;
-                }
-            }
-        </script>
-    </head>
-    <body>
+            </script>
+        </head>
+        <body>
     ';
 
     if (isset($_REQUEST['registration_number']))

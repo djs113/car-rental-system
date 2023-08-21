@@ -18,7 +18,22 @@
         $_SESSION['payment_amount'] = $payment_amount;
 
         echo '
-            <form action="payment-script.php" method="POST">
+            <script type="text/javascript">
+                function formValidate()
+                {
+                    var card_selected = document.getElementById("card").checked;
+                    var cash_selected = document.getElementById("cash").checked;
+
+                    console.log(card);
+
+                    if ((!(card_selected)) && (!(cash_selected)))
+                    {
+                        alert("Enter payment method");
+                        return false;
+                    }
+                }
+            </script>
+            <form action="payment-script.php" method="POST" onsubmit="return formValidate()">
                 <label for="payment_amount">Payable amount: </label>Rs.'.$payment_amount.'
                 <br><br>
 

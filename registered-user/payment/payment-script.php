@@ -26,14 +26,6 @@
 
         if ($payment_method == 'card')
         {
-            echo '
-                <script type="text/javascript">
-                    function formValidate()
-                    {
-                        
-                    }
-                </script>
-            ';
             $qry = "SELECT card_name, card_number, card_id FROM user_cards WHERE username='$username'";
             $res_array = mysqli_query($conn, $qry);
             
@@ -62,9 +54,32 @@
                     ';
                 } else
                 {
+
                     echo '
+                        <script type="text/javascript">
+                            function formValidate()
+                            {
+                                var flag = 0;
+
+                                for (var i = 1; i <= '.$num_of_cards.'; i++)
+                                {
+                                    var card = document.getElementById(`card_${i}`).checked;
+                                    if (card)
+                                    {
+                                        flag = 1;
+                                        break;
+                                    }
+                                }
+
+                                if (flag == 0)
+                                {
+                                    alert("Select a card");
+                                    return false;
+                                }
+                            }
+                        </script>
                         <h2>Card Name (Card Number)</h2>
-                        <form action="process-payment-form.php" method="POST"> 
+                        <form action="process-payment-form.php" method="POST" onsubmit="return formValidate()"> 
                     ';
 
                     $num = 1;

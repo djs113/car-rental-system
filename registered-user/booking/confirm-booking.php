@@ -83,7 +83,12 @@
             <label for="payment_amount">Payable amount: </label>Rs.'.$payment_amount.'
             <br><br>
 
-            <button><a href="/car-rental-system/registered-user/payment/payment-form.php?payment_amount='.$payment_amount.'">Proceed to payment</a></button>
+            <form action="/car-rental-system/registered-user/payment/payment-form.php" method="POST">
+                
+                <input type="hidden" id="payment_amount" name="payment_amount" value="'.$payment_amount.'" />
+                <input type="submit" value="Proceed to payment" />
+            
+            </form>            
         ';
     } else
     {

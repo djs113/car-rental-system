@@ -12,9 +12,9 @@
     if ($conn->connect_error)
         die("Connection error".$conn->connect_error);
 
-    if ($_REQUEST['payment_amount'])
+    if ($_POST['payment_amount'])
     {
-        $payment_amount = $_REQUEST['payment_amount'];
+        $payment_amount = $_POST['payment_amount'];
         $_SESSION['payment_amount'] = $payment_amount;
 
         echo '

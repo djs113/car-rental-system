@@ -23,7 +23,19 @@
         $res = mysqli_fetch_array($res_array);
     
         echo '
-            <form action="/car-rental-system/registered-user/payment/cards/modify-card/modify-card-script.php" method="POST">
+            <script type="text/javascript">
+                function formValidate()
+                {
+                    var card_name = document.getElementById("card_name").value;
+
+                    if (card_name == "")
+                    {
+                        alert("Enter card name");
+                        return false;
+                    }
+                }
+            </script>
+            <form action="/car-rental-system/registered-user/payment/cards/modify-card/modify-card-script.php" method="POST" onsubmit="return formValidate()">
                 <label for="card_id">Card Id: </label>'.$res['card_id'].'
                 <br><br>
                 

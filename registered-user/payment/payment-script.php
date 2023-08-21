@@ -26,6 +26,14 @@
 
         if ($payment_method == 'card')
         {
+            echo '
+                <script type="text/javascript">
+                    function formValidate()
+                    {
+                        
+                    }
+                </script>
+            ';
             $qry = "SELECT card_name, card_number, card_id FROM user_cards WHERE username='$username'";
             $res_array = mysqli_query($conn, $qry);
             
@@ -59,15 +67,19 @@
                         <form action="process-payment-form.php" method="POST"> 
                     ';
 
+                    $num = 1;
+
                     while ($res = mysqli_fetch_array($res_array))
                     {
                         $_SESSION['card_id'] = $res[2];
                         $masked_card_number = "XXXXX".substr($res[1], -4);
                         
                         echo '
-                            <input type="radio" name="card_number" value="'.$res[1].'" />
+                            <input type="radio" id="card_'.$num.'" name="card_number" value="'.$res[1].'" />
                             <label for="card">'.$res[0].' ('.$masked_card_number.')</label>
                         ';
+
+                        $num++;
                     }
 
                     echo '

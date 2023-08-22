@@ -23,7 +23,51 @@
     $res = mysqli_fetch_array($res_array);
 
     echo '
-        <form action="edit-profile-script.php" method="POST">
+        <script type="text/javascript">
+            function formValidate()
+            {
+                var first_name = document.getElementById("first_name").value;
+                var last_name = document.getElementById("last_name").value;
+                var email = document.getElementById("email").value;
+                var phone_number = document.getElementById("phone_number").value;
+
+                var email_reg = /^\w+([-+.\']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+                var phone_reg = /^\d{10}$/;
+
+                if (first_name == "")
+                {
+                    alert("Enter first name");
+                    return false;
+                }
+
+                if (last_name == "")
+                {
+                    alert("Enter last name");
+                    return false;
+                }
+
+                if (email == "")
+                {
+                    alert("Enter email");
+                    return false;
+                } else if (!(email.match(email_reg)))
+                {
+                    alert("Enter valid email");
+                    return false;
+                }
+
+                if (phone_number == "")
+                {
+                    alert("Enter phone number");
+                    return false;
+                } else if (!(phone_number.match(phone_reg)))
+                {
+                    alert("Enter valid phone number");
+                    return false;
+                }
+            } 
+        </script>
+        <form action="edit-profile-script.php" method="POST" onsubmit="return formValidate()">
             <label for="first_name">First name: </label><input type="text" id="first_name" name="first_name" value="'.$res['first_name'].'" />
             <br><br>
 

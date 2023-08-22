@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vehicle Search</title>
     <script type="text/javascript">
-        function validate_booking_period()
+        function validateBookingPeriod()
         {
             var pick_up_date = new Date(document.getElementById("pick_up_date").value);
             var pick_up_time = new Date(document.getElementById("pick_up_date").value + "T" + document.getElementById("pick_up_time").value + ":00");
@@ -13,8 +13,38 @@
             var drop_off_date = new Date(document.getElementById("drop_off_date").value);
             var drop_off_time = new Date(document.getElementById("drop_off_date").value + "T" + document.getElementById("drop_off_time").value + ":00");
 
-            var current_date = new Date();
+            var current_date_time = new Date();
 
+            var pick_up_time_val = document.getElementById("pick_up_time").value.split(":");
+            var pick_up_time_obj = new Date();
+
+            var pick_up_hours = Number(pick_up_time_val[0]);
+            var pick_up_minutes = Number(pick_up_time_val[1]);
+
+            // pick_up_time_obj.setHours(pick_up_time_val[0]);
+            // pick_up_time_obj.setMinutes(pick_up_time_val[1]);
+
+            console.log(pick_up_date.getTime());
+
+            if (pick_up_time.getTime() < current_date_time.getTime())
+            {
+                alert("Pick up date should be greater than or equal to today's date");
+                return false;
+            }
+
+            if (pick_up_hours < current_date_time.getHours())
+            {
+                alert("Pick up time should be greater than current time");
+                return false;
+            } else if (pick_up_hours == current_date_time.getHours())
+            {
+                if (pick_up_minutes < current_date_time.getMinutes())
+                {
+                    alert("Pick up time should be greater than current time");
+                    return false;
+                }
+            }
+            
             if (pick_up_date.getTime() > drop_off_date.getTime())
             {
                 alert("Pick up date should be lesser than or equal to drop off date");
@@ -25,20 +55,12 @@
                 alert("Pick up time should be lesser than drop off time");
                 return false;
             }
-
-            if (pick_up_date.getTime() < current_date.getTime())
-            {
-                alert("Pick up date should be greater than or equal to today's date");
-                return false;
-            }
-
-            
         }
     </script>
 </head>
 <body>
     <h2><u>Available Vehicle Search</u></h2>
-    <form action="vehicle-search-script.php" method="POST">
+    <form action="vehicle-search-script.php" method="POST" onsubmit="return validateBookingPeriod()">
         <label for="pick_up_date">Pick up date: </label><input type="date" name="pick_up_date" id="pick_up_date" />
         <br><br>
 
@@ -51,7 +73,7 @@
         <label for="drop_off_time">Drop off time: </label><input type="time" name="drop_off_time" id="drop_off_time" />
         <br><br>
 
-        <input type="submit" value="Search Vehicles" onclick="return validate_booking_period()"/>
+        <input type="submit" value="Search Vehicles" />
     </form>
     
     <br><br>

@@ -96,6 +96,8 @@
             }
         }
 
+        mysqli_free_result($res_array);
+
         $registration_number = $_GLOBALS['registration_number'];
 
         if (isset($_REQUEST['cash_payment']))
@@ -113,7 +115,15 @@
 
             if ($conn->multi_query($qry))
             {
-                echo "Booking successful";
+                $booking_id_qry = "SELECT booking_id FROM cash_booking_details ORDER BY booking_id DESC LIMIT 1";
+
+                $res_array = mysqli_query($conn, $booking_id_qry);
+                $res = mysqli_fetch_array($res_array);
+
+                echo '
+                    Booking successful
+                    <button><a href="/car-rental-system/registered-user/profile-management/manage-booking.php?booking_id='.$res['booking_id'].'"></a></button>     
+                ';
             } else
             {
                 echo "
@@ -136,7 +146,15 @@
 
             if ($conn->multi_query($qry))
             {
-                echo "Booking successful";
+                $booking_id_qry = "SELECT booking_id FROM card_booking_details ORDER BY booking_id DESC LIMIT 1";
+                
+                $res_array = mysqli_query($conn, $booking_id_qry);
+                $res = mysqli_fetch_array($res_array);
+                
+                echo '
+                    Booking successful
+                    <button><a href="/car-rental-system/registered-user/profile-management/manage-booking.php?booking_id='.$res['booking_id'].'">View booking</a></button>     
+                ';
             } else
             {
                 echo "

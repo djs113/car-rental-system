@@ -13,6 +13,8 @@
             var drop_off_date = new Date(document.getElementById("drop_off_date").value);
             var drop_off_time = new Date(document.getElementById("drop_off_date").value + "T" + document.getElementById("drop_off_time").value + ":00");
 
+            var current_date = new Date();
+
             if (pick_up_date.getTime() > drop_off_date.getTime())
             {
                 alert("Pick up date should be lesser than or equal to drop off date");
@@ -23,6 +25,14 @@
                 alert("Pick up time should be lesser than drop off time");
                 return false;
             }
+
+            if (pick_up_date.getTime() < current_date.getTime())
+            {
+                alert("Pick up date should be greater than or equal to today's date");
+                return false;
+            }
+
+            
         }
     </script>
 </head>

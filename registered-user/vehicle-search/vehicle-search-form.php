@@ -53,7 +53,10 @@
         if (isset($_SESSION['login_user']))
             echo '<button><a href="/car-rental-system/registered-user/user-login/logout.php">Logout</a></button>';
         else
-            echo '<button><a href="/car-rental-system/registered-user/user-login/user-login-page.html">Login</a></button>';
+            echo '
+                <button><a href="/car-rental-system/registered-user/user-login/user-login-page.html">Login</a></button>
+                <button><a href="/car-rental-system/registration/registration-form.html">Register</a></button> 
+            ';
         
         $conn = mysqli_connect('localhost', 'root', '', 'car_rental_system');
 

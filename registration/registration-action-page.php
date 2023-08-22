@@ -28,7 +28,7 @@
     if ($conn->multi_query($sql) == TRUE)
     {
        echo 'User successfully added<br>
-             <button><a href="/car-rental-system/iindex.php">Login</a></button>
+             <button><a href="/car-rental-system/registered-user/user-login/user-login-page.html">Login</a></button>
        ';
     } else
     {

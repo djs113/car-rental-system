@@ -65,7 +65,7 @@
 
         if (!isset($_SESSION['login_admin']))
         {
-            header("location:/car-rental-system/admin/admin-login/admin-login.php");
+            header("location:/car-rental-system/admin/admin-login/admin-login-form.php");
             exit;
         }
     ?>
@@ -74,7 +74,7 @@
         <?php
             if (!isset($_SESSION['login_admin']))
             {
-                header("location:/car-rental-system/admin/admin-login/admin-login.php");
+                header("location:/car-rental-system/admin/admin-login/admin-login-form.php");
                 exit;
             }
         

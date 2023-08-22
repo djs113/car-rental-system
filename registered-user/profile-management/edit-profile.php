@@ -74,7 +74,7 @@
             <label for="last_name">Last name: </label><input type="text" id="last_name" name="last_name" value="'.$res['last_name'].'" />
             <br><br>
 
-            <label for="email">Email: </label><input type="text" id="email" name="email" value="'.$res['email'].'" />
+            <label for="email">Email: </label><input type="email" id="email" name="email" value="'.$res['email'].'" />
             <br><br>
 
             <label for="phone_number">Phone number: </label><input type="text" id="phone_number" name="phone_number" value="'.$res['phone_number'].'" />

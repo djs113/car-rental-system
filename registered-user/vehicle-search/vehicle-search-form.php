@@ -15,46 +15,47 @@
 
             var current_date_time = new Date();
 
-            var pick_up_time_val = document.getElementById("pick_up_time").value.split(":");
-            var pick_up_time_obj = new Date();
-
-            var pick_up_hours = Number(pick_up_time_val[0]);
-            var pick_up_minutes = Number(pick_up_time_val[1]);
-
-            // pick_up_time_obj.setHours(pick_up_time_val[0]);
-            // pick_up_time_obj.setMinutes(pick_up_time_val[1]);
-
-            console.log(pick_up_date.getTime());
-
             if (pick_up_time.getTime() < current_date_time.getTime())
-            {
-                alert("Pick up date should be greater than or equal to today's date");
-                return false;
-            }
-
-            if (pick_up_hours < current_date_time.getHours())
-            {
-                alert("Pick up time should be greater than current time");
-                return false;
-            } else if (pick_up_hours == current_date_time.getHours())
-            {
-                if (pick_up_minutes < current_date_time.getMinutes())
+            {    
+                if (pick_up_date.toDateString() == current_date_time.toDateString())
                 {
                     alert("Pick up time should be greater than current time");
                     return false;
+                } else
+                {
+                    alert("Pick up date should be greater than or equal to today's date");
+                    return false;
                 }
-            }
+            } 
             
             if (pick_up_date.getTime() > drop_off_date.getTime())
             {
                 alert("Pick up date should be lesser than or equal to drop off date");
                 return false;
-            }
-            else if ((pick_up_date.getTime() == drop_off_date.getTime()) && (pick_up_time.getTime() > drop_off_time.getTime()))
+            } else if (pick_up_date.getTime() == drop_off_date.getTime())
             {
-                alert("Pick up time should be lesser than drop off time");
-                return false;
-            }
+                if (pick_up_time.getTime() >= drop_off_time.getTime())
+                {
+                    alert("Pick up time should be lesser than drop off time");
+                    return false;
+                } else 
+                {
+                    var hour_diff = drop_off_time.getHours() - pick_up_time.getHours();
+                    
+                    if (hour_diff < 1)
+                    {
+                        alert("Booking duration must be at least for an hour");
+                        return false;
+                    } else if (hour_diff == 1)
+                    {
+                        if ((drop_off_time.getMinutes() - pick_up_time.getMinutes()) < 0)
+                        {
+                            alert("Booking duration must be at least an hour");
+                            return false;
+                        }
+                    }
+                }
+            } 
         }
     </script>
 </head>

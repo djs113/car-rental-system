@@ -21,59 +21,69 @@
     
     $card_count = mysqli_num_rows($res_array);
 
+    echo '
+        <link rel="stylesheet" type="text/css" href="view-cards-css.css">
+    ';
+
     if ($card_count != 0)
     {
         echo '
-            <table border="1">
-                <th>Card number</th>
-                <th>Name on card</th>
-                <th>Expiry Date</th>
-                <th>Card Id</th>
-                <th>Card name</th>
+            <div class="main">
+                <table border="1">
+                    <th>Card number</th>
+                    <th>Name on card</th>
+                    <th>Expiry Date</th>
+                    <th>Card Id</th>
+                    <th>Card name</th>
         ';
 
         while ($res = mysqli_fetch_array($res_array))
         {
             echo '
-                <tr>
-                    <td>'.$res['card_number'].'</td>
-                    <td>'.$res['name_on_card'].'</td>
-                    <td>'.$res['expiry_date'].'</td>
-                    <td>'.$res['card_id'].'</td>
-                    <td>'.$res['card_name'].'</td>
-                    <td>
-                        <form action="/car-rental-system/registered-user/payment/cards/modify-card/modify-card-form.php" method="POST">
+                    <tr>
+                        <td>'.$res['card_number'].'</td>
+                        <td>'.$res['name_on_card'].'</td>
+                        <td>'.$res['expiry_date'].'</td>
+                        <td>'.$res['card_id'].'</td>
+                        <td>'.$res['card_name'].'</td>
+                        <td>
+                            <form action="/car-rental-system/registered-user/payment/cards/modify-card/modify-card-form.php" method="POST">
+                                
+                                <input type="hidden" id="card_id" name="card_id" value="'.$res['card_id'].'" />
+                                <input type="submit" class="submit" value="Modify card" />
+                                
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/car-rental-system/registered-user/payment/cards/delete-card/delete-card-form.php" method="POST">
                             
-                            <input type="hidden" id="card_id" name="card_id" value="'.$res['card_id'].'" />
-                            <input type="submit" value="Modify card" />
-                            
-                        </form>
-                    </td>
-                    <td>
-                        <form action="/car-rental-system/registered-user/payment/cards/delete-card/delete-card-form.php" method="POST">
-                        
-                            <input type="hidden" id="card_id" name="card_id" value="'.$res['card_id'].'" />
-                            <input type="submit" value="Delete" />
-                        </form>
-                    </td>
+                                <input type="hidden" id="card_id" name="card_id" value="'.$res['card_id'].'" />
+                                <input type="submit" class="submit" value="Delete" />
+                            </form>
+                        </td>
                 </tr>
             ';
         }
 
         echo '
-            </table>
+                </table>
         ';
     } else
     {
         echo '
-            No saved cards
-            <br><br>
-            <button><a href="/car-rental-system/registered-user/payment/cards/add-card.php">Add card</a></button> 
+            <div class="main">
+                No saved cards
+                <br><br>
+            
+                <button><a href="/car-rental-system/registered-user/payment/cards/add-card.php">Add card</a></button>
         ';
     }
 
     echo '
-        <br><br>
-        <button><a href="/car-rental-system/registered-user/profile-management/view-profile.php">Go back</a></button>
+            <br><br>
+            <div class="back_button">
+                <button><a href="/car-rental-system/registered-user/profile-management/view-profile.php">Go back</a></button>
+            </div>
+        </div>
     ';
 ?>

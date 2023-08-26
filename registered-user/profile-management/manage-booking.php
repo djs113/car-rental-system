@@ -138,9 +138,11 @@
             } else
             {
                 echo '
-                    Invalid booking id
-                    <br><br>    
-                    <button><a href="/car-rental-system/registered-user/profile-management/view-bookings.php></a>Go back</button>
+                    <div class="invalid_message">
+                        Invalid booking id
+                        <br><br>
+                    </div>   
+                    <button><a href="/car-rental-system/registered-user/profile-management/view-bookings.php">Go back</a></button>
                 ';
             }
         }

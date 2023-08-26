@@ -39,6 +39,11 @@
     $qry = "INSERT INTO user_cards (card_name, username, card_number) VALUES 
     ('$card_name', '$username', $card_number)";
 
+    echo '
+        <link rel="stylesheet" type="text/css" href="card-addition-script-css.css">
+        <div class="main">
+    ';
+
     if ($conn->query($qry) == TRUE)
     {
         echo '
@@ -49,16 +54,19 @@
         if ((isset($_SESSION['ongoing_payment'])) && ($_SESSION['ongoing_payment'] == TRUE))
         {
             echo '
-                <form action="/car-rental-system/registered-user/payment/payment-script.php" method="POST">
+                <div class="submit">
+                    <form action="/car-rental-system/registered-user/payment/payment-script.php" method="POST">
 
-                    <input type="hidden" id="payment_method" name="payment_method" value="card"/>
-                    <input type="submit" value="Return to payment" />
+                        <input type="hidden" id="payment_method" name="payment_method" value="card"/>
+                        <input type="submit" value="Return to payment" />
 
-                </form>
+                    </form>
+                </div>
             ';
         } else
         {
             echo '
+                </div>
                 <button><a href="/car-rental-system/registered-user/profile-management/view-profile.php">Go back</a></button> 
             ';
         }
@@ -67,7 +75,7 @@
         echo'
             Error in addition of card<br>
             Error: '.$conn->error.'
-
+            </div>
             <button><a href="/car-rental-system/registered-user/payment/cards/add-card.php">Try again</a></button>    
         ';        
     }

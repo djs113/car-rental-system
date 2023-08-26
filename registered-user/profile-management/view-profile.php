@@ -23,21 +23,28 @@
     $res = mysqli_fetch_array($res_array);
 
     echo '
-        <label for="first_name">First name: </label>'.$res['first_name'].'
-        <br><br>
+        <link rel="stylesheet" type="text/css" href="/car-rental-system/registered-user/profile-management/view-profile-css.css">
 
-        <label for="last_name">Last name: </label>'.$res['last_name'].'
-        <br><br>
+        <div class="main">
+            <label for="first_name">First name: </label><p>'.$res['first_name'].'</p>
+            <br><br>
 
-        <label for="email">Email: </label>'.$res['email'].'
-        <br><br>
+            <label for="last_name">Last name: </label><p>'.$res['last_name'].'</p>
+            <br><br>
 
-        <label for="phone_number">Phone number: </label>'.$res['phone_number'].'
-        <br><br>
+            <label for="email">Email: </label><p>'.$res['email'].'</p>
+            <br><br>
 
-        <button><a href="/car-rental-system/registered-user/profile-management/edit-profile.php">Edit profile</a></button>
-        <button><a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go back</a></button>
-        <button><a href="/car-rental-system/registered-user/payment/cards/add-card.php">Add card</a></button>
-        <button><a href="/car-rental-system/registered-user/profile-management/view-cards.php">View cards</a></button>
+            <label for="phone_number">Phone number: </label><p>'.$res['phone_number'].'</p>
+            <br><br>
+        </div>
+        
+        <div class="buttons">
+            <button><a href="/car-rental-system/registered-user/profile-management/edit-profile.php">Edit profile</a></button>
+            <button><a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go back</a></button>
+            <button><a href="/car-rental-system/registered-user/payment/cards/add-card.php">Add card</a></button>
+            <button><a href="/car-rental-system/registered-user/profile-management/view-cards.php">View cards</a></button>
+        </div>
+        
     ';
 ?>

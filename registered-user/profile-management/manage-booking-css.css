@@ -18,6 +18,15 @@ body {
     box-shadow: 5px 20px 50px #000;
 }
 
+.invalid_message {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    height: 70px;
+}
+
 label {
     color: #fff;
     justify-content: center;

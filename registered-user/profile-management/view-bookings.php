@@ -68,17 +68,17 @@
                     cash_booking_details.registration_number = vehicles.registration_number LEFT JOIN 
                     vehicle_models ON vehicles.model_id = vehicle_models.model_id WHERE username = '$username'";
             
-            $res_array = mysqli_query($conn, $qry);
+            $booking_res_array = mysqli_query($conn, $qry);
 
-            while ($res = mysqli_fetch_array($res_array))
+            while ($booking_res = mysqli_fetch_array($booking_res_array))
             {
                 echo '
                     <tr>
-                        <td>'.$res[0].'</td>
-                        <td>'.$res[1].'</td>
-                        <td>'.$res[2].'</td>
-                        <td>'.$res[3].'</td>
-                        <td><a href="/car-rental-system/registered-user/profile-management/manage-booking.php?booking_id='.$res[0].'">View Booking</a></td>
+                        <td>'.$booking_res[0].'</td>
+                        <td>'.$booking_res[1].'</td>
+                        <td>'.$booking_res[2].'</td>
+                        <td>'.$booking_res[3].'</td>
+                        <td><a href="/car-rental-system/registered-user/profile-management/manage-booking.php?booking_id='.$booking_res[0].'">View Booking</a></td>
                     </tr> 
                 ';
             }

@@ -23,30 +23,38 @@
         $res = mysqli_fetch_array($res_array);
 
         echo '
-            <form action="/car-rental-system/registered-user/payment/cards/delete-card/delete-card-script.php" method="POST">
-                <label for="card_id">Card Id: </label>'.$res['card_id'].'
-                <br><br>
-                
-                <label for="card_number">Card number: </label>'.$res['card_number'].'
-                <br><br>
+            <link rel="stylesheet" type="text/css" href="delete-card-form-css.css">
+            
+            <div class="main">
+                <form action="/car-rental-system/registered-user/payment/cards/delete-card/delete-card-script.php" method="POST">
+                    <label for="card_id">Card Id: </label><p>'.$res['card_id'].'</p>
+                    <br><br>
+                    
+                    <label for="card_number">Card number: </label><p>'.$res['card_number'].'</p>
+                    <br><br>
 
-                <label for="card_name">Card name: </label>'.$res['card_name'].'
-                <br><br>
+                    <label for="card_name">Card name: </label><p>'.$res['card_name'].'</p>
+                    <br><br>
 
-                <label for="expiry_date">Expiry date: </label>'.$res['expiry_date'].'
-                <br><br>
+                    <label for="expiry_date">Expiry date: </label><p>'.$res['expiry_date'].'</p>
+                    <br><br>
 
-                <label for="name_on_card">Name on card: </label>'.$res['name_on_card'].'
-                <br><br>
+                    <label for="name_on_card">Name on card: </label><p>'.$res['name_on_card'].'</p>
+                    <br><br>
 
-                <input type="hidden" id="card_id" name="card_id" value="'.$res['card_id'].'" />
+                    <input type="hidden" id="card_id" name="card_id" value="'.$res['card_id'].'" />
 
-                Do you really want to delete this card?
-                <br><br>
-
-                <input type="submit" value="Delete" />
-                <button><a href="/car-rental-system/registered-user/profile-management/view-cards.php">Go back</a></button>
-            </form>
+                    <div class="deletion_confirmation">
+                        Do you really want to delete this card?
+                        <br><br>
+                    </div>
+                    
+                    <div class="buttons">
+                        <input type="submit" value="Delete" />
+                        <button><a href="/car-rental-system/registered-user/profile-management/view-cards.php">Go back</a></button>
+                    </div>
+                </form>
+            </div>
         ';
     } else
         header("location:/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php");

@@ -14,6 +14,11 @@
 
     if (isset($_POST['card_id']))
     {
+        echo '
+            <link rel="stylesheet" type="text/css" href="delete-card-script-css.css">
+            <div class="main">
+        ';
+
         $card_id = $_POST['card_id'];
 
         $qry = "SELECT card_number FROM user_cards WHERE card_id = $card_id";
@@ -64,8 +69,9 @@
         }       
         
         echo '
-            <br><br>
-            <button><a href="/car-rental-system/registered-user/profile-management/view-cards.php">Go back</a></button>
+                <br><br>
+                <button><a href="/car-rental-system/registered-user/profile-management/view-cards.php">Go back</a></button>
+            </div>
         ';
     } else
         header("location:/car-rental-system/registered-user/profile-management/view-cards.php");

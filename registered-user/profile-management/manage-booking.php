@@ -28,52 +28,57 @@
 
         $booking_count = mysqli_num_rows($res_array);
 
+        echo '
+            <link rel="stylesheet" type="text/css" href="/car-rental-system/registered-user/profile-management/manage-booking-css.css">
+            <div class="main">
+        ';
+
         if ($booking_count != 0)
         {
             $booking_flag = 1;
 
             echo '
-                <label for="booking_id">Booking Id: </label> '.$res['booking_id'].'
+                <label for="booking_id">Booking Id: </label> <p>'.$res['booking_id'].'</p>
                 <br>
                 <br>
 
-                <label for="registration_number">Registration Number: </label> '.$res['registration_number'].'
+                <label for="registration_number">Registration Number: </label> <p>'.$res['registration_number'].'</p>
                 <br>
                 <br>
 
-                <label for="brand_name">Brand Name: </label> '.$res['brand_name'].'
+                <label for="brand_name">Brand Name: </label> <p>'.$res['brand_name'].'</p>
                 <br>
                 <br>
 
-                <label for="model_name">Model Name: </label> '.$res['model_name'].'
+                <label for="model_name">Model Name: </label> <p>'.$res['model_name'].'</p>
                 <br>
                 <br>
 
-                <label for="pick_up_date">Pick up date: </label> '.$res['pick_up_date'].'
+                <label for="pick_up_date">Pick up date: </label> <p>'.$res['pick_up_date'].'</p>
                 <br>
                 <br>
 
-                <label for="pick_up_time">Pick up time: </label> '.$res['pick_up_time'].'
+                <label for="pick_up_time">Pick up time: </label> <p>'.$res['pick_up_time'].'</p>
                 <br>
                 <br>
 
-                <label for="drop_off_date">Drop off date: </label> '.$res['drop_off_date'].'
+                <label for="drop_off_date">Drop off date: </label> <p>'.$res['drop_off_date'].'</p>
                 <br>
                 <br>
 
-                <label for="drop_off_time">Drop off time: </label> '.$res['drop_off_time'].'
+                <label for="drop_off_time">Drop off time: </label> <p>'.$res['drop_off_time'].'</p>
                 <br>
                 <br>
 
-                <label for="payment_amount">Payment amount: </label> '.$res['payment_amount'].'
+                <label for="payment_amount">Payment amount: </label> <p>'.$res['payment_amount'].'</p>
                 <br>
                 <br>
 
-                <label for="payment_time">Payment time: </label> '.$res['payment_time'].'
+                <label for="payment_time">Payment time: </label> <p>'.$res['payment_time'].'</p>
                 <br>
                 <br>
 
-                <label for="card_id">Card Id: </label> '.$res['card_id'].'
+                <label for="card_id">Card Id: </label> <p>'.$res['card_id'].'</p>
                 <br>
                 <br>
             ';
@@ -94,39 +99,39 @@
                 $booking_flag = 1;
 
                 echo '
-                    <label for="booking_id">Booking Id: </label> '.$res['booking_id'].'
+                    <label for="booking_id">Booking Id: </label> <p>'.$res['booking_id'].'</p>
                     <br>
                     <br>
 
-                    <label for="registration_number">Registration Number: </label> '.$res['registration_number'].'
+                    <label for="registration_number">Registration Number: </label> <p>'.$res['registration_number'].'</p>
                     <br>
                     <br>
 
-                    <label for="brand_name">Brand Name: </label> '.$res['brand_name'].'
+                    <label for="brand_name">Brand Name: </label> <p>'.$res['brand_name'].'</p>
                     <br>
                     <br>
 
-                    <label for="model_name">Model Name: </label> '.$res['model_name'].'
+                    <label for="model_name">Model Name: </label> <p>'.$res['model_name'].'</p>
                     <br>
                     <br>
 
-                    <label for="pick_up_date">Pick up date: </label> '.$res['pick_up_date'].'
+                    <label for="pick_up_date">Pick up date: </label> <p>'.$res['pick_up_date'].'</p>
                     <br>
                     <br>
 
-                    <label for="pick_up_time">Pick up time: </label> '.$res['pick_up_time'].'
+                    <label for="pick_up_time">Pick up time: </label> <p>'.$res['pick_up_time'].'</p>
                     <br>
                     <br>
 
-                    <label for="drop_off_date">Drop off date: </label> '.$res['drop_off_date'].'
+                    <label for="drop_off_date">Drop off date: </label> <p>'.$res['drop_off_date'].'</p>
                     <br>
                     <br>
 
-                    <label for="drop_off_time">Drop off time: </label> '.$res['drop_off_time'].'
+                    <label for="drop_off_time">Drop off time: </label> <p>'.$res['drop_off_time'].'</p>
                     <br>
                     <br>
 
-                    <label for="payment_amount">Payment amount: </label> '.$res['payment_amount'].'
+                    <label for="payment_amount">Payment amount: </label> <p>'.$res['payment_amount'].'</p>
                     <br>
                     <br>
             ';
@@ -138,20 +143,26 @@
                     <button><a href="/car-rental-system/registered-user/profile-management/view-bookings.php></a>Go back</button>
                 ';
             }
-        } 
+        }
+        
+        echo '
+            </div> 
+        ';
     } else
         header("location:/car-rental-system/registered-user/profile-management/view-bookings.php");
     
     if ($booking_flag == 1)
     {
             echo '
-                <button><a href="/car-rental-system/registered-user/profile-management/view-bookings.php">Go back</a></button> 
-                <br>
-                
-                <form action="cancel-booking.php" method="POST">
-                    <input type="hidden" id="booking_id" name="booking_id" value="'.$res['booking_id'].'" />
-                    <input type="submit" value="Cancel Booking" />
-                </form>
+                <div class="buttons">
+                    <button><a href="/car-rental-system/registered-user/profile-management/view-bookings.php">Go back</a></button> 
+                    <br>
+                    
+                    <form action="cancel-booking.php" method="POST">
+                        <input type="hidden" id="booking_id" name="booking_id" value="'.$res['booking_id'].'" />
+                        <input type="submit" value="Cancel Booking" />
+                    </form>
+                </div>
             ';
     }
 ?>

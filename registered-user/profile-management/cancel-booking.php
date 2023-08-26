@@ -12,6 +12,11 @@
     if ($conn->connect_error)
         die("Connection error".$conn->connect_error);
 
+    echo '
+        <link rel="stylesheet" type="text/css" href="/car-rental-system/registered-user/profile-management/cancel-booking-css.css"> 
+        <div class="main">
+    ';
+
     if (isset($_POST['booking_id']))
     {
         $booking_id = $_POST['booking_id'];
@@ -71,6 +76,7 @@
         }
 
         echo '
+            </div>
             <button><a href="/car-rental-system/registered-user/profile-management/view-bookings.php">Go back</a></button> 
         ';
     } else

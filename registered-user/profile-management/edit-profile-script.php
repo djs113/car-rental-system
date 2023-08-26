@@ -16,6 +16,10 @@
 
     if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['email']) && isset($_POST['phone_number']))
     {
+        echo '
+            <link rel="stylesheet" type="text/css" href="edit-profile-script-css.css">
+            <div class="main">
+        ';
         $first_name = $_POST['first_name'];
         $last_name = $_POST['last_name'];
         $email = $_POST['email'];
@@ -36,10 +40,10 @@
         }
 
         echo '
+            </div>
             <br><br>
             <button><a href="/car-rental-system/registered-user/profile-management/edit-profile.php">Go back</a></button> 
         ';
     } else
         header("location:/car-rental-system/registered-user/edit-profile.php");
-    
 ?>

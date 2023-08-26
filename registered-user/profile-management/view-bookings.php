@@ -36,17 +36,22 @@
 
     $total_bookings = $card_count_res[0] + $cash_count_res[0];
 
+    echo '
+        <link rel="stylesheet" type="text/css" href="/car-rental-system/registered-user/profile-management/view-bookings-css.css">    
+    ';
+
     if ($total_bookings != 0)
     {
         echo '
-        <table border="1"> 
+        <div class="tbl">
+            <table border="1"> 
             <tr>
                 <th>Booking ID</th>
                 <th>Brand Name</th>
                 <th>Model Name</th>
                 <th>Pick up date</th>
             </tr>    
-        ';
+    ';
     
         while ($res = mysqli_fetch_array($res_array))
         {
@@ -81,7 +86,8 @@
 
         echo '
             </table>
-            <br><br>
+        </div>
+        <br><br>
         ';
     } else
     {

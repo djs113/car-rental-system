@@ -14,6 +14,11 @@
     
     if (isset($_POST['card_name']) && (isset($_POST['card_id'])))
     {
+        echo '
+            <link rel="stylesheet" type="text/css" href="modify-card-script-css.css">
+            <div class="main">        
+        ';
+
         $card_name = $_POST['card_name'];
         $card_id = $_POST['card_id'];
         
@@ -35,6 +40,8 @@
                 <button><a href="/car-rental-system/registered-user/payment/cards/modify-card/modify-card-form.php">Try again</a></button> 
             ';
         }
+
+        echo '</div>';
     } else
         header("location:/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php");
 ?>

@@ -27,17 +27,21 @@
         $address = $res_2['address'];
         
         echo '
-            <label for="contact_email">Contact email: </label>'.$contact_email.'
-            <br><br>
+            <link rel="stylesheet" type="text/css" href="contact-details-display-css.css">
 
-            <label for="contact_number_1">Contact number 1: </label>'.$contact_number_1.'
-            <br><br>
+            <div class="main">
+                <label for="contact_email">Contact email: </label><p>'.$contact_email.'</p>
+                <br><br>
 
-            <label for="contact_number_2">Contact number 2: </label>'.$contact_number_2.'
-            <br><br>
+                <label for="contact_number_1">Contact number 1: </label><p>'.$contact_number_1.'</p>
+                <br><br>
 
-            <label for="address">Address: </label>'.$address.'
-            <br><br>
+                <label for="contact_number_2">Contact number 2: </label><p>'.$contact_number_2.'</p>
+                <br><br>
+
+                <label for="address">Address: </label><p>'.$address.'</p>
+                <br><br>
+            </div>
 
             <button><a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go back</a></button>
         ';

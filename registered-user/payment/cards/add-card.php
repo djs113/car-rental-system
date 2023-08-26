@@ -13,6 +13,8 @@
         die("Connection error".$conn->connect_error);
 
     echo '
+        <link rel="stylesheet" type="text/css" href="add-card-css.css">
+        
         <script type="text/javascript">
             function formValidate()
             {
@@ -61,22 +63,24 @@
             } 
         </script>
 
-        <form action="card-addition-script.php" method="POST" onsubmit="return formValidate()">
-            <label for="card_number">Card Number: </label><input type="text" id="card_number" name="card_number" />
-            <br><br>
+        <div class="main">
+            <form action="card-addition-script.php" method="POST" onsubmit="return formValidate()">
+                <label for="card_number">Card Number: </label><input type="text" id="card_number" name="card_number" />
+                <br><br>
 
-            <label for="name_on_card">Name on Card: </label><input type="text" id="name_on_card" name="name_on_card" />
-            <br><br>
+                <label for="name_on_card">Name on Card: </label><input type="text" id="name_on_card" name="name_on_card" />
+                <br><br>
 
-            <label for="expiry_date">Expiry date: </label><input type="date" id="expiry_date" name="expiry_date" />
-            <br><br>
+                <label for="expiry_date">Expiry date: </label><input type="date" id="expiry_date" name="expiry_date" />
+                <br><br>
 
-            <label for="card_name">Card Name: </label><input type="text" id="card_name" name="card_name" />
-            <br><br>
+                <label for="card_name">Card Name: </label><input type="text" id="card_name" name="card_name" />
+                <br><br>
 
-                <input type="submit" value="Add card" />
-        </form> 
-
+                <input type="submit" class="submit" value="Add card" />
+            </form>
+        </div>
+         
         <button><a href="/car-rental-system/registered-user/profile-management/view-profile.php">Go back</a></button>
     ';
 ?>

@@ -86,9 +86,40 @@
                         <input type="submit" value="Search Vehicles" id="submit"/>
                     </form>
                     <br><br>
-                    <div class="buttons">
+                </div>
+    
+                <div class="wrapper">
+                    <div class="section">
+                        <div class="top_navbar">
+                            <div class="hamburger">
+                                <a href="#">
+                                    <i class="fas fa-bars"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script type="text/javascript">
+                        var hamburger = document.querySelector(".hamburger");
+                        hamburger.addEventListener("click", function(){
+                            document.querySelector("body").classList.toggle("active");
+                        })
+                    </script>
+
+                    <div class="sidebar">
     ';
 
+    if (isset($_SESSION['login_user']))
+    {
+        $username = $_SESSION['login_user'];
+
+        echo '
+                        <div class="profile">
+                            <h3>'.$username.'</h3>
+                        </div>
+        ';
+    }
+                           
     $conn = mysqli_connect('localhost', 'root', '', 'car_rental_system');
 
     if ($conn->connect_error)
@@ -106,19 +137,8 @@
 
     $details_count = $contact_1_count + $contact_2_count;
 
-    
-
     echo '
-                    </div>
-                </div>
-
-                <div class="wrapper">
-                    <div class="sidebar">
-                        <div class="profile">
-                            <h3>User name</h3>
-                        </div>
-                        
-                        <ul>    
+        <ul> 
     ';
 
     if ($details_count == 2)
@@ -178,7 +198,7 @@
     echo '
                         </ul>
                     </div>
-                </div> 
+                </div>
             </body>
         </html>
     ';

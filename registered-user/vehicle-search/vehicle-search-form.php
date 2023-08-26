@@ -67,7 +67,7 @@
                 <link rel="stylesheet" type="text/css" href="/car-rental-system/css/all.css">
                 <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
             </head>
-            <body>
+            <body class="active">
                 <div class="main">
                     <p><u>Available Vehicle Search</u></p>
                     <form action="vehicle-search-script.php" method="POST" onsubmit="return validateBookingPeriod()">

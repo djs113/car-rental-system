@@ -23,6 +23,8 @@
     $res = mysqli_fetch_array($res_array);
 
     echo '
+        <link rel="stylesheet" type="text/css" href="edit-profile-css.css">
+
         <script type="text/javascript">
             function formValidate()
             {
@@ -67,21 +69,25 @@
                 }
             } 
         </script>
-        <form action="edit-profile-script.php" method="POST" onsubmit="return formValidate()">
-            <label for="first_name">First name: </label><input type="text" id="first_name" name="first_name" value="'.$res['first_name'].'" />
-            <br><br>
 
-            <label for="last_name">Last name: </label><input type="text" id="last_name" name="last_name" value="'.$res['last_name'].'" />
-            <br><br>
+        <div class="main">
+            <form action="edit-profile-script.php" method="POST" onsubmit="return formValidate()">
+                <label for="first_name">First name: </label><input type="text" id="first_name" name="first_name" value="'.$res['first_name'].'" />
+                <br><br>
 
-            <label for="email">Email: </label><input type="email" id="email" name="email" value="'.$res['email'].'" />
-            <br><br>
+                <label for="last_name">Last name: </label><input type="text" id="last_name" name="last_name" value="'.$res['last_name'].'" />
+                <br><br>
 
-            <label for="phone_number">Phone number: </label><input type="text" id="phone_number" name="phone_number" value="'.$res['phone_number'].'" />
-            <br><br>
+                <label for="email">Email: </label><input type="email" id="email" name="email" value="'.$res['email'].'" />
+                <br><br>
 
-            <input type="submit" value="Save" />
-        </form> 
+                <label for="phone_number">Phone number: </label><input type="text" id="phone_number" name="phone_number" value="'.$res['phone_number'].'" />
+                <br><br>
+
+                <input class="submit" type="submit" value="Save" />
+            </form> 
+        </div>
+        
 
         <button><a href="/car-rental-system/registered-user/profile-management/view-profile.php">Go back</a></button>
     ';

@@ -64,6 +64,8 @@
                 </script>
                 <link rel="stylesheet" type="text/css" href="fonts.css">
                 <link rel="stylesheet" type="text/css" href="vehicle-search-form-css.css">
+                <link rel="stylesheet" type="text/css" href="/car-rental-system/css/all.css">
+                <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
             </head>
             <body>
                 <div class="main">
@@ -85,17 +87,7 @@
                     </form>
                     <br><br>
                     <div class="buttons">
-                        <button><a href="/car-rental-system/registered-user/profile-management/view-bookings.php">View Bookings</a></button>
-                        <button><a href="/car-rental-system/registered-user/profile-management/view-profile.php">View profile</a></button>
     ';
-
-    if (isset($_SESSION['login_user']))
-        echo '<button><a href="/car-rental-system/registered-user/user-login/logout.php">Logout</a></button>';
-    else
-        echo '
-            <button><a href="/car-rental-system/registered-user/user-login/user-login-page.html">Login</a></button>
-            <button><a href="/car-rental-system/registration/registration-form.html">Register</a></button> 
-        ';
 
     $conn = mysqli_connect('localhost', 'root', '', 'car_rental_system');
 
@@ -114,18 +106,80 @@
 
     $details_count = $contact_1_count + $contact_2_count;
 
-    if ($details_count == 2)
-        echo '<button><a href="/car-rental-system/admin/contact-management/contact-details-display.php">Contact us</a></button>';
+    
 
     echo '
+                    </div>
                 </div>
-            </div>
-            <div class="wrapper">
-            <div class="sidebar">
-                aa
-            </div>
-        </div>
-        </body>
-    </html>
+
+                <div class="wrapper">
+                    <div class="sidebar">
+                        <div class="profile">
+                            <h3>User name</h3>
+                        </div>
+                        
+                        <ul>    
+    ';
+
+    if ($details_count == 2)
+        echo '
+                            <li>
+                                <a href="/car-rental-system/admin/contact-management/contact-details-display.php">
+                                    <span class="icon"><i class=""></i></span>
+                                    <span class="item">Contact us</span>
+                                </a>
+                            </li>
+        ';
+    
+    if (isset($_SESSION['login_user']))
+    {
+        echo '          
+                            <li>
+                                <a href="/car-rental-system/registered-user/user-login/logout.php">
+                                    <span class="icon"><i class=""></i></span>
+                                    <span class="item">Logout</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/car-rental-system/registered-user/profile-management/view-bookings.php">
+                                    <span class="icon"><i class=""></i></span>
+                                    <span class="item">View bookings</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/car-rental-system/registered-user/profile-management/view-profile.php">
+                                    <span class="icon"><i class=""></i></span>
+                                    <span class="item">View profile</span>
+                                </a>
+                            </li>
+        ';
+    }
+    else
+    {  
+        echo '
+                            <li>
+                                <a href="/car-rental-system/registered-user/user-login/user-login-page.html">
+                                    <span class="icon"><i class=""></i></span>
+                                    <span class="item">Login</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/car-rental-system/registration/registration-form.html">
+                                    <span class="icon"><i class=""></i></span>
+                                    <span class="item">Register</span>
+                                </a>
+                            </li>
+        ';
+    }
+
+    echo '
+                        </ul>
+                    </div>
+                </div> 
+            </body>
+        </html>
     ';
 ?>

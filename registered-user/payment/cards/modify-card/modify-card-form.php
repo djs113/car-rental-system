@@ -23,6 +23,8 @@
         $res = mysqli_fetch_array($res_array);
     
         echo '
+            <link rel="stylesheet" type="text/css" href="modify-card-form-css.css">
+            
             <script type="text/javascript">
                 function formValidate()
                 {

@@ -24,7 +24,7 @@
     
         echo '
             <link rel="stylesheet" type="text/css" href="modify-card-form-css.css">
-            
+
             <script type="text/javascript">
                 function formValidate()
                 {
@@ -37,26 +37,29 @@
                     }
                 }
             </script>
-            <form action="/car-rental-system/registered-user/payment/cards/modify-card/modify-card-script.php" method="POST" onsubmit="return formValidate()">
-                <label for="card_id">Card Id: </label>'.$res['card_id'].'
-                <br><br>
-                
-                <label for="card_number">Card number: </label>'.$res['card_number'].'
-                <br><br>
 
-                <label for="name_on_card">Name on card: </label>'.$res['name_on_card'].'
-                <br><br>
+            <div class="main">
+                <form action="/car-rental-system/registered-user/payment/cards/modify-card/modify-card-script.php" method="POST" onsubmit="return formValidate()">
+                    <label for="card_id">Card Id: </label><p>'.$res['card_id'].'</p>
+                    <br><br>
+                    
+                    <label for="card_number">Card number: </label><p>'.$res['card_number'].'</p>
+                    <br><br>
 
-                <label for="expiry_date">Expiry date: </label>'.$res['expiry_date'].'
-                <br><br>
+                    <label for="name_on_card">Name on card: </label><p>'.$res['name_on_card'].'</p>
+                    <br><br>
 
-                <label for="card_name">Card name: </label><input type="text" id="card_name" name="card_name" value="'.$res['card_name'].'" />
-                <br><br>
+                    <label for="expiry_date">Expiry date: </label><p>'.$res['expiry_date'].'</p>
+                    <br><br>
 
-                <input type="hidden" id="card_id" name="card_id" value="'.$res['card_id'].'" />
+                    <label for="card_name">Card name: </label><input type="text" class="card_name" id="card_name" name="card_name" value="'.$res['card_name'].'" />
+                    <br><br>
 
-                <input type="submit" value="Modify" />
-            </form>
+                    <input type="hidden" id="card_id" name="card_id" value="'.$res['card_id'].'" />
+
+                    <input type="submit" class="submit"value="Modify" /> 
+                </form>
+            </div>
         ';
     } else
         header("location:/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php");

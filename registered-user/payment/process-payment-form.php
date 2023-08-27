@@ -42,7 +42,6 @@
                     <input type="submit" class="submit" value="Submit" />
                 </form>
             </div>
-            
         '; 
     } else
     {

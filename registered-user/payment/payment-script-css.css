@@ -82,3 +82,12 @@ input[type="radio"] {
     display: flex;
     justify-content: space-around;
 }
+
+.no_cards_message {
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}

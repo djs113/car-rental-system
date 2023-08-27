@@ -114,7 +114,9 @@
                 }
             } else
                 echo '
-                    No saved cards.
+                    <div class="no_cards_message">
+                        No saved cards.
+                    </div>
                     <div class="buttons">   
                 ';
 

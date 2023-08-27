@@ -62,33 +62,39 @@
         $_SESSION['drop_off_time'] = $_POST['drop_off_time'];
 
         echo '
-            <label for="brand_name">Brand Name: </label>'.$res[0].'
-            <br><br>
+            <link rel="stylesheet" type="text/css" href="confirm-booking-css.css">
 
-            <label for="model_name">Model Name: </label>'.$res[1].'
-            <br><br>
+            <div class="main"> 
+                <label for="brand_name">Brand Name: </label><p>'.$res[0].'</p>
+                <br><br>
 
-            <label for="pick_up_date">Pick up date: </label>'.$_POST['pick_up_date'].'
-            <br><br>
+                <label for="model_name">Model Name: </label><p>'.$res[1].'</p>
+                <br><br>
 
-            <label for="pick_up_time">Pick up time: </label>'.$_POST['pick_up_time'].'
-            <br><br>
+                <label for="pick_up_date">Pick up date: </label><p>'.$_POST['pick_up_date'].'</p>
+                <br><br>
 
-            <label for="drop_off_date">Drop off date: </label>'.$_POST['drop_off_date'].'
-            <br><br>
+                <label for="pick_up_time">Pick up time: </label><p>'.$_POST['pick_up_time'].'</p>
+                <br><br>
 
-            <label for="drop_off_time">Drop off time: </label>'.$_POST['drop_off_time'].'
-            <br><br>
+                <label for="drop_off_date">Drop off date: </label><p>'.$_POST['drop_off_date'].'</p>
+                <br><br>
 
-            <label for="payment_amount">Payable amount: </label>Rs.'.$payment_amount.'
-            <br><br>
+                <label for="drop_off_time">Drop off time: </label><p>'.$_POST['drop_off_time'].'</p>
+                <br><br>
 
-            <form action="/car-rental-system/registered-user/payment/payment-form.php" method="POST">
-                
-                <input type="hidden" id="payment_amount" name="payment_amount" value="'.$payment_amount.'" />
-                <input type="submit" value="Proceed to payment" />
-            
-            </form>            
+                <label for="payment_amount">Payable amount: </label><p>Rs.'.$payment_amount.'</p>
+                <br><br>
+
+                <div class="buttons">
+                    <form action="/car-rental-system/registered-user/payment/payment-form.php" method="POST">      
+                        <input type="hidden" id="payment_amount" name="payment_amount" value="'.$payment_amount.'" />
+                        <input type="submit" value="Proceed to payment" />  
+                    </form>
+
+                    <button><a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go home</a></button>
+                </div>
+            </div>            
         ';
     } else
     {

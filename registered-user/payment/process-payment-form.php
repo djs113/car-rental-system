@@ -15,6 +15,8 @@
     if ($_POST['card_number'])
     {
         echo '
+            <link rel="stylesheet" type="text/css" href="process-payment-form-css.css">
+
             <script type="text/javascript">
                 function formValidate()
                 {
@@ -31,12 +33,16 @@
                     }
                 }
             </script>
-            <form action="confirm-payment.php" method="POST" onsubmit="return formValidate()">
-                <label for="otp">Enter the otp: </label><input type="text" id="otp" name="otp" />
-                <br><br>
-                
-                <input type="submit" value="Submit" />
-            </form>
+
+            <div class="main">
+                <form action="confirm-payment.php" method="POST" onsubmit="return formValidate()">
+                    <label for="otp">Enter the otp: </label><input type="text" id="otp" name="otp" />
+                    <br><br>
+                    
+                    <input type="submit" class="submit" value="Submit" />
+                </form>
+            </div>
+            
         '; 
     } else
     {

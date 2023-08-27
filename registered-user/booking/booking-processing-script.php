@@ -169,7 +169,7 @@
         } else 
         {
             
-            // header("location:/car-rental-system/registered-user/vehicle-search-form.php");
+            header("location:/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php");
             exit;
         }
     }

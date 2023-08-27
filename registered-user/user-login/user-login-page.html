@@ -3,22 +3,24 @@
         <title>
             Registered User Login Page
         </title>
+        <link rel="stylesheet" type="text/css" href="user-login-page-css.css">
     </head>
-    <body style="background-image: url(/car-rental-system/images/cars-background.webp); background-size: cover;">
-        <div style="text-align: center; width: 100%; margin-top: 100px; float: left">
-            <div style="width: 40%; float: left; min-height: 200px; background-color: #a0cdf9; margin-left: 30%;">
-                <h2>USER LOGIN</h2>
-                <p><strong>WELCOME TO THE LOGIN PAGE</strong></p>
-                <form action="login.php" method="POST">
-                    <label for="username"><b>Username: </b></label><input type="text" name="username" id="username" />
-                    <br><br>
-
-                    <label for="password"><b>Password: </b></label><input type="password" name="passwd" id="passwd" />
-                    <br><br>
-
-                    <input type="submit" value="Login" />
-                </form>
-            </div>
+    <body>
+        <div class="heading">
+            <h1>USER LOGIN</h1>
+            <h2><strong>WELCOME TO THE LOGIN PAGE</strong></h2>
+        </div>
+        
+        <div class="main">
+            <form action="login.php" method="POST">
+                <label for="username">Username: </label><input type="text" name="username" id="username" />
+                <br><br>
+    
+                <label for="password">Password: </label><input type="password" name="passwd" id="passwd" />
+                <br><br>
+    
+                <input type="submit" class="submit" value="Login" />
+            </form>
         </div>
     </body>
 </html>

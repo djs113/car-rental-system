@@ -10,9 +10,13 @@
     if ($_POST['otp'])
     {
         echo '
-            <p>
-                Payment is successful.
-            </p>
+            <link rel="stylesheet" type="text/css" href="confirm-payment-css.css">
+
+            <div class="main">
+                <p>
+                    Payment is successful.
+                </p> 
+            </div>
         ';
 
         if (isset($_SESSION['ongoing_payment']) && ($_SESSION['ongoing_payment'] == TRUE))

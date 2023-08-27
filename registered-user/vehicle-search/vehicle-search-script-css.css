@@ -11,14 +11,14 @@ body {
 
 .main {
     width: 875px;
-    height: 150px;
+    height: fit-content;
     background: red;
     overflow: hidden;
     background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/cover;
     border-radius: 10px;
     box-shadow: 5px 20px 50px #000;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 50px;
+    padding-bottom: 120px;
     position: relative;
     color: white;
     text-align: center;
@@ -32,7 +32,7 @@ table {
     color: white;
 }
 
-input {
+input, button {
     width: 100px;
 	height: 40px;
 	margin: 10px auto;
@@ -48,4 +48,14 @@ input {
 	border-radius: 5px;
 	transition: .2s ease-in;
 	cursor: pointer;
+}
+
+button {
+    bottom: 20px;
+    position: absolute;
+}
+
+button a {
+    text-decoration: none;
+    color: white;
 }

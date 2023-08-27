@@ -168,6 +168,7 @@
 
             echo '
                     </table>
+                    <button><a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go back</a></button>
                 </div>
             ';
         }

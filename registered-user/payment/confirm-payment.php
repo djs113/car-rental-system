@@ -16,7 +16,6 @@
                 <p>
                     Payment is successful.
                 </p> 
-            </div>
         ';
 
         if (isset($_SESSION['ongoing_payment']) && ($_SESSION['ongoing_payment'] == TRUE))
@@ -25,13 +24,14 @@
         $payment_time = date("Y-m-d h:i:s");
         $_SESSION['payment_time'] = $payment_time;
 
-        sleep(3);
+        // sleep(3);
 
         echo '
-            <form action="/car-rental-system/registered-user/booking/booking-processing-script.php" method="POST">
-                <input type="hidden" id="payment_success" name="payment_success" value="TRUE" />
-                <input type="submit" value="Proceed" />
-            </form>
+                <form action="/car-rental-system/registered-user/booking/booking-processing-script.php" method="POST">
+                    <input type="hidden" id="payment_success" name="payment_success" value="TRUE" />
+                    <input type="submit" value="Proceed" />
+                </form>
+            </div>
         ';
 
         // header('location:/car-rental-system/registered-user/booking/booking-processing-script.php?payment_success="TRUE"');

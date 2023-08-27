@@ -26,6 +26,11 @@
 
         if ($payment_method == 'card')
         {
+            echo '
+                <link rel="stylesheet" type="text/css" href="payment-script-css.css">
+                <div class="main">      
+            ';
+
             $qry = "SELECT card_name, card_number, card_id FROM user_cards WHERE username='$username'";
             $res_array = mysqli_query($conn, $qry);
             
@@ -42,14 +47,15 @@
                     
                     echo '
                         <form action="process-payment-form.php" method="POST">
-                            <label for="card_name">Card Name: '.$res[0].'</label>
+                            <label for="card_name">Card Name: </label><p>'.$res[0].'</p>
                             <br><br>
 
-                            <label for="card_number">Card Number: '.$masked_card_number.'</label>
+                            <label for="card_number">Card Number: </label><p>'.$masked_card_number.'</p>
                             <input type="hidden" id="card_number" name="card_number" value="'.$res[1].'" />
                             <br><br>
 
-                            <input type="submit" value="Pay" />
+                            <div class="buttons">
+                                <input type="submit" value="Pay" />
                         </form>
                     ';
                 } else
@@ -80,6 +86,7 @@
                         </script>
                         <h2>Card Name (Card Number)</h2>
                         <form action="process-payment-form.php" method="POST" onsubmit="return formValidate()"> 
+                        <div class="cards">
                     ';
 
                     $num = 1;
@@ -90,23 +97,32 @@
                         $masked_card_number = "XXXXX".substr($res[1], -4);
                         
                         echo '
-                            <input type="radio" id="card_'.$num.'" name="card_number" value="'.$res[1].'" />
-                            <label for="card">'.$res[0].' ('.$masked_card_number.')</label>
+                            <div class="card">
+                                <p>'.$res[0].' ('.$masked_card_number.')</p>
+                                <input type="radio" class="radio" "id="card_'.$num.'" name="card_number" value="'.$res[1].'" />
+                            </div>
                         ';
-
                         $num++;
                     }
 
                     echo '
+                            </div>
+                            <div class="buttons">
                             <input type="submit" value="Pay" />
                         </form>  
                     ';
                 }
             } else
-                echo 'No saved cards.';
+                echo '
+                    No saved cards.
+                    <div class="buttons">   
+                ';
 
             echo '
-                <button><a href="/car-rental-system/registered-user/payment/cards/add-card.php">Add new card</a></button> 
+                    <button><a href="/car-rental-system/registered-user/payment/cards/add-card.php">Add new card</a></button> 
+                    <button><a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go home</a></button>
+                </div>
+            </div>    
             ';
         } else 
         {

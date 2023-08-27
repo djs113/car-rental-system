@@ -8,6 +8,11 @@
 
     if ($_POST['pick_up_date'] && $_POST['pick_up_time'] && $_POST['drop_off_date'] && $_POST['drop_off_time'])
     {
+        echo '
+            <link rel="stylesheet" type="text/css" href="vehicle-search-script-css.css">
+            <div class="main">
+        ';
+
         $_SESSION['booking_ongoing'] = TRUE;
 
         $given_pick_up_date = $_POST['pick_up_date'];
@@ -98,6 +103,7 @@
             echo 'No available vehicles for this time period
                   <br><br>
                   <button><a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Search again</a></button>
+                  </div>
             ';
     
         } else
@@ -161,7 +167,8 @@
             }
 
             echo '
-                </table>
+                    </table>
+                </div>
             ';
         }
     } else

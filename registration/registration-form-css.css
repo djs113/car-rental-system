@@ -17,7 +17,6 @@ body {
     border-radius: 10px;
     box-shadow: 5px 20px 50px #000;
     padding-top: 30px;
-    padding-bottom: 10px;
     position: relative;
     top: 20px;
 }
@@ -40,6 +39,7 @@ input {
 	outline: none;
 	border-radius: 5px;
     text-align: center;
+    font-size: 16px;
 }
 
 #submit {
@@ -58,6 +58,8 @@ input {
 	border-radius: 5px;
 	transition: .2s ease-in;
 	cursor: pointer;
+    position: relative;
+    bottom: 15px;
 }
 
 .heading {

@@ -24,7 +24,7 @@
         $payment_time = date("Y-m-d h:i:s");
         $_SESSION['payment_time'] = $payment_time;
 
-        // sleep(3);
+        sleep(3);
 
         echo '
                 <form action="/car-rental-system/registered-user/booking/booking-processing-script.php" method="POST">
@@ -33,8 +33,6 @@
                 </form>
             </div>
         ';
-
-        // header('location:/car-rental-system/registered-user/booking/booking-processing-script.php?payment_success="TRUE"');
     } else
     {
         sleep(3);

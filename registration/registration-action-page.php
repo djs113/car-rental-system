@@ -11,8 +11,6 @@
         die("Connection error".$conn->connect_error);
     }
 
-    echo "Connection successful<br>";    
-
     $username = $_POST['username'];
     $passwd = $_POST['passwd'];
     $first_name = $_POST['first_name'];
@@ -25,19 +23,31 @@
     $sql .= "INSERT INTO user_emails VALUES ('$email', '$username');";
     $sql .= "INSERT INTO user_phone_numbers VALUES ('$phone_number', '$username');";
     
+    echo '
+        <link rel="stylesheet" type="text/css" href="registration-action-page-css.css">
+        <div class="main">
+    ';
+
     if ($conn->multi_query($sql) == TRUE)
     {
-       echo 'User successfully added<br>
-             <button><a href="/car-rental-system/registered-user/user-login/user-login-page.html">Login</a></button>
+       echo '
+            <p>User successfully added</p><br>
+            <button><a href="/car-rental-system/registered-user/user-login/user-login-page.html">Login</a></button>
        ';
     } else
     {
-        echo 'Error in addition of user<br>Error: '.$conn->error.'
-              <button><a href="/car-rental-system/registration/registration-form.html">Registration</a></button>
-        ';
-             
+        echo '
+            <p>
+                Error in addition of user<br>
+                Error: '.$conn->error.'
+            </p>
+            <button><a href="/car-rental-system/registration/registration-form.html">Registration</a></button>
+        ';       
     }
 
-    $conn->close();
+    echo '
+        </div>
+    ';
 
+    $conn->close();
 ?>

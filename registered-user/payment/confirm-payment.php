@@ -27,7 +27,14 @@
 
         sleep(3);
 
-        header('location:/car-rental-system/registered-user/booking/booking-processing-script.php?payment_success="TRUE"');
+        echo '
+            <form action="/car-rental-system/registered-user/booking/booking-processing-script.php" method="POST">
+                <input type="hidden" id="payment_success" name="payment_success" value="TRUE" />
+                <input type="submit" value="Proceed" />
+            </form>
+        ';
+
+        // header('location:/car-rental-system/registered-user/booking/booking-processing-script.php?payment_success="TRUE"');
     } else
     {
         sleep(3);

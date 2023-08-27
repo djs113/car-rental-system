@@ -131,7 +131,7 @@
                     Error while booking vehicle<br>
                     Error: ".$conn->error;
             }
-        } else if (isset($_REQUEST['payment_success']))
+        } else if ((isset($_POST['payment_success'])) && ($_POST['payment_success'] == TRUE))
         {
             // card bookings
 
@@ -168,7 +168,8 @@
             
         } else 
         {
-            header("location:/car-rental-system/registered-user/vehicle-search-form.php");
+            
+            // header("location:/car-rental-system/registered-user/vehicle-search-form.php");
             exit;
         }
     }

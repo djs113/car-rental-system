@@ -164,8 +164,6 @@
                     Error while booking vehicle<br>
                     Error: ".$conn->error;
             }
-
-            
         } else 
         {
             

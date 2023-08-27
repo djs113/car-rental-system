@@ -14,6 +14,11 @@
 
     if ($_SESSION['model_id'])
     {
+        echo '
+            <link rel="stylesheet" type="text/css" href="booking-processing-script-css.css">
+            <div class="main">
+        ';
+        
         $model_id = $_SESSION['model_id'];
         
         // retreive unbooked vehicles
@@ -123,14 +128,23 @@
 
                 echo '
                     Booking successful
-                    <button><a href="/car-rental-system/registered-user/profile-management/manage-booking.php?booking_id='.$res['booking_id'].'">View booking</a></button>     
+                    <div class="buttons">
+                        <button><a href="/car-rental-system/registered-user/profile-management/manage-booking.php?booking_id='.$res['booking_id'].'">View booking</a></button>
                 ';
             } else
             {
-                echo "
+                echo '
                     Error while booking vehicle<br>
-                    Error: ".$conn->error;
+                    Error: '.$conn->error.'
+                    <div class="buttons">
+                ';
             }
+
+            echo '
+                        <button><a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go home</a></button> 
+                    </div>
+                </div>    
+            ';
         } else if ((isset($_POST['payment_success'])) && ($_POST['payment_success'] == TRUE))
         {
             // card bookings
@@ -154,19 +168,31 @@
                 $res = mysqli_fetch_array($res_array);
                 
                 echo '
-                    Booking successful
-                    <button><a href="/car-rental-system/registered-user/profile-management/manage-booking.php?booking_id='.$res['booking_id'].'">View booking</a></button>     
+                    <p>
+                        Booking successful
+                    </p>
+                    <div class="buttons">
+                        <button><a href="/car-rental-system/registered-user/profile-management/manage-booking.php?booking_id='.$res['booking_id'].'">View booking</a></button> 
                 ';
             }
             else
             {
-                echo "
-                    Error while booking vehicle<br>
-                    Error: ".$conn->error;
-            }
+                echo '
+                    <p>
+                        Error while booking vehicle<br>
+                        Error: '.$conn->error.'
+                    </p>
+                    <div class="buttons"> 
+                ';
+            }   
+        
+            echo '
+                        <button><a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go home</a></button>
+                    </div>
+                </div>
+            ';
         } else 
         {
-            
             header("location:/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php");
             exit;
         }

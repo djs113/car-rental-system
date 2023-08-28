@@ -12,6 +12,13 @@
     if ($conn->connect_error)
         die("Connection error".$conn->connect_error);
 
+    echo '
+        <link rel="stylesheet" type="text/css" href="/car-rental-system/car/add-car/add-car-script-css.css">
+        <div class="main">
+            <p>
+    ';
+
+
     $brand_name = $_POST['brand_name'];
     $model_name = $_POST['model_name'];
     $registration_number = $_POST['registration_number'];
@@ -37,8 +44,8 @@
         echo 'Error in addition of car';
 
     echo '
-        <br><br>
-        <button><a href="/car-rental-system/car/add-car/add-car-form.php">Go back</a></button>
-    ';
-    
+            </p>
+            <button><a href="/car-rental-system/car/add-car/add-car-form.php">Go back</a></button>
+        </div>    
+    '; 
 ?>

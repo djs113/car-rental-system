@@ -17,6 +17,11 @@
 
     if ((isset($_POST['booking_id'])) && (isset($_POST['registration_number'])))
     {
+        echo '
+            <link rel="stylesheet" type="text/css" href="/car-rental-system/admin/vehicle-return/return-vehicle-script-css.css">
+            <div class="main">     
+        ';
+
         $booking_id = $_POST['booking_id'];
         $registration_number = $_POST['registration_number'];
 
@@ -50,17 +55,25 @@
             }
             
             echo '
-                Successfully returned vehicle
-                <br><br>
+                <p>
+                    Successfully returned vehicle
+                    <br><br>
+                </p>
             ';
         } else
         {
             echo '
-                Error in returning vehicle<br>
-                Error: '.$conn->error.'<br><br>';
+                <p>
+                    Error in returning vehicle<br>
+                    Error: '.$conn->error.'<br><br>
+                </p>
+            ';
         }
 
-        echo '<button><a href="/car-rental-system/admin/vehicle-return/returning-vehicles-display.php">Go back</a></button>'; 
+        echo '
+                <button><a href="/car-rental-system/admin/vehicle-return/returning-vehicles-display.php">Go back</a></button>
+            </div>   
+        '; 
     } else
         header("location:/car-rental-system/admin/vehicle-return/returning-vehicles-display.php");
 ?>

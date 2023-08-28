@@ -21,9 +21,12 @@
                     <title>
                         View Cars       
                     </title>
+                <link rel="stylesheet" type="text/css" href="/car-rental-system/car/view-car/view-all-cars-css.css">
                 </head>
-                <body><h2><u>View Cars</u></h2> 
-                
+                <h1>View Cars</h1> 
+                <div class="main">
+                    <body>
+                    
                     <table cellspacing="3" cellpadding="3" border="1">
                         <tr> 
                             <th>Registration Number</th>
@@ -61,14 +64,16 @@
                 ';
             }
 
-            echo '          <td><a href="/car-rental-system/car/modify-car/modify-car-form.php?registration_number='.$registration_number.'">Edit Car</a></td> 
-                            <td><a href="/car-rental-system/car/delete-car/delete-car-form.php?registration_number='.$registration_number.'">Delete Car</a></td>   
+            echo '          <td><button><a href="/car-rental-system/car/modify-car/modify-car-form.php?registration_number='.$registration_number.'">Edit Car</a></button></td> 
+                            <td><button><a href="/car-rental-system/car/delete-car/delete-car-form.php?registration_number='.$registration_number.'">Delete Car</a></button></td>   
                         </tr>
             ';
         }
 
         echo '
-                    </table>
+                        </table>
+                        <button><a href="/car-rental-system/admin/admin-home/admin-home-page.php">Go back</a></button>
+                    </div>
                 </body>
             </html>
         ';

@@ -95,26 +95,34 @@
                             }
                         }
                     </script>
+                <link rel="stylesheet" type="text/css" href="modify-contact-details-form-css.css">
                 </head>
+
                 <body>
-                    <form action="modify-contact-details-script.php" method="POST" onsubmit="return form_validate()">
-                        <label for="contact_email">Contact email: </label><input type="email" id="contact_email" name="contact_email" value="'.$contact_email.'"/>
-                        <br><br>
+                    <div class="main">
+                        <form action="modify-contact-details-script.php" method="POST" onsubmit="return form_validate()">
+                            <label for="contact_email">Contact email: </label><input type="email" id="contact_email" name="contact_email" value="'.$contact_email.'"/>
+                            <br><br>
 
-                        <label for="contact_number_1">Contact number 1: </label><input type="text" id="contact_number_1" name="contact_number_1" value="'.$contact_number_1.'"/>
-                        <br><br>
+                            <label for="contact_number_1">Contact number 1: </label><input type="text" id="contact_number_1" name="contact_number_1" value="'.$contact_number_1.'"/>
+                            <br><br>
 
-                        <label for="contact_number_2">Contact number 2: </label><input type="text" id="contact_number_2" name="contact_number_2" value="'.$contact_number_2.'"/>
-                        <br><br>
+                            <label for="contact_number_2">Contact number 2: </label><input type="text" id="contact_number_2" name="contact_number_2" value="'.$contact_number_2.'"/>
+                            <br><br>
 
-                        <label for="address">Address: </label>
-                        <br>
+                            <label for="address">Address: </label>
+                            <br>
 
-                        <textarea id="address" name="address" rows="10" cols="30">'.$address.'</textarea>
-                        <br><br>
+                            <textarea id="address" name="address" rows="10" cols="30">'.$address.'</textarea>
+                            <br><br>
 
-                        <input type="submit" value="Modify" />
-                    </form>
+                            <div class="buttons">
+                                <input type="submit" class="submit" value="Modify" />
+
+                                <button><a href="/car-rental-system/admin/admin-home/admin-home-page.php">Go back</a></button>
+                            </div>
+                        </form>
+                    </div>
                 </body>
             </html> 
         ';

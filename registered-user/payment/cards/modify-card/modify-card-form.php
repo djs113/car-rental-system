@@ -57,7 +57,10 @@
 
                     <input type="hidden" id="card_id" name="card_id" value="'.$res['card_id'].'" />
 
-                    <input type="submit" class="submit"value="Modify" /> 
+                    <div class="buttons">
+                        <input type="submit" class="submit" value="Modify" />
+                        <button><a href="/car-rental-system/registered-user/profile-management/view-cards.php">Go back</a></button>
+                    </div>        
                 </form>
             </div>
         ';

@@ -21,7 +21,7 @@
                     <title>
                         View Cars       
                     </title>
-                <link rel="stylesheet" type="text/css" href="/car-rental-system/car/view-car/view-all-cars-css.css">
+                    <link rel="stylesheet" type="text/css" href="/car-rental-system/car/view-car/view-all-cars-css.css">
                 </head>
                 <h1>View Cars</h1> 
                 <div class="main">

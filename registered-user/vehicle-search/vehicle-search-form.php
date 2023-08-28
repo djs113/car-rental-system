@@ -192,6 +192,13 @@
                                     <span class="item">Register</span>
                                 </a>
                             </li>
+
+                            <li>
+                                <a href="/car-rental-system/admin/admin-login/admin-login-form.php">
+                                    <span class="icon"><i class=""></i></span>
+                                    <span class="item">Admin Login</span>
+                                </a> 
+                            </li>
         ';
     }
 

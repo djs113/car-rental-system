@@ -12,6 +12,11 @@
     if ($conn->connect_error)
         die("Connection failed<br>Connection Error: ".$conn->connect_error);
 
+    echo '
+        <link rel="stylesheet" type="text/css" href="/car-rental-system/admin/vehicle-return/returning-vehicles-display-css.css"> 
+        <div class="main">  
+    ';
+
     date_default_timezone_set("Asia/Calcutta");
     $current_date = date("Y-m-d", time());
 
@@ -60,7 +65,7 @@
                             <input type="hidden" id="registration_number" name="registration_number" 
                             value="'.$res['registration_number'].'" />
                             
-                            <input type="submit" value="Accept return" />      
+                            <input type="submit" class="submit" value="Accept return" />      
                         </form>
                     </td>
                 </tr>
@@ -68,14 +73,17 @@
         }
 
         echo '
-            </table>
+                </table>
+                <button><a href="/car-rental-system/admin/admin-home/admin-home-page.php">Go back</a></button>
+            </div>
         ';
     } else
     {
         echo '
-            No vehicles to be returned
-            <br><br>
-            <button><a href="/car-rental-system/admin/admin-home/admin-home-page.php">Go back</a></button>    
+                <p>No vehicles to be returned</p>
+                <br><br>
+                <button><a href="/car-rental-system/admin/admin-home/admin-home-page.php">Go back</a></button>    
+            </div>     
         ';
     }
         

@@ -5,7 +5,7 @@
         </title>
     </head>
     <body>
-        <h2><u>Delete Car</u></h2>
+        <h1>Delete Car</h1>
         <?php
             session_start(); 
   
@@ -19,6 +19,11 @@
 
             if ($conn->connect_error) 
                 die("Connection failed<br>Connection Error: ".$conn->connect_error);
+
+            echo '
+                <link rel="stylesheet" type="text/css" href="/car-rental-system/car/delete-car/delete-car-form-css.css"> 
+                <div class="main">  
+            ';
                 
             $registration_number = $_REQUEST['registration_number'];
 
@@ -33,22 +38,25 @@
             $res = mysqli_fetch_array($res_array);
 
             echo '
-                Do you really want to delete this car?
-                <br><br>
-
                 <form action="delete-car.php" method="POST">
                     <input type="hidden" name="registration_number" id="registration_number" value="'.$registration_number.'">
 
-                    <label for="brand name">Brand Name: </label>'.$res['brand_name'].'
+                    <label for="brand name">Brand Name: </label><p>'.$res['brand_name'].'</p>
                     <br><br>
 
-                    <label for="model name">Model Name: </label>'.$res['model_name'].'
+                    <label for="model name">Model Name: </label><p>'.$res['model_name'].'</p>
                     <br><br>
 
-                    <label for="registration number">Registration Number: </label>'.$registration_number.'
+                    <label for="registration number">Registration Number: </label><p>'.$registration_number.'</p>
                     <br><br>
 
-                    <input type="submit" value="Delete Vehicle">
+                    <div class="message">Do you really want to delete this car?</div>
+                    <br><br>
+
+                    <div class="buttons">
+                        <input type="submit" class="submit" value="Delete Vehicle">
+                        <a href="/car-rental-system/car/view-car/view-all-cars.php">Go back</a>
+                    </div>
                 </form>
             ';
         ?>

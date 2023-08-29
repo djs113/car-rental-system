@@ -45,4 +45,12 @@ a {
     text-decoration: none;
     color: white;
     text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+p {
+    position: relative;
+    bottom: -15px;
+    font-size: 18px;
 }

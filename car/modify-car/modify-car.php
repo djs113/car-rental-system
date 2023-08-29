@@ -27,9 +27,9 @@
     $qry .= "UPDATE engine_numbers SET engine_number = '$engine_number' WHERE registration_number = '$registration_number'";
     
     if ($conn->multi_query($qry) == TRUE)
-        echo "Car successfully modified.<br><br>";
+        echo "<p>Car successfully modified</p>";
     else
-        echo "Error in modification of car.<br>Error: ".$conn->error;
+        echo "<p>Error in modification of car.<br>Error: ".$conn->error."</p>";
    
     echo '
             <a href="/car-rental-system/admin/admin-home/admin-home-page.php">Go back</a>

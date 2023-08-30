@@ -17,10 +17,23 @@
 
     $model_id = $_POST['model_id'];
 
-    $qry = "DELETE FROM vehicle_models WHERE model_id = $model_id";
+    $qry = "SELECT COUNT(*) FROM vehicles WHERE model_id = $model_id";
+
+    $res_array = mysqli_query($conn, $qry);
+    $res = mysqli_fetch_array($res_array);
+
+    $vehicle_count = $res[0];
+
+    if ($vehicle_count == 0)
+    {
+        $qry = "DELETE FROM vehicle_models WHERE model_id = $model_id";
  
-    if ($conn->query($qry) == TRUE)
-        echo "Car model successfully deleted.<br>";
-    else
-        echo "Error in deletion of car model.<br>Error: ".$conn->error;
+        if ($conn->query($qry) == TRUE)
+            echo "Car model successfully deleted.<br>";
+        else
+            echo "Error in deletion of car model.<br>Error: ".$conn->error;
+    } else 
+    {
+        echo 'There are vehicles belonging to this model, please delete them first before this model can be deleted<br>';
+    }    
 ?>

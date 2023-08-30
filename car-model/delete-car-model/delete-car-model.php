@@ -12,8 +12,11 @@
     if ($conn->connect_error)
         die("Connection error".$conn->connect_error);
 
-    // $brand_name = $_POST['brand_name'];
-    // $model_name = $_POST['model_name'];
+    echo '
+        <link rel="stylesheet" type="text/css" href="/car-rental-system/car-model/delete-car-model/delete-car-model-css.css"> 
+        <div class="main">
+            <p>  
+    ';
 
     $model_id = $_POST['model_id'];
 
@@ -35,5 +38,11 @@
     } else 
     {
         echo 'There are vehicles belonging to this model, please delete them first before this model can be deleted<br>';
-    }    
+    }   
+    
+    echo '
+            </p>
+            <a href="/car-rental-system/car-model/view-car-model/view-all-models.php">Go back</a>
+        </div> 
+    ';
 ?>

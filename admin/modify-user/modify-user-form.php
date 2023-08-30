@@ -47,6 +47,7 @@
                 }
             }
         </script>
+        <link rel="stylesheet" type="text/css" href="/car-rental-system/admin/modify-user/modify-user-form-css.css">
     </head>
     <body>
         <?php
@@ -63,30 +64,33 @@
             $res_array = mysqli_query($conn, $qry);
             $res = mysqli_fetch_array($res_array);
         ?>
-        <h2><u>Modify User</u></h2>
-        <form action="modify-user.php" method="POST" onsubmit="return form_validate()">
-            <input type="hidden" name="username" value="<?php echo $username;?>" />
-            <br><br>
 
-            <label for="username">Username: <?php echo $res['username'];?>
-            <br><br>
+        <h1>Modify User</h1>
+        <div class="main">
+            <form action="modify-user.php" method="POST" onsubmit="return form_validate()">
+                <input type="hidden" name="username" value="<?php echo $username;?>" />
+                <br><br>
 
-            <label for="first_name">First Name: </label><input type="text" name="first_name" id="first_name" value="<?php echo $res['first_name'];?>" />
-            <br><br>
+                <label for="username">Username: </label><p><?php echo $res['username'];?></p>
+                <br><br>
 
-            <label for="last_name">Last Name: </label><input type="text" name="last_name" id="last_name" value="<?php echo $res['last_name'];?>" />
-            <br><br>
+                <label for="first_name">First Name: </label><input type="text" name="first_name" id="first_name" value="<?php echo $res['first_name'];?>" />
+                <br><br>
 
-            <label for="passwd">Password Hash: </label><input type="text" name="passwd" id="passwd" value="<?php echo $res['passwd'];?>" />
-            <br><br>
+                <label for="last_name">Last Name: </label><input type="text" name="last_name" id="last_name" value="<?php echo $res['last_name'];?>" />
+                <br><br>
 
-            <label for="email">Email: </label><input type="email" name="email" id="email" value="<?php echo $res['email'];?>" />
-            <br><br>
+                <label for="email">Email: </label><input type="email" name="email" id="email" value="<?php echo $res['email'];?>" />
+                <br><br>
 
-            <label for="phone_number">Phone Number: </label><input type="text" name="phone_number" id="phone_number" value="<?php echo $res['phone_number'];?>" />
-            <br><br>
+                <label for="phone_number">Phone Number: </label><input type="text" name="phone_number" id="phone_number" value="<?php echo $res['phone_number'];?>" />
+                <br><br>
 
-            <input type="submit" value="Modify User" />
-        </form>
+                <div class="buttons">
+                    <input type="submit" class="submit" value="Modify User" />
+                    <a href="/car-rental-system/admin/admin-home/admin-home-page.php">Go back</a>
+                </div>
+            </form>
+        </div>
     </body>
 </html>

@@ -15,15 +15,14 @@
     $res_array = mysqli_query($conn, $qry);
 
     echo '
-        <html?>
+        <html>
             <head>
                 <title>
                     View Users       
                 </title>
                 <link rel="stylesheet" href="/car-rental-system/admin/view-user/view-all-users-css.css">
             </head>
-            <body>
-                <div class="main"> 
+            <body>     
     ';
 
     $user_count = mysqli_num_rows($res_array);
@@ -31,17 +30,18 @@
     if ($user_count != 0)
     {
         echo '
-            <h2><u>View Users</u></h2>
+            <h1>View Users</h1>
             
-            <table cellspacing="3" cellpadding="3" border="1">
-            <tr>
-                <th>Username</th>
-                <th>Password</th>  
-                <th>First Name</th>  
-                <th>Last Name</th>
-                <th>Email</th>  
-                <th>Phone Number</th>
-            </tr>
+            <div class="main">    
+                <table cellspacing="3" cellpadding="3" border="1">
+                <tr>
+                    <th>Username</th>
+                    <th>Password</th>  
+                    <th>First Name</th>  
+                    <th>Last Name</th>
+                    <th>Email</th>  
+                    <th>Phone Number</th>
+                </tr>
         ';
         
         while ($res = mysqli_fetch_array($res_array))
@@ -65,8 +65,9 @@
         ';
     } else {
         echo '
-            <p>No users are added</p>
-            <br>
+            <div class="no_users">
+                <p>No users are added</p>
+                <br>
         ';
     }
 

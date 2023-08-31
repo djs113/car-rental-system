@@ -32,7 +32,7 @@
     {
        echo '
             <p>User successfully added</p><br>
-            <button><a href="/car-rental-system/registered-user/user-login/user-login-page.html">Login</a></button>
+            <a href="/car-rental-system/registered-user/user-login/user-login-page.html">Login</a>
        ';
     } else
     {
@@ -41,7 +41,7 @@
                 Error in addition of user<br>
                 Error: '.$conn->error.'
             </p>
-            <button><a href="/car-rental-system/registration/registration-form.html">Registration</a></button>
+            <a href="/car-rental-system/registration/registration-form.html">Registration</a>
         ';       
     }
 

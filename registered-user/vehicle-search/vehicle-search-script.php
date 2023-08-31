@@ -102,7 +102,7 @@
 
             echo 'No available vehicles for this time period
                   <br><br>
-                  <button><a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Search again</a></button>
+                  <a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Search again</a>
                   </div>
             ';
     
@@ -168,7 +168,7 @@
 
             echo '
                     </table>
-                    <button><a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go back</a></button>
+                    <a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go back</a>
                 </div>
             ';
         }

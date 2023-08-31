@@ -134,7 +134,7 @@
 
                     <div class="buttons">
                         <input type="submit" class="submit" value="Add Vehicle" />
-                        <button><a href="/car-rental-system/admin/admin-home/admin-home-page.php">Go back</a></button>
+                        <a href="/car-rental-system/admin/admin-home/admin-home-page.php">Go back</a>
                     </div>
                 </form>
             ';

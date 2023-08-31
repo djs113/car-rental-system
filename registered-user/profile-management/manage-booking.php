@@ -142,7 +142,7 @@
                         Invalid booking id
                         <br><br>
                     </div>   
-                    <button><a href="/car-rental-system/registered-user/profile-management/view-bookings.php">Go back</a></button>
+                    <a href="/car-rental-system/registered-user/profile-management/view-bookings.php">Go back</a>
                 ';
             }
         }
@@ -157,7 +157,7 @@
     {
             echo '
                 <div class="buttons">
-                    <button><a href="/car-rental-system/registered-user/profile-management/view-bookings.php">Go back</a></button> 
+                    <a href="/car-rental-system/registered-user/profile-management/view-bookings.php">Go back</a> 
                     <br>
                     
                     <form action="cancel-booking.php" method="POST">

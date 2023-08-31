@@ -75,14 +75,14 @@
                 No saved cards
                 <br><br>
             
-                <button><a href="/car-rental-system/registered-user/payment/cards/add-card.php">Add card</a></button>
+                <a href="/car-rental-system/registered-user/payment/cards/add-card.php">Add card</a>
         ';
     }
 
     echo '
             <br><br>
             <div class="back_button">
-                <button><a href="/car-rental-system/registered-user/profile-management/view-profile.php">Go back</a></button>
+                <a href="/car-rental-system/registered-user/profile-management/view-profile.php">Go back</a>
             </div>
         </div>
     ';

@@ -43,8 +43,8 @@
         echo '
                 </p>
                 <div class="buttons">
-                    <button><a href="/car-rental-system/admin/contact-management/modify-contact-details/modify-contact-details-form.php">Go back</a></button>
-                    <button><a href="/car-rental-system/admin/admin-home/admin-home-page.php">Go home</a></button> 
+                    <a href="/car-rental-system/admin/contact-management/modify-contact-details/modify-contact-details-form.php">Go back</a>
+                    <a href="/car-rental-system/admin/admin-home/admin-home-page.php">Go home</a> 
                 </div>
             </div>
         ';

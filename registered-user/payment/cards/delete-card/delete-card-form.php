@@ -51,7 +51,7 @@
                     
                     <div class="buttons">
                         <input type="submit" class="submit" value="Delete" />
-                        <button><a href="/car-rental-system/registered-user/profile-management/view-cards.php">Go back</a></button>
+                        <a href="/car-rental-system/registered-user/profile-management/view-cards.php">Go back</a>
                     </div>
                 </form>
             </div>

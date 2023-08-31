@@ -932,7 +932,7 @@ readers do not read off random characters that represent icons */
 .fa-circle-notch::before {
   content: "\f1ce"; }
 
-.fa-tablet-screen-button::before {
+.fa-tablet-screen-a::before {
   content: "\f3fa"; }
 
 .fa-tablet-alt::before {
@@ -1724,7 +1724,7 @@ readers do not read off random characters that represent icons */
 .fa-c::before {
   content: "\43"; }
 
-.fa-tablet-button::before {
+.fa-tablet-a::before {
   content: "\f10a"; }
 
 .fa-building-lock::before {
@@ -3215,7 +3215,7 @@ readers do not read off random characters that represent icons */
 .fa-arrow-alt-circle-up::before {
   content: "\f35b"; }
 
-.fa-mobile-screen-button::before {
+.fa-mobile-screen-a::before {
   content: "\f3cd"; }
 
 .fa-mobile-alt::before {
@@ -3371,7 +3371,7 @@ readers do not read off random characters that represent icons */
 .fa-terminal::before {
   content: "\f120"; }
 
-.fa-mobile-button::before {
+.fa-mobile-a::before {
   content: "\f10b"; }
 
 .fa-house-medical-flag::before {

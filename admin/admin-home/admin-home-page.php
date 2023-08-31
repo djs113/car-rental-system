@@ -34,45 +34,45 @@
     if ($details_count == 0)
     {
         echo '
-            <button><a href="/car-rental-system/admin/contact-management/add-contact-details/add-contact-details-form.php">
-            Add contact details</a></button> 
+            <a href="/car-rental-system/admin/contact-management/add-contact-details/add-contact-details-form.php">
+            Add contact details</a> 
             <br><br>
         ';
     } else 
     {
         echo '
-            <button><a href="/car-rental-system/admin/contact-management/modify-contact-details/modify-contact-details-form.php">
-            Modify contact details</a></button>
+            <a href="/car-rental-system/admin/contact-management/modify-contact-details/modify-contact-details-form.php">
+            Modify contact details</a>
             <br><br> 
         ';
     }
     
     echo '
 
-                <button><a href="/car-rental-system/admin/vehicle-return/returning-vehicles-display.php">View returning 
-                vehicles</a></button>
+                <a href="/car-rental-system/admin/vehicle-return/returning-vehicles-display.php">View returning 
+                vehicles</a>
                 <br><br>
                 
-                <button><a href="/car-rental-system/car/add-car/add-car-form.php">Add car</a>
-                <br><br></button>
+                <a href="/car-rental-system/car/add-car/add-car-form.php">Add car</a>
+                <br><br>
             </div>
 
             <div class="row2">
-                <button><a href="/car-rental-system/car/view-car/view-all-cars.php">View cars</a>
-                <br><br></button>
+                <a href="/car-rental-system/car/view-car/view-all-cars.php">View cars</a>
+                <br><br>
 
-                <button><a href="/car-rental-system/car-model/add-car-model/add-car-model-form.php">Add car model</a>
-                <br><br></button>
+                <a href="/car-rental-system/car-model/add-car-model/add-car-model-form.php">Add car model</a>
+                <br><br>
 
-                <button><a href="/car-rental-system/car-model/view-car-model/view-all-models.php">View car models</a>
-                <br><br></button>
+                <a href="/car-rental-system/car-model/view-car-model/view-all-models.php">View car models</a>
+                <br><br>
             </div>
 
             <div class="row2">
-                <button><a href="/car-rental-system/admin/view-user/view-all-users.php">View users</a>
-                <br><br></button>
+                <a href="/car-rental-system/admin/view-user/view-all-users.php">View users</a>
+                <br><br>
                 
-                <button><a href="/car-rental-system/admin/admin-login/admin-logout.php">Logout</a></button>
+                <a href="/car-rental-system/admin/admin-login/admin-logout.php">Logout</a>
             </div>
         </div>    
     ';

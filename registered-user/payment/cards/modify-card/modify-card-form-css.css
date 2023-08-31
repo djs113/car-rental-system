@@ -46,7 +46,7 @@ input, p {
     padding: 20px;
 }
 
-.submit, button {
+.submit, a {
     width: 200px;
 	height: 40px;
 	margin: 10px auto;
@@ -64,9 +64,11 @@ input, p {
 	cursor: pointer;
 }
 
-button a {
-    text-decoration: none;
+a {
     color: white;
+	text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 .buttons {

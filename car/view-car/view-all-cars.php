@@ -66,8 +66,8 @@
                     ';
                 }
 
-                echo '          <td><button><a href="/car-rental-system/car/modify-car/modify-car-form.php?registration_number='.$registration_number.'">Edit Car</a></button></td> 
-                                <td><button><a href="/car-rental-system/car/delete-car/delete-car-form.php?registration_number='.$registration_number.'">Delete Car</a></button></td>   
+                echo '          <td><a href="/car-rental-system/car/modify-car/modify-car-form.php?registration_number='.$registration_number.'">Edit Car</a></td> 
+                                <td><a href="/car-rental-system/car/delete-car/delete-car-form.php?registration_number='.$registration_number.'">Delete Car</a></td>   
                             </tr>
                 ';
             }
@@ -84,7 +84,7 @@
     }
 
     echo '
-                    <button><a href="/car-rental-system/admin/admin-home/admin-home-page.php">Go back</a></button>
+                    <a href="/car-rental-system/admin/admin-home/admin-home-page.php">Go back</a>
                 </div>
             </body>
         </html>

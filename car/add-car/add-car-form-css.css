@@ -46,7 +46,7 @@ input, select {
     text-align: center;
 }
 
-button, .submit {
+a, .submit {
     width: 200px;
 	height: 40px;
 	margin: 10px auto;
@@ -65,9 +65,11 @@ button, .submit {
     margin: 30px;
 }
 
-button a {
-    text-decoration: none;
+a {
     color: white;
+	text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 .buttons {

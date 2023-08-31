@@ -45,7 +45,7 @@
 
     echo '
             </p>
-            <button><a href="/car-rental-system/car/add-car/add-car-form.php">Go back</a></button>
+            <a href="/car-rental-system/car/add-car/add-car-form.php">Go back</a>
         </div>    
     '; 
 ?>

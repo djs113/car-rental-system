@@ -40,10 +40,10 @@
         </div>
         
         <div class="buttons">
-            <button><a href="/car-rental-system/registered-user/profile-management/edit-profile.php">Edit profile</a></button>
-            <button><a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go back</a></button>
-            <button><a href="/car-rental-system/registered-user/payment/cards/add-card.php">Add card</a></button>
-            <button><a href="/car-rental-system/registered-user/profile-management/view-cards.php">View cards</a></button>
+            <a href="/car-rental-system/registered-user/profile-management/edit-profile.php">Edit profile</a>
+            <a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go back</a>
+            <a href="/car-rental-system/registered-user/payment/cards/add-card.php">Add card</a>
+            <a href="/car-rental-system/registered-user/profile-management/view-cards.php">View cards</a>
         </div>
         
     ';

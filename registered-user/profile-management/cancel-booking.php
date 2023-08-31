@@ -77,7 +77,7 @@
 
         echo '
             </div>
-            <button><a href="/car-rental-system/registered-user/profile-management/view-bookings.php">Go back</a></button> 
+            <a href="/car-rental-system/registered-user/profile-management/view-bookings.php">Go back</a> 
         ';
     } else
         header("location:/car-rental-system/registered-user/profile-management/view-bookings.php"); 

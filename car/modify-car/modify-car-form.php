@@ -194,7 +194,7 @@
 
                     <div class="buttons">
                         <input type="submit" class="submit" value="Modify Vehicle" />
-                        <button><a href="/car-rental-system/car/view-car/view-all-cars.php">Go back</a></button>
+                        <a href="/car-rental-system/car/view-car/view-all-cars.php">Go back</a>
                     </div>
                 </form>
             </div>

@@ -71,7 +71,7 @@
         }
 
         echo '
-                <button><a href="/car-rental-system/admin/vehicle-return/returning-vehicles-display.php">Go back</a></button>
+                <a href="/car-rental-system/admin/vehicle-return/returning-vehicles-display.php">Go back</a>
             </div>   
         '; 
     } else

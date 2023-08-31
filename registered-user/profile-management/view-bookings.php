@@ -38,6 +38,7 @@
 
     echo '
         <link rel="stylesheet" type="text/css" href="/car-rental-system/registered-user/profile-management/view-bookings-css.css">    
+        <div class="main">  
     ';
 
     if ($total_bookings != 0)
@@ -98,6 +99,7 @@
     }
 
     echo '   
-        <button><a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go back</a></button> 
+        <a id="go_back" href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go back</a>
+        </div>
     ';
 ?>

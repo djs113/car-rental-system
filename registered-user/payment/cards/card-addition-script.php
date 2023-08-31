@@ -53,7 +53,7 @@
                 Card has already been added
                 <br><br>
                 </div>
-                <button><a href="/car-rental-system/registered-user/payment/cards/add-card.php">Go back</a></button>
+                <a href="/car-rental-system/registered-user/payment/cards/add-card.php">Go back</a>
             ';
 
             $add_card_flag = 0;
@@ -90,7 +90,7 @@
             {
                 echo '
                     </div>
-                    <button><a href="/car-rental-system/registered-user/profile-management/view-profile.php">Go back</a></button> 
+                    <a href="/car-rental-system/registered-user/profile-management/view-profile.php">Go back</a> 
                 ';
             }
         } else
@@ -99,7 +99,7 @@
                 Error in addition of card<br>
                 Error: '.$conn->error.'
                 </div>
-                <button><a href="/car-rental-system/registered-user/payment/cards/add-card.php">Try again</a></button>    
+                <a href="/car-rental-system/registered-user/payment/cards/add-card.php">Try again</a>    
             ';        
         }
     }

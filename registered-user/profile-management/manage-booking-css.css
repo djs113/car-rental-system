@@ -46,7 +46,7 @@ p {
 	border-radius: 5px;
 }
 
-button, input {
+a, input {
     width: 200px;
 	height: 40px;
 	margin: 10px auto;
@@ -71,7 +71,9 @@ button, input {
     justify-content: space-around;
 }
 
-button a {
-    text-decoration: none;
+a {
     color: white;
+	text-decoration: none;
+    display: flex;
+    align-items: center;
 }

@@ -129,7 +129,7 @@
                 echo '
                     Booking successful
                     <div class="buttons">
-                        <button><a href="/car-rental-system/registered-user/profile-management/manage-booking.php?booking_id='.$res['booking_id'].'">View booking</a></button>
+                        <a href="/car-rental-system/registered-user/profile-management/manage-booking.php?booking_id='.$res['booking_id'].'">View booking</a>
                 ';
             } else
             {
@@ -141,7 +141,7 @@
             }
 
             echo '
-                        <button><a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go home</a></button> 
+                        <a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go home</a> 
                     </div>
                 </div>    
             ';
@@ -172,7 +172,7 @@
                         Booking successful
                     </p>
                     <div class="buttons">
-                        <button><a href="/car-rental-system/registered-user/profile-management/manage-booking.php?booking_id='.$res['booking_id'].'">View booking</a></button> 
+                        <a href="/car-rental-system/registered-user/profile-management/manage-booking.php?booking_id='.$res['booking_id'].'">View booking</a> 
                 ';
             }
             else
@@ -187,7 +187,7 @@
             }   
         
             echo '
-                        <button><a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go home</a></button>
+                        <a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go home</a>
                     </div>
                 </div>
             ';

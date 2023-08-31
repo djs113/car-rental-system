@@ -92,7 +92,7 @@
                         <input type="submit" value="Proceed to payment" />  
                     </form>
 
-                    <button><a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go home</a></button>
+                    <a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go home</a>
                 </div>
             </div>            
         ';

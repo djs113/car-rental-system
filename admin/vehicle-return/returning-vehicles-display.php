@@ -74,7 +74,7 @@
 
         echo '
                 </table>
-                <button><a href="/car-rental-system/admin/admin-home/admin-home-page.php">Go back</a></button>
+                <a href="/car-rental-system/admin/admin-home/admin-home-page.php">Go back</a>
             </div>
         ';
     } else
@@ -82,7 +82,7 @@
         echo '
                 <p>No vehicles to be returned</p>
                 <br><br>
-                <button><a href="/car-rental-system/admin/admin-home/admin-home-page.php">Go back</a></button>    
+                <a href="/car-rental-system/admin/admin-home/admin-home-page.php">Go back</a>    
             </div>     
         ';
     }

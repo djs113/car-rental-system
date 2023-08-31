@@ -31,7 +31,7 @@ p {
     font-size: 18px;
 }
 
-button {
+a {
     width: 200px;
 	height: 40px;
 	margin: 10px auto;
@@ -51,7 +51,9 @@ button {
     bottom: 5px;
 }
 
-button a {
-    text-decoration: none;
+a {
     color: white;
+	text-decoration: none;
+    display: flex;
+    align-items: center;
 }

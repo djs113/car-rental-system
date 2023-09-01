@@ -14,7 +14,6 @@
 
     if ($_POST['payment_method'])
     {
-        $_SESSION['ongoing_payment'] = TRUE;
         $payment_method = $_POST['payment_method'];
         
         // to retain value of payment method after leaving this page to add a new card
@@ -26,6 +25,8 @@
 
         if ($payment_method == 'card')
         {
+            $_SESSION['ongoing_payment'] = TRUE;
+
             echo '
                 <link rel="stylesheet" type="text/css" href="payment-script-css.css">
                 <div class="main">      

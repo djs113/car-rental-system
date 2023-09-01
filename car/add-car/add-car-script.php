@@ -83,9 +83,8 @@
         }
 
         echo '
-                </span>
+                    </span>
                 </p>
-                <br><br>
                 <a href="/car-rental-system/car/add-car/add-car-form.php">Go back</a>
             </div>
         ';

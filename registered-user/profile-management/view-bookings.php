@@ -26,7 +26,7 @@
     $count_qry = "SELECT COUNT(*) FROM cash_booking_details WHERE username = '$username'";
 
     $cash_count_res_array = mysqli_query($conn, $count_qry);
-    $cash_count_res = mysqli_fetch_array($card_count_res_array);
+    $cash_count_res = mysqli_fetch_array($cash_count_res_array);
 
     if (is_null($card_count_res))
         $card_count_res[0] = 0;

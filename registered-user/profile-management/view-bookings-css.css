@@ -24,6 +24,15 @@ table {
     color: white;
 }
 
+p {
+    font-size: 18px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 18px;
+}
+
 a {
     width: 200px;
 	height: 40px;

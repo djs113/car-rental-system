@@ -93,7 +93,7 @@
     } else
     {
         echo '
-            No bookings available!
+            <p>No bookings available!</p>
             <br><br>     
         ';
     }

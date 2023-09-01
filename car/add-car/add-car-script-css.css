@@ -53,5 +53,9 @@ a {
 p {
     font-size: 18px;
     position: relative;
-    bottom: -5px;
+    bottom: -5px;    
+}
+
+span {
+    text-align: center;
 }

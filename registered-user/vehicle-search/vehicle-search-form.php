@@ -187,7 +187,7 @@
                             </li>
 
                             <li>
-                                <a class="sidebar_item" "href="/car-rental-system/registration/registration-form.html">
+                                <a class="sidebar_item" href="/car-rental-system/registration/registration-form.html">
                                     <span class="icon"><i class=""></i></span>
                                     <span class="item">Register</span>
                                 </a>

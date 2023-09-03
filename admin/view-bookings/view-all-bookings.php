@@ -71,7 +71,7 @@
                         <td>'.$card_booking_res['card_id'].'</td>
                         <td>'.$card_booking_res['registration_number'].'</td>
                         <td>
-                            <form action="/car-rental-system/registered-user/profile-management/cancel-booking.php" method="POST">
+                            <form action="/car-rental-system/admin/delete-bookings/delete-booking-script.php" method="POST">
                                 <input type="hidden" id="booking_id" name="booking_id" value="'.$card_booking_res['booking_id'].'" />
                                 <input type="submit" value="Cancel booking" />
                             </form>
@@ -128,7 +128,7 @@
                         <td>'.$cash_booking_res['username'].'</td>
                         <td>'.$cash_booking_res['registration_number'].'</td>
                         <td>
-                            <form method="/car-rental-system/registered-user/profile-managment/cancel-booking.php" method="POST">
+                            <form action="/car-rental-system/admin/delete-bookings/delete-booking-script.php" method="POST">
                                 <input type="hidden" id="booking_id" name="booking_id" value="'.$cash_booking_res['booking_id'].'" />
                                 <input type="submit" value="Cancel booking" /> 
                             </form>

@@ -1,7 +1,6 @@
 <?php
     session_start();
-    session_unset();
-    session_destroy();
-
+    unset($_SESSION['login_user']);
+    
     header("location:/car-rental-system/registered-user/user-login/user-login-page.html");
 ?>

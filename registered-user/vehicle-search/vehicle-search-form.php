@@ -192,13 +192,28 @@
                                     <span class="item">Register</span>
                                 </a>
                             </li>
-
-                            <li>
-                                <a class="sidebar_item" href="/car-rental-system/admin/admin-login/admin-login-form.php">
-                                    <span class="icon"><i class=""></i></span>
-                                    <span class="item">Admin Login</span>
-                                </a> 
-                            </li>
+        ';
+    }
+    
+    if (!(isset($_SESSION['login_admin'])))
+    {
+        echo '
+                        <li>
+                            <a class="sidebar_item" href="/car-rental-system/admin/admin-login/admin-login-form.php">
+                                <span class="icon"><i class=""></i></span>
+                                <span class="item">Admin Login</span>
+                            </a> 
+                        </li>
+        ';
+    } else 
+    {
+        echo '
+            <li>
+                <a class="sidebar_item" href="/car-rental-system/admin/admin-home/admin-home-page.php">
+                    <span class="icon"><i class=""></i></span>
+                    <span class="item">Admin Home</span>
+                </a>  
+            </li> 
         ';
     }
 

@@ -25,6 +25,9 @@ body {
     justify-content: space-around;
     color: white;
     height: 70px;
+    font-size: 18px;
+    position: relative;
+    top: 15px;
 }
 
 label {

@@ -140,7 +140,6 @@
                 echo '
                     <div class="invalid_message">
                         Invalid booking id
-                        <br><br>
                     </div>   
                     <a href="/car-rental-system/registered-user/profile-management/view-bookings.php">Go back</a>
                 ';

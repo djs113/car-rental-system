@@ -10,6 +10,25 @@
         <title>
             Admin Login Page
         </title>
+        <script type="text/javascript">
+            function formValidate()
+            {
+                var username = document.getElementById("username").value;
+                var passwd = document.getElementById("passwd").value;
+
+                if (username == "") 
+                {
+                    alert("Enter username");
+                    return false;
+                }
+
+                if (passwd == "") 
+                {
+                    alert("Enter password");
+                    return false;
+                }
+            }
+        </script>
         <link rel="stylesheet" type="text/css" href="admin-login-form-css.css">
     </head>
     <body>
@@ -19,7 +38,7 @@
         </div>
 
         <div class="main">
-            <form action="/car-rental-system/admin/admin-login/admin-login.php" method="POST">
+            <form action="/car-rental-system/admin/admin-login/admin-login.php" method="POST" onsubmit="return formValidate()">
                 <label for="username">Username: </label><input type="text" name="username" id="username" />
                 <br><br>
 

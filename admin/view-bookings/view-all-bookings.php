@@ -17,6 +17,10 @@
     
     if ($conn->connect_error)
         die("Connection failed<br>Connection Error: ".$conn->connect_error);
+
+    echo '
+        <link rel="stylesheet" type="text/css" href="/car-rental-system/admin/view-bookings/view-all-bookings-css.css"> 
+    ';
     
     $card_booking_qry = "SELECT * FROM card_booking_details";
 
@@ -29,10 +33,6 @@
     $cash_booking_count = mysqli_num_rows($cash_booking_res_array);
 
     $total_bookings = $card_booking_count + $cash_booking_count;
-
-    echo '
-        <div class="main">
-    ';
 
     if ($total_bookings != 0)
     {
@@ -81,16 +81,20 @@
             }
 
             echo '
-                        </table>
-                    </div>
+                    </table>
                 </div>     
             ';
         } else 
         {
             echo '
-                <p>No card bookings</p>
+                <div class="no_card_bookings">
+                    <p>No card bookings</p>
             ';
         }
+
+        echo '
+            </div> 
+        ';
         
         if ($cash_booking_count != 0) 
         {
@@ -134,25 +138,30 @@
             }
 
             echo '
-                        </table>
-                    </div>
-                </div> 
+                    </table>
+                </div>
             ';
         } else 
         {
             echo '
-                <p>No cash bookings</p> 
+                <div class="no_cash_bookings">
+                    <p>No cash bookings</p> 
             ';
         }
+
+        echo '
+            </div> 
+        ';
     } else 
     {
         echo '
-            <p>No bookings</p> 
+            <div class="no_bookings">
+                <p>No bookings</p> 
+            </div>
         ';
     }
 
     echo '
             <a href="/car-rental-system/admin/admin-home/admin-home-page.php">Go back</a>
-        </div> 
     ';
 ?>

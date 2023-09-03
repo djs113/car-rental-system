@@ -1,3 +1,10 @@
+<?php
+    session_start();
+
+    if (isset($_SESSION['login_admin'])) 
+        header("location:/car-rental-system/admin/admin-home/admin-home-page.php");
+?>
+
 <html>
     <head>
         <title>

@@ -71,6 +71,8 @@
             <div class="row2">
                 <a href="/car-rental-system/admin/view-user/view-all-users.php">View users</a>
                 <br><br>
+
+                <a href="/car-rental-system/admin/view-bookings/view-all-bookings.php">View bookings</a>
                 
                 <a href="/car-rental-system/admin/admin-login/admin-logout.php">Logout</a>
             </div>

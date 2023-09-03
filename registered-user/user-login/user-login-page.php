@@ -4,6 +4,7 @@
     if (isset($_SESSION['login_user']))
         header("location:/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php");
 ?>
+
 <html>
     <head>
         <title>

@@ -180,7 +180,7 @@
     {  
         echo '
                             <li>
-                                <a class="sidebar_item" href="/car-rental-system/registered-user/user-login/user-login-page.html">
+                                <a class="sidebar_item" href="/car-rental-system/registered-user/user-login/user-login-page.php">
                                     <span class="icon"><i class=""></i></span>
                                     <span class="item">Login</span>
                                 </a>

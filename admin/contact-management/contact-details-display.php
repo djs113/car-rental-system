@@ -46,5 +46,5 @@
             <a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go back</a>
         ';
     } else
-        header("location:/car-rental-system/registered-user/user-login/user-login-page.html");
+        header("location:/car-rental-system/registered-user/user-login/user-login-page.php");
 ?>

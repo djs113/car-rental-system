@@ -3,7 +3,7 @@
 
     if (!isset($_SESSION['login_admin']))
     {
-        header("location:/car-rental-system/registered-user/user-login/user-login-page.html");
+        header("location:/car-rental-system/registered-user/user-login/user-login-page.php");
         exit;
     }
 

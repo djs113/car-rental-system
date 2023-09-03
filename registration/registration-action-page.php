@@ -59,7 +59,7 @@
         {
         echo '
                 <p>User successfully added</p><br>
-                <a href="/car-rental-system/registered-user/user-login/user-login-page.html">Login</a>
+                <a href="/car-rental-system/registered-user/user-login/user-login-page.php">Login</a>
         ';
         } else
         {

@@ -3,6 +3,16 @@
 
     if (isset($_SESSION['login_user']))
         header("location:/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php");
+    else if ((isset($_SESSION['incorrect_details'])) && ($_SESSION['incorrect_details'] == TRUE))
+    {
+        echo '
+            <script type="text/javascript">
+                alert("Incorrect username or password");
+            </script>
+        ';
+
+        $_SESSION['incorrect_details'] = FALSE;
+    }
 ?>
 
 <html>
@@ -11,7 +21,7 @@
             Registered User Login Page
         </title>
         <script type="text/javascript">
-            function formValidate() 
+            function formValidate()
             {
                 var username = document.getElementById("username").value;
                 var passwd = document.getElementById("passwd").value;

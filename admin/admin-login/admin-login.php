@@ -21,5 +21,5 @@
         $_SESSION['login_admin'] = $res['username'];
         header("location:/car-rental-system/admin/admin-home/admin-home-page.php");
     } else
-        header("location:/car-rental-system/admin/admin-login/admin-login-form.php");
+        header("location:/car-rental-system/admin/admin-login/incorrect-admin-login-details.php");
 ?>

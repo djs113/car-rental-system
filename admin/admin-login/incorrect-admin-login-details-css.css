@@ -27,7 +27,7 @@ p {
     display: flex;
     justify-content: center;
     position: relative;
-    top: 10px;
+    top: 5px;
 }
 
 a {
@@ -50,5 +50,5 @@ a {
     align-items: center;
     text-decoration: none;
     position: relative;
-    top: 5px;
+    top: 10px;
 }

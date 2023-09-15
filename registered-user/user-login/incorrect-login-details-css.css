@@ -21,6 +21,15 @@ body {
     padding-bottom: 20px;
 }
 
+p {
+    color: white;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 5px;
+}
+
 a {
     width: 200px;
 	height: 40px;
@@ -42,13 +51,4 @@ a {
     text-decoration: none;
     position: relative;
     top: 10px;
-}
-
-p {
-    color: white;
-    font-size: 18px;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    top: 5px;
 }

@@ -21,8 +21,6 @@
         $_SESSION['login_user'] = $username;
         header("location:/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php");
     } else
-    {
-        $_SESSION['incorrect_details'] = TRUE;
-        header("location:/car-rental-system/registered-user/user-login/user-login-page.php");
-    }
+        header("location:/car-rental-system/registered-user/user-login/incorrect-login-details.php");
+    
 ?>

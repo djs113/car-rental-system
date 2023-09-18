@@ -88,7 +88,7 @@
                 <div class="main">  
             ';
 
-            $qry = "SELECT brand_name FROM vehicle_models";
+            $qry = "SELECT DISTINCT brand_name FROM vehicle_models";
             $res_array = mysqli_query($conn, $qry);
 
             echo '

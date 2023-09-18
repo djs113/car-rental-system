@@ -4,7 +4,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 135vh;
+    min-height: 195vh;
     font-family: 'Jost', sans-serif;
     background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
 }
@@ -17,8 +17,6 @@ body {
     border-radius: 10px;
     box-shadow: 5px 20px 50px #000;
     padding-top: 20px;
-    position: relative;
-    top: 15px;
     color: white;
     display: flex;
     align-items: center;

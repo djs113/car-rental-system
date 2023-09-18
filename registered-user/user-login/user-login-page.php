@@ -26,8 +26,8 @@
                 {
                     alert("Enter password");
                     return false;
-                }
             }
+        }
         </script>
         <link rel="stylesheet" type="text/css" href="user-login-page-css.css">
     </head>

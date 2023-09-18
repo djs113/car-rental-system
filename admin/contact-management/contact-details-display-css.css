@@ -54,13 +54,10 @@ a {
 	border-radius: 5px;
 	transition: .2s ease-in;
 	cursor: pointer;
-    position: absolute;
-    bottom: 50px;
-}
-
-a {
-    color: white;
-	text-decoration: none;
     display: flex;
+    justify-content: center;
     align-items: center;
+    position: relative;
+    bottom: 30px;
+    text-decoration: none;
 }

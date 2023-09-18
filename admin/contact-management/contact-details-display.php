@@ -41,9 +41,9 @@
 
                 <label for="address">Address: </label><p>'.$address.'</p>
                 <br><br>
-            </div>
 
-            <a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go back</a>
+                <a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go back</a>
+            </div>
         ';
     } else
         header("location:/car-rental-system/registered-user/user-login/user-login-page.php");

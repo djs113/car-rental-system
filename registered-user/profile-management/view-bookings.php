@@ -53,22 +53,14 @@
                 <th>Pick up date</th>
             </tr>    
     ';
-    
-        while ($res = mysqli_fetch_array($res_array))
-        {
-            $card_id = $res[0];
 
-            $qry = "SELECT card_booking_details.booking_id, vehicle_models.brand_name, 
-                    vehicle_models.model_name, card_booking_details.pick_up_date FROM card_booking_details LEFT JOIN vehicles ON 
-                    card_booking_details.registration_number = vehicles.registration_number LEFT JOIN 
-                    vehicle_models ON vehicles.model_id = vehicle_models.model_id WHERE 
-                    card_booking_details.card_id = $card_id
-                    UNION
-                    SELECT cash_booking_details.booking_id, vehicle_models.brand_name, vehicle_models.model_name, 
+        if ($card_count_res[0] == 0)
+        {
+            $qry = "SELECT cash_booking_details.booking_id, vehicle_models.brand_name, vehicle_models.model_name, 
                     cash_booking_details.pick_up_date FROM cash_booking_details LEFT JOIN vehicles ON 
                     cash_booking_details.registration_number = vehicles.registration_number LEFT JOIN 
                     vehicle_models ON vehicles.model_id = vehicle_models.model_id WHERE username = '$username'";
-            
+        
             $booking_res_array = mysqli_query($conn, $qry);
 
             while ($booking_res = mysqli_fetch_array($booking_res_array))
@@ -83,12 +75,44 @@
                     </tr> 
                 ';
             }
+        } else
+        {
+            while ($res = mysqli_fetch_array($res_array))
+            {
+                $card_id = $res[0];
+
+                $qry = "SELECT card_booking_details.booking_id, vehicle_models.brand_name, 
+                        vehicle_models.model_name, card_booking_details.pick_up_date FROM card_booking_details LEFT JOIN vehicles ON 
+                        card_booking_details.registration_number = vehicles.registration_number LEFT JOIN 
+                        vehicle_models ON vehicles.model_id = vehicle_models.model_id WHERE 
+                        card_booking_details.card_id = $card_id
+                        UNION
+                        SELECT cash_booking_details.booking_id, vehicle_models.brand_name, vehicle_models.model_name, 
+                        cash_booking_details.pick_up_date FROM cash_booking_details LEFT JOIN vehicles ON 
+                        cash_booking_details.registration_number = vehicles.registration_number LEFT JOIN 
+                        vehicle_models ON vehicles.model_id = vehicle_models.model_id WHERE username = '$username'";
+                
+                $booking_res_array = mysqli_query($conn, $qry);
+
+                while ($booking_res = mysqli_fetch_array($booking_res_array))
+                {
+                    echo '
+                        <tr>
+                            <td>'.$booking_res[0].'</td>
+                            <td>'.$booking_res[1].'</td>
+                            <td>'.$booking_res[2].'</td>
+                            <td>'.$booking_res[3].'</td>
+                            <td><a href="/car-rental-system/registered-user/profile-management/manage-booking.php?booking_id='.$booking_res[0].'">View Booking</a></td>
+                        </tr> 
+                    ';
+                }
+            }
         }
 
         echo '
-            </table>
-        </div>
-        <br><br>
+                    </table>
+                </div>
+                <br><br>
         ';
     } else
     {

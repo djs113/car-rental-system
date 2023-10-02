@@ -39,7 +39,7 @@
                 <label for="contact_number_2">Contact number 2: </label><p>'.$contact_number_2.'</p>
                 <br><br>
 
-                <label for="address">Address: </label><p>'.$address.'</p>
+                <label for="address">Address: </label><p id="address">'.$address.'</p>
                 <br><br>
 
                 <a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go back</a>

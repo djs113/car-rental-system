@@ -38,6 +38,11 @@ p {
 	border-radius: 5px;
 }
 
+#address
+{
+    height: 40px;
+}
+
 a {
     width: 200px;
 	height: 40px;

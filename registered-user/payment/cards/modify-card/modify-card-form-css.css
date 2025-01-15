@@ -17,7 +17,7 @@ body {
     border-radius: 10px;
     box-shadow: 5px 20px 50px #000;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     position: relative;
 }
 
@@ -46,7 +46,7 @@ input, p {
     padding: 20px;
 }
 
-.submit {
+.submit, a {
     width: 200px;
 	height: 40px;
 	margin: 10px auto;
@@ -62,7 +62,16 @@ input, p {
 	border-radius: 5px;
 	transition: .2s ease-in;
 	cursor: pointer;
-    position: absolute;
-    bottom: 5px;
-    left: 338px;
+}
+
+a {
+    color: white;
+	text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
 }

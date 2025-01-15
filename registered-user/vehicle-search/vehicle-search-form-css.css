@@ -47,7 +47,7 @@ input {
 	border-radius: 5px;
 }
 
-#submit, button {
+#submit {
     width: 60%;
 	height: 40px;
 	margin: 10px auto;
@@ -66,8 +66,15 @@ input {
 }
 
 a {
-    color: #fff;
+    color: white;
 	text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar_item {
+    color: white;
+    text-decoration: none;
 }
 
 .wrapper .sidebar {

@@ -3,7 +3,7 @@
 
     if (!isset($_SESSION['login_user']))
     {
-        header("location:/car-rental-system/registered-user/user-login/user-login-page.html");
+        header("location:/car-rental-system/registered-user/user-login/user-login-page.php");
         exit;
     }
 
@@ -67,23 +67,24 @@
 
         echo '
                 </table>
+                <br><br>
+                <a class="back_button" href="/car-rental-system/registered-user/profile-management/view-profile.php">Go back</a>
         ';
     } else
     {
         echo '
-            <div class="main">
-                No saved cards
-                <br><br>
-            
-                <button><a href="/car-rental-system/registered-user/payment/cards/add-card.php">Add card</a></button>
+            <div class="no_saved_cards">
+                <p>No saved cards</p>
+        
+
+                <div class="buttons">
+                    <a href="/car-rental-system/registered-user/payment/cards/add-card.php">Add card</a>
+                    <a href="/car-rental-system/registered-user/profile-management/view-profile.php">Go back</a>
+                </div>
         ';
     }
 
     echo '
-            <br><br>
-            <div class="back_button">
-                <button><a href="/car-rental-system/registered-user/profile-management/view-profile.php">Go back</a></button>
-            </div>
         </div>
     ';
 ?>

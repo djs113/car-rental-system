@@ -11,6 +11,13 @@
 
     if ($conn->connect_error)
         die("Connection failed<br>Connection Error: ".$conn->connect_error);
+    
+    echo '
+        <link rel="stylesheet" type="text/css" href="admin-home-page-css.css">
+        <div class="main">
+            <h1>Admin Dashboard</h1>
+            <div class="row1">
+    ';
 
     $qry = "SELECT COUNT(*) FROM contact_details_1";
     
@@ -42,25 +49,33 @@
     
     echo '
 
-        <a href="/car-rental-system/admin/vehicle-return/returning-vehicles-display.php">View returning 
-        vehicles</a>
-        <br><br>
-        
-        <a href="/car-rental-system/car/add-car/add-car-form.php">Add car</a>
-        <br><br>
+                <a href="/car-rental-system/admin/vehicle-return/returning-vehicles-display.php">View returning 
+                vehicles</a>
+                <br><br>
+                
+                <a href="/car-rental-system/car/add-car/add-car-form.php">Add car</a>
+                <br><br>
+            </div>
 
-        <a href="/car-rental-system/car/view-car/view-all-cars.php">View cars</a>
-        <br><br>
+            <div class="row2">
+                <a href="/car-rental-system/car/view-car/view-all-cars.php">View cars</a>
+                <br><br>
 
-        <a href="/car-rental-system/car-model/add-car-model/add-car-model-form.php">Add car model</a>
-        <br><br>
+                <a href="/car-rental-system/car-model/add-car-model/add-car-model-form.php">Add car model</a>
+                <br><br>
 
-        <a href="/car-rental-system/car-model/view-car-model/view-all-models.php">View car models</a>
-        <br><br>
+                <a href="/car-rental-system/car-model/view-car-model/view-all-models.php">View car models</a>
+                <br><br>
+            </div>
 
-        <a href="/car-rental-system/admin/view-user/view-all-users.php">View users</a>
-        <br><br>
-        
-        <button><a href="/car-rental-system/admin/admin-login/admin-logout.php">Logout</a></button>
+            <div class="row2">
+                <a href="/car-rental-system/admin/view-user/view-all-users.php">View users</a>
+                <br><br>
+
+                <a href="/car-rental-system/admin/view-bookings/view-all-bookings.php">View bookings</a>
+                
+                <a href="/car-rental-system/admin/admin-login/admin-logout.php">Logout</a>
+            </div>
+        </div>    
     ';
 ?>

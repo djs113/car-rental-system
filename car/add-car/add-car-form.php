@@ -70,7 +70,7 @@
         }
     ?>
     <body>
-        <h2><u>Add Car</u></h2>
+        <h1>Add Car</h1>
         <?php
             if (!isset($_SESSION['login_admin']))
             {
@@ -83,7 +83,12 @@
             if ($conn->connect_error)
                 die("Connection error".$conn->connect_error);
 
-            $qry = "SELECT brand_name FROM vehicle_models";
+            echo '
+                <link rel="stylesheet" type="text/css" href="/car-rental-system/car/add-car/add-car-form-css.css">
+                <div class="main">  
+            ';
+
+            $qry = "SELECT DISTINCT brand_name FROM vehicle_models";
             $res_array = mysqli_query($conn, $qry);
 
             echo '
@@ -127,10 +132,14 @@
                     <label for="vehicle color">Vehicle Color: </label><input type="text" name="vehicle_color" id="vehicle_color" />
                     <br><br>
 
-                    <input type="submit" value="Add Vehicle" />
+                    <div class="buttons">
+                        <input type="submit" class="submit" value="Add Vehicle" />
+                        <a href="/car-rental-system/admin/admin-home/admin-home-page.php">Go back</a>
+                    </div>
                 </form>
             ';
         ?>
-        <button><a href="/car-rental-system/admin/admin-home/admin-home-page.php">Home Page</a></button>
+            
+        </div>
     </body>
 </html>

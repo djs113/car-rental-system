@@ -1,7 +1,6 @@
 <?php
     session_start();
-    session_unset();
-    session_destroy();
-
+    unset($_SESSION['login_admin']);
+    
     header("location:/car-rental-system/index.php");
 ?>

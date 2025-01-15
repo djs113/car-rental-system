@@ -38,7 +38,12 @@ p {
 	border-radius: 5px;
 }
 
-button {
+#address
+{
+    height: 40px;
+}
+
+a {
     width: 200px;
 	height: 40px;
 	margin: 10px auto;
@@ -54,11 +59,10 @@ button {
 	border-radius: 5px;
 	transition: .2s ease-in;
 	cursor: pointer;
-    position: absolute;
-    bottom: 50px;
-}
-
-a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 30px;
     text-decoration: none;
-    color: white;
 }

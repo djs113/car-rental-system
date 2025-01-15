@@ -32,7 +32,7 @@ table {
     color: white;
 }
 
-input, button {
+input, a {
     width: 100px;
 	height: 40px;
 	margin: 10px auto;
@@ -50,12 +50,43 @@ input, button {
 	cursor: pointer;
 }
 
-button {
+.no_available_vehicles {
+    width: 500px;
+    background: red;
+    overflow: hidden;
+    background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/cover;
+    border-radius: 10px;
+    box-shadow: 5px 20px 50px #000;
+    padding-top: 50px;
+    padding-bottom: 120px;
+    position: relative;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 18px;
+}
+
+p {
+    position: relative;
+    top: 20px;
+}
+
+.no_available_vehicles a {
+    width: 200px;
+    
+}
+
+a {
     bottom: 20px;
     position: absolute;
 }
 
-button a {
-    text-decoration: none;
+a {
     color: white;
+	text-decoration: none;
+    display: flex;
+    align-items: center;
 }

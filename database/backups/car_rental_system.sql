@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 16, 2023 at 11:48 AM
+-- Generation Time: Oct 02, 2023 at 09:08 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -58,12 +58,6 @@ CREATE TABLE `card_booking_details` (
   `registration_number` varchar(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `card_booking_details`
---
-
-INSERT INTO `card_booking_details` (`booking_id`, `pick_up_date`, `pick_up_time`, `drop_off_date`, `drop_off_time`, `payment_amount`, `payment_time`, `card_id`, `registration_number`) VALUES(1, '2023-06-09', '09:07:00', '2023-06-13', '19:07:00', 1000, '2023-06-08 14:05:06', 5643234, 'MN43LLJ23');
-
 -- --------------------------------------------------------
 
 --
@@ -80,8 +74,15 @@ CREATE TABLE `card_details` (
 -- Dumping data for table `card_details`
 --
 
-INSERT INTO `card_details` (`card_number`, `name_on_card`, `expiry_date`) VALUES(6757345, 'vxvdvgdf', '2024-09-04');
-INSERT INTO `card_details` (`card_number`, `name_on_card`, `expiry_date`) VALUES(2343131231, 'abc', '2024-04-06');
+INSERT INTO `card_details` (`card_number`, `name_on_card`, `expiry_date`) VALUES(12356, '123', '2023-09-29');
+INSERT INTO `card_details` (`card_number`, `name_on_card`, `expiry_date`) VALUES(5634534423, 'ccbfgef', '2023-08-17');
+INSERT INTO `card_details` (`card_number`, `name_on_card`, `expiry_date`) VALUES(6342411313, 'bbxffsrfw', '2023-09-08');
+INSERT INTO `card_details` (`card_number`, `name_on_card`, `expiry_date`) VALUES(8553352452, 'dfsdfvc', '2023-09-09');
+INSERT INTO `card_details` (`card_number`, `name_on_card`, `expiry_date`) VALUES(34535466345, 'vbcbbf', '2023-08-23');
+INSERT INTO `card_details` (`card_number`, `name_on_card`, `expiry_date`) VALUES(56423123128, 'n,jhjljlk', '2023-08-31');
+INSERT INTO `card_details` (`card_number`, `name_on_card`, `expiry_date`) VALUES(85634424223, 'sa', '2023-09-29');
+INSERT INTO `card_details` (`card_number`, `name_on_card`, `expiry_date`) VALUES(567563424234, 'bvnbv', '2023-08-17');
+INSERT INTO `card_details` (`card_number`, `name_on_card`, `expiry_date`) VALUES(32145435345345, 'vbcbbf', '2023-09-22');
 
 -- --------------------------------------------------------
 
@@ -100,12 +101,6 @@ CREATE TABLE `cash_booking_details` (
   `username` varchar(20) DEFAULT NULL,
   `registration_number` varchar(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `cash_booking_details`
---
-
-INSERT INTO `cash_booking_details` (`booking_id`, `pick_up_date`, `pick_up_time`, `drop_off_date`, `drop_off_time`, `payment_amount`, `payment_time`, `username`, `registration_number`) VALUES(2000000000, '2023-06-05', '10:00:04', '2023-06-15', '15:07:00', 5000, '2023-06-04 11:03:00', 'aa', 'MN43LLJ23');
 
 -- --------------------------------------------------------
 
@@ -156,9 +151,11 @@ CREATE TABLE `engine_numbers` (
 -- Dumping data for table `engine_numbers`
 --
 
-INSERT INTO `engine_numbers` (`engine_number`, `registration_number`) VALUES('BNN6SN452', 'CVB345345');
-INSERT INTO `engine_numbers` (`engine_number`, `registration_number`) VALUES('343BDSN452', 'MN43LLJ23');
-INSERT INTO `engine_numbers` (`engine_number`, `registration_number`) VALUES('HGFDSN452', 'XDC3453');
+INSERT INTO `engine_numbers` (`engine_number`, `registration_number`) VALUES('B421-1234', 'KL07CR2314');
+INSERT INTO `engine_numbers` (`engine_number`, `registration_number`) VALUES('J983-3654', 'KL07CR9814');
+INSERT INTO `engine_numbers` (`engine_number`, `registration_number`) VALUES('K098-4876', 'KL07CT8932');
+INSERT INTO `engine_numbers` (`engine_number`, `registration_number`) VALUES('G764-1742', 'KL07CX7645');
+INSERT INTO `engine_numbers` (`engine_number`, `registration_number`) VALUES('Z165-5416', 'KL07CZ2315');
 
 -- --------------------------------------------------------
 
@@ -177,8 +174,8 @@ CREATE TABLE `user_cards` (
 -- Dumping data for table `user_cards`
 --
 
-INSERT INTO `user_cards` (`card_id`, `card_name`, `username`, `card_number`) VALUES(5643234, 'card', 'aa', 2343131231);
-INSERT INTO `user_cards` (`card_id`, `card_name`, `username`, `card_number`) VALUES(5643237, 'dsfafwerw', 'aa', 6757345);
+INSERT INTO `user_cards` (`card_id`, `card_name`, `username`, `card_number`) VALUES(5643275, 'jknk', 'aa', 85634424223);
+INSERT INTO `user_cards` (`card_id`, `card_name`, `username`, `card_number`) VALUES(5643276, 'vbcb', 'aa', 12356);
 
 -- --------------------------------------------------------
 
@@ -197,12 +194,8 @@ CREATE TABLE `user_details` (
 -- Dumping data for table `user_details`
 --
 
-INSERT INTO `user_details` (`username`, `passwd`, `first_name`, `last_name`) VALUES('aa', '4124bc0a9335c27f086f24ba207a4912', 'aa', 'bb');
-INSERT INTO `user_details` (`username`, `passwd`, `first_name`, `last_name`) VALUES('fsda', 'd29aaa0b9cd402b4bfe2395a805f9ada', 'klafvxv', 'ergrwff');
-INSERT INTO `user_details` (`username`, `passwd`, `first_name`, `last_name`) VALUES('nbvnc', '5c56fc99fe03e32897a4b562b502cd81', 'hnxvxxc', 'ytrhrth');
-INSERT INTO `user_details` (`username`, `passwd`, `first_name`, `last_name`) VALUES('vcbcb', '4124bc0a9335c27f086f24ba207a4912', 'bcvbc', 'xcser');
-INSERT INTO `user_details` (`username`, `passwd`, `first_name`, `last_name`) VALUES('vnbvncbcb', '4124bc0a9335c27f086f24ba207a4912', 'rbtbbcvbc', 'xxczxcser');
-INSERT INTO `user_details` (`username`, `passwd`, `first_name`, `last_name`) VALUES('xcvvx', 'c2a82dd938f5d722f574e94f42f60bca', 'sdfa', 'bhgdbdf');
+INSERT INTO `user_details` (`username`, `passwd`, `first_name`, `last_name`) VALUES('aa', '4124bc0a9335c27f086f24ba207a4912', 'dfsf', 'sdafdsf');
+INSERT INTO `user_details` (`username`, `passwd`, `first_name`, `last_name`) VALUES('john', '4124bc0a9335c27f086f24ba207a4912', 'John', 'Smith');
 
 -- --------------------------------------------------------
 
@@ -219,12 +212,8 @@ CREATE TABLE `user_emails` (
 -- Dumping data for table `user_emails`
 --
 
-INSERT INTO `user_emails` (`email`, `username`) VALUES('a@gmail.com', 'aa');
-INSERT INTO `user_emails` (`email`, `username`) VALUES('adfsf@gmail.com', 'fsda');
-INSERT INTO `user_emails` (`email`, `username`) VALUES('nbnv@gmail.com', 'nbvnc');
-INSERT INTO `user_emails` (`email`, `username`) VALUES('yut@gmail.com', 'vcbcb');
-INSERT INTO `user_emails` (`email`, `username`) VALUES('yerwewut@gmail.com', 'vnbvncbcb');
-INSERT INTO `user_emails` (`email`, `username`) VALUES('sfsf@gmail.com', 'xcvvx');
+INSERT INTO `user_emails` (`email`, `username`) VALUES('sfsf@gmail.com', 'aa');
+INSERT INTO `user_emails` (`email`, `username`) VALUES('johnsmith123@gmail.com', 'john');
 
 -- --------------------------------------------------------
 
@@ -241,12 +230,8 @@ CREATE TABLE `user_phone_numbers` (
 -- Dumping data for table `user_phone_numbers`
 --
 
-INSERT INTO `user_phone_numbers` (`phone_number`, `username`) VALUES(2313312321323, 'aa');
-INSERT INTO `user_phone_numbers` (`phone_number`, `username`) VALUES(1234567890, 'fsda');
-INSERT INTO `user_phone_numbers` (`phone_number`, `username`) VALUES(31234325534, 'nbvnc');
-INSERT INTO `user_phone_numbers` (`phone_number`, `username`) VALUES(5645223444, 'vcbcb');
-INSERT INTO `user_phone_numbers` (`phone_number`, `username`) VALUES(9845223444, 'vnbvncbcb');
-INSERT INTO `user_phone_numbers` (`phone_number`, `username`) VALUES(8008098934223, 'xcvvx');
+INSERT INTO `user_phone_numbers` (`phone_number`, `username`) VALUES(1234567890, 'aa');
+INSERT INTO `user_phone_numbers` (`phone_number`, `username`) VALUES(9867541320, 'john');
 
 -- --------------------------------------------------------
 
@@ -265,9 +250,11 @@ CREATE TABLE `vehicles` (
 -- Dumping data for table `vehicles`
 --
 
-INSERT INTO `vehicles` (`registration_number`, `vehicle_color`, `is_booked`, `model_id`) VALUES('CVB345345', 'cvxvsdf', 0, 4);
-INSERT INTO `vehicles` (`registration_number`, `vehicle_color`, `is_booked`, `model_id`) VALUES('MN43LLJ23', 'lkcvlv', 1, 4);
-INSERT INTO `vehicles` (`registration_number`, `vehicle_color`, `is_booked`, `model_id`) VALUES('XDC3453', 'cvxvsdf', 0, 4);
+INSERT INTO `vehicles` (`registration_number`, `vehicle_color`, `is_booked`, `model_id`) VALUES('KL07CR2314', 'Red', 0, 24);
+INSERT INTO `vehicles` (`registration_number`, `vehicle_color`, `is_booked`, `model_id`) VALUES('KL07CR9814', 'Red', 0, 27);
+INSERT INTO `vehicles` (`registration_number`, `vehicle_color`, `is_booked`, `model_id`) VALUES('KL07CT8932', 'Black', 0, 25);
+INSERT INTO `vehicles` (`registration_number`, `vehicle_color`, `is_booked`, `model_id`) VALUES('KL07CX7645', 'Blue', 0, 26);
+INSERT INTO `vehicles` (`registration_number`, `vehicle_color`, `is_booked`, `model_id`) VALUES('KL07CZ2315', 'Black', 0, 24);
 
 -- --------------------------------------------------------
 
@@ -290,8 +277,10 @@ CREATE TABLE `vehicle_models` (
 -- Dumping data for table `vehicle_models`
 --
 
-INSERT INTO `vehicle_models` (`model_id`, `brand_name`, `model_name`, `vehicle_type`, `hour_price`, `day_price`, `week_price`, `month_price`) VALUES(4, 'xcvfs', 'vcvsdfsf', 'cvxsdfs', 300, 1000, 2300, 7000);
-INSERT INTO `vehicle_models` (`model_id`, `brand_name`, `model_name`, `vehicle_type`, `hour_price`, `day_price`, `week_price`, `month_price`) VALUES(5, 'vcbcx', 'rewtewr', 'adsds', 34, 634, 1234, 6532);
+INSERT INTO `vehicle_models` (`model_id`, `brand_name`, `model_name`, `vehicle_type`, `hour_price`, `day_price`, `week_price`, `month_price`) VALUES(24, 'Audi', 'Q5', 'SUV', 3000, 15000, 60000, 150000);
+INSERT INTO `vehicle_models` (`model_id`, `brand_name`, `model_name`, `vehicle_type`, `hour_price`, `day_price`, `week_price`, `month_price`) VALUES(25, 'BMW', 'Z4', 'Convertible', 3800, 20000, 80000, 200000);
+INSERT INTO `vehicle_models` (`model_id`, `brand_name`, `model_name`, `vehicle_type`, `hour_price`, `day_price`, `week_price`, `month_price`) VALUES(26, 'Jaguar', 'F-TYPE', 'Coupe', 6000, 25000, 100000, 300000);
+INSERT INTO `vehicle_models` (`model_id`, `brand_name`, `model_name`, `vehicle_type`, `hour_price`, `day_price`, `week_price`, `month_price`) VALUES(27, 'BMW', 'X5', 'SUV', 4000, 23000, 90000, 180000);
 
 --
 -- Indexes for dumped tables
@@ -393,25 +382,25 @@ ALTER TABLE `vehicle_models`
 -- AUTO_INCREMENT for table `card_booking_details`
 --
 ALTER TABLE `card_booking_details`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT for table `cash_booking_details`
 --
 ALTER TABLE `cash_booking_details`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2000000001;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2000000041;
 
 --
 -- AUTO_INCREMENT for table `user_cards`
 --
 ALTER TABLE `user_cards`
-  MODIFY `card_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5643238;
+  MODIFY `card_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5643277;
 
 --
 -- AUTO_INCREMENT for table `vehicle_models`
 --
 ALTER TABLE `vehicle_models`
-  MODIFY `model_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `model_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- Constraints for dumped tables

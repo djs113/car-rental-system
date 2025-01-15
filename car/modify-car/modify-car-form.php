@@ -111,6 +111,7 @@
                     }
                 }
             </script>
+            <link rel="stylesheet" type="text/css" href="/car-rental-system/car/modify-car/modify-car-form-css.css">
         </head>
         <body>
     ';
@@ -129,14 +130,15 @@
         $model_res = mysqli_fetch_array($model_array);
 
         echo '
-            <h2><u>Modify Car</u></h2>
-            <form action="modify-car.php" method="POST" onsubmit="return formValidate()">
-                <label for="registration_number">Registration Number: <input type="text" id="registration_number" name="registration_number" value="'.$registration_number.'" />
-                <br><br>
+            <h1>Modify Car</h1>
+            <div class="main">
+                <form action="modify-car.php" method="POST" onsubmit="return formValidate()">
+                    <label for="registration_number">Registration Number: <input type="text" id="registration_number" name="registration_number" value="'.$registration_number.'" />
+                    <br><br>
 
-                <label for="brand_name">Brand Name: </label>
-                <select id="brand_name" name="brand_name" onchange="selectModels()">
-                    <option value="'.$model_res['brand_name'].'">'.$model_res['brand_name'].'</option>
+                    <label for="brand_name">Brand Name: </label>
+                    <select id="brand_name" name="brand_name" onchange="selectModels()">
+                        <option value="'.$model_res['brand_name'].'">'.$model_res['brand_name'].'</option>
         ';
 
         $qry = "SELECT brand_name FROM vehicle_models";
@@ -169,29 +171,33 @@
         $res = mysqli_fetch_array($res_array);
 
         echo '
-                </select>
-                <br><br>
+                    </select>
+                    <br><br>
 
-                <label for="engine_number">Engine Number: </label><input type="text" 
-                name="engine_number" id="engine_number" value="'.$res['engine_number'].'" />
-                <br><br>
+                    <label for="engine_number">Engine Number: </label><input type="text" 
+                    name="engine_number" id="engine_number" value="'.$res['engine_number'].'" />
+                    <br><br>
 
-                <label for="vehicle_color">Vehicle Color: </label><input type="text" 
-                name="vehicle_color" id="vehicle_color" value="'.$res['vehicle_color'].'" />
-                <br><br>
+                    <label for="vehicle_color">Vehicle Color: </label><input type="text" 
+                    name="vehicle_color" id="vehicle_color" value="'.$res['vehicle_color'].'" />
+                    <br><br>
 
-                <label for="is_booked">Booking Status: </label><input type="text" name="is_booked" 
-                id="is_booked" value="'.$res['is_booked'].'" />
-                <br><br>
+                    <label for="is_booked">Booking Status: </label><input type="text" name="is_booked" 
+                    id="is_booked" value="'.$res['is_booked'].'" />
+                    <br><br>
 
-                <label for="model id">Model Id: </label><div name="model_id" id="model_id">
-                '.$res['model_id'].'</div>
+                    <label for="model id">Model Id: </label><p name="model_id" id="model_id">
+                    '.$res['model_id'].'</p>
 
-                <input type="hidden" id="model_id_val" name="model_id_val" value="'.$res['model_id'].'" />
-                <br><br>
+                    <input type="hidden" id="model_id_val" name="model_id_val" value="'.$res['model_id'].'" />
+                    <br><br>
 
-                <input type="submit" value="Modify Vehicle" />
-            </form>
+                    <div class="buttons">
+                        <input type="submit" class="submit" value="Modify Vehicle" />
+                        <a href="/car-rental-system/car/view-car/view-all-cars.php">Go back</a>
+                    </div>
+                </form>
+            </div>
         </body>
     </html>
         ';

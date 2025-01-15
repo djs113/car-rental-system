@@ -25,7 +25,30 @@ table {
     color: white;
 }
 
-button {
+.no_saved_cards {
+    width: 500px;
+    background: red;
+    overflow: hidden;
+    background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/cover;
+    border-radius: 10px;
+    box-shadow: 5px 20px 50px #000;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    position: relative;
+	display: flex;
+	flex-direction: column;
+}
+ 
+p {
+    color: white;
+	display: flex;
+	justify-content: center;
+	font-size: 18px;
+	position: relative;
+	top: 25px;
+}
+
+a {
     width: 200px;
 	height: 40px;
 	margin: 10px auto;
@@ -41,13 +64,14 @@ button {
 	border-radius: 5px;
 	transition: .2s ease-in;
 	cursor: pointer;
-    position: absolute;
-    bottom: 10px;
+    
 }
 
-button a {
-    text-decoration: none;
+a {
     color: white;
+	text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 .submit {
@@ -72,4 +96,11 @@ button a {
     position: absolute;
     bottom: -3px;
     left: 330px;
+}
+
+.buttons {
+	display: flex;
+	justify-content: space-around;
+	position: relative;
+	top: 25px;
 }

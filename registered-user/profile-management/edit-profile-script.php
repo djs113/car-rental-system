@@ -3,7 +3,7 @@
 
     if (!isset($_SESSION['login_user']))
     {
-        header("location:/car-rental-system/registered-user/user-login/user-login-page.html");
+        header("location:/car-rental-system/registered-user/user-login/user-login-page.php");
         exit;
     }
 
@@ -42,7 +42,7 @@
         echo '
             </div>
             <br><br>
-            <button><a href="/car-rental-system/registered-user/profile-management/edit-profile.php">Go back</a></button> 
+            <a href="/car-rental-system/registered-user/profile-management/edit-profile.php">Go back</a> 
         ';
     } else
         header("location:/car-rental-system/registered-user/edit-profile.php");

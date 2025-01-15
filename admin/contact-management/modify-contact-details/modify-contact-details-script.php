@@ -14,6 +14,12 @@
 
     if (isset($_POST['contact_email']) && isset($_POST['contact_number_1']) && isset($_POST['contact_number_2']) && isset($_POST['address']))
     {
+        echo '
+            <link rel="stylesheet" type="text/css" href="modify-contact-details-script-css.css">
+            <div class="main"> 
+                <p> 
+        ';
+
         $contact_email = $_POST['contact_email'];
         $contact_number_1 = $_POST['contact_number_1'];
         $contact_number_2 = $_POST['contact_number_2'];
@@ -33,6 +39,15 @@
                 Error in updation of contact details<br>
                 Error: '.$conn->error;
         }
+
+        echo '
+                </p>
+                <div class="buttons">
+                    <a href="/car-rental-system/admin/contact-management/modify-contact-details/modify-contact-details-form.php">Go back</a>
+                    <a href="/car-rental-system/admin/admin-home/admin-home-page.php">Go home</a> 
+                </div>
+            </div>
+        ';
     } else 
         header("location:/car-rental-system/admin/admin-home/admin-home-page.php");
 ?>

@@ -144,7 +144,7 @@
     if ($details_count == 2)
         echo '
                             <li>
-                                <a href="/car-rental-system/admin/contact-management/contact-details-display.php">
+                                <a class="sidebar_item" href="/car-rental-system/admin/contact-management/contact-details-display.php">
                                     <span class="icon"><i class=""></i></span>
                                     <span class="item">Contact us</span>
                                 </a>
@@ -155,21 +155,21 @@
     {
         echo '          
                             <li>
-                                <a href="/car-rental-system/registered-user/user-login/logout.php">
+                                <a class="sidebar_item" href="/car-rental-system/registered-user/user-login/logout.php">
                                     <span class="icon"><i class=""></i></span>
                                     <span class="item">Logout</span>
                                 </a>
                             </li>
 
                             <li>
-                                <a href="/car-rental-system/registered-user/profile-management/view-bookings.php">
+                                <a class="sidebar_item" href="/car-rental-system/registered-user/profile-management/view-bookings.php">
                                     <span class="icon"><i class=""></i></span>
                                     <span class="item">View bookings</span>
                                 </a>
                             </li>
 
                             <li>
-                                <a href="/car-rental-system/registered-user/profile-management/view-profile.php">
+                                <a class="sidebar_item" href="/car-rental-system/registered-user/profile-management/view-profile.php">
                                     <span class="icon"><i class=""></i></span>
                                     <span class="item">View profile</span>
                                 </a>
@@ -180,18 +180,40 @@
     {  
         echo '
                             <li>
-                                <a href="/car-rental-system/registered-user/user-login/user-login-page.html">
+                                <a class="sidebar_item" href="/car-rental-system/registered-user/user-login/user-login-page.php">
                                     <span class="icon"><i class=""></i></span>
                                     <span class="item">Login</span>
                                 </a>
                             </li>
 
                             <li>
-                                <a href="/car-rental-system/registration/registration-form.html">
+                                <a class="sidebar_item" href="/car-rental-system/registration/registration-form.html">
                                     <span class="icon"><i class=""></i></span>
                                     <span class="item">Register</span>
                                 </a>
                             </li>
+        ';
+    }
+    
+    if (!(isset($_SESSION['login_admin'])))
+    {
+        echo '
+                        <li>
+                            <a class="sidebar_item" href="/car-rental-system/admin/admin-login/admin-login-form.php">
+                                <span class="icon"><i class=""></i></span>
+                                <span class="item">Admin Login</span>
+                            </a> 
+                        </li>
+        ';
+    } else 
+    {
+        echo '
+            <li>
+                <a class="sidebar_item" href="/car-rental-system/admin/admin-home/admin-home-page.php">
+                    <span class="icon"><i class=""></i></span>
+                    <span class="item">Admin Home</span>
+                </a>  
+            </li> 
         ';
     }
 

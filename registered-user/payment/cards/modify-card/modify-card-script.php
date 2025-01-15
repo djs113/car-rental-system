@@ -3,7 +3,7 @@
 
     if (!isset($_SESSION['login_user']))
     {
-        header("location:/car-rental-system/registered-user/user-login/user-login-page.html");
+        header("location:/car-rental-system/registered-user/user-login/user-login-page.php");
         exit;
     }
 
@@ -29,7 +29,7 @@
             echo '
                 Successfully updated card details
                 <br><br>
-                <button><a href="/car-rental-system/registered-user/profile-management/view-cards.php">Go back</a></button>     
+                <a href="/car-rental-system/registered-user/profile-management/view-cards.php">Go back</a>     
             ';
         } else
         {
@@ -37,7 +37,7 @@
                 Error in updation of card details<br>
                 Error: '.$conn->error.'
                 <br><br>
-                <button><a href="/car-rental-system/registered-user/payment/cards/modify-card/modify-card-form.php">Try again</a></button> 
+                <a href="/car-rental-system/registered-user/payment/cards/modify-card/modify-card-form.php">Try again</a> 
             ';
         }
 

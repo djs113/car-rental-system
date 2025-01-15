@@ -40,7 +40,7 @@ input {
     font-size: 16px;
 }
 
-button {
+a {
     width: 200px;
 	height: 40px;
 	margin: 10px auto;
@@ -78,7 +78,9 @@ button {
 	cursor: pointer;
 }
 
-button a {
-    text-decoration: none;
+a {
     color: white;
+	text-decoration: none;
+    display: flex;
+    align-items: center;
 }

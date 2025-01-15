@@ -3,7 +3,7 @@
 
     if (!isset($_SESSION['login_user']))
     {
-        header("location:/car-rental-system/registered-user/user-login/user-login-page.html");
+        header("location:/car-rental-system/registered-user/user-login/user-login-page.php");
         exit;
     }
 
@@ -92,7 +92,7 @@
                         <input type="submit" value="Proceed to payment" />  
                     </form>
 
-                    <button><a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go home</a></button>
+                    <a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go home</a>
                 </div>
             </div>            
         ';

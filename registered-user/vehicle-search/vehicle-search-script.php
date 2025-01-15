@@ -10,7 +10,6 @@
     {
         echo '
             <link rel="stylesheet" type="text/css" href="vehicle-search-script-css.css">
-            <div class="main">
         ';
 
         $_SESSION['booking_ongoing'] = TRUE;
@@ -100,18 +99,20 @@
         {
             $_SESSION['booking_ongoing'] = FALSE;
 
-            echo 'No available vehicles for this time period
-                  <br><br>
-                  <button><a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Search again</a></button>
-                  </div>
+            echo '
+                <div class="no_available_vehicles">
+                    <p>No available vehicles for this time period</p>
+                    <a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Search again</a>
+                </div>
             ';
     
         } else
         {
             echo '
-                <table border="1">
-                    <th>Model Name</th>
-                    <th>Brand Name</th>
+                <div class="main">
+                    <table border="1">
+                        <th>Model Name</th>
+                        <th>Brand Name</th>
             ';
 
             if ($unbooked_vehicles_count != 0)
@@ -168,7 +169,7 @@
 
             echo '
                     </table>
-                    <button><a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go back</a></button>
+                    <a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go back</a>
                 </div>
             ';
         }

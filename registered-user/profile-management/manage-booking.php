@@ -3,7 +3,7 @@
 
     if (!isset($_SESSION['login_user']))
     {
-        header("location:/car-rental-system/registered-user/user-login/user-login-page.html");
+        header("location:/car-rental-system/registered-user/user-login/user-login-page.php");
         exit;
     }
 
@@ -140,9 +140,8 @@
                 echo '
                     <div class="invalid_message">
                         Invalid booking id
-                        <br><br>
                     </div>   
-                    <button><a href="/car-rental-system/registered-user/profile-management/view-bookings.php">Go back</a></button>
+                    <a href="/car-rental-system/registered-user/profile-management/view-bookings.php">Go back</a>
                 ';
             }
         }
@@ -157,7 +156,7 @@
     {
             echo '
                 <div class="buttons">
-                    <button><a href="/car-rental-system/registered-user/profile-management/view-bookings.php">Go back</a></button> 
+                    <a href="/car-rental-system/registered-user/profile-management/view-bookings.php">Go back</a> 
                     <br>
                     
                     <form action="cancel-booking.php" method="POST">

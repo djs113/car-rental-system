@@ -43,7 +43,7 @@ p {
     font-size: 16px;
 }
 
-input, button {
+input, a {
     width: 200px;
 	height: 40px;
 	margin: 10px auto;
@@ -61,14 +61,16 @@ input, button {
 	cursor: pointer;
 }
 
-button {
+a {
     margin-left: 0;
     margin-right: 0;
 }
 
-button a {
-    text-decoration: none;
+a {
     color: white;
+	text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 .buttons {

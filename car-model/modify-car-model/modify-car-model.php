@@ -12,6 +12,12 @@
     if ($conn->connect_error)
         die("Connection error".$conn->connect_error);
 
+    echo ' 
+        <link rel="stylesheet" type="text/css" href="/car-rental-system/car-model/modify-car-model/modify-car-model-css.css">
+        <div class="main">
+            <p>
+    ';
+
     $model_id = $_POST['model_id'];
     $brand_name = $_POST['brand_name'];
     $model_name = $_POST['model_name'];
@@ -26,5 +32,11 @@
     if ($conn->query($qry) == TRUE)
         echo "Car model successfully modified.<br>";
     else
-        echo "Error in modification of car model.<br>Error: ".$conn->error;
+        echo "Error in modification of car model.<br>Error: ".$conn->error."<br>";
+
+    echo '
+            </p>
+            <a href="/car-rental-system/car-model/view-car-model/view-all-models.php">Go back</a>
+        </div> 
+    ';
 ?>

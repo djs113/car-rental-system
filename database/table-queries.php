@@ -45,7 +45,7 @@
         
         // Table creation
                 $sql .= "CREATE TABLE vehicle_models (model_id INT PRIMARY KEY AUTO_INCREMENT, brand_name VARCHAR(20), model_name VARCHAR(30), vehicle_type VARCHAR(20), hour_price INT, day_price INT, week_price INT, month_price INT);";
-                $sql .= "CREATE TABLE vehicles (registration_number VARCHAR(11) PRIMARY KEY, vehicle_color VARCHAR(20), is_booked TINYINT DEFAULT 0, model_id int, FOREIGN KEY (model_id) REFERENCES vehicle_models(model_id));";
+                $sql .= "CREATE TABLE vehicles (registration_number VARCHAR(11) PRIMARY KEY, vehicle_color VARCHAR(20), is_booked TINYINT DEFAULT 0, model_id INT, FOREIGN KEY (model_id) REFERENCES vehicle_models(model_id));";
                 $sql .= "CREATE TABLE engine_numbers (engine_number VARCHAR(20) PRIMARY KEY, registration_number VARCHAR(11) UNIQUE, FOREIGN KEY (registration_number) REFERENCES vehicles(registration_number));";
 
         // Record Insertion

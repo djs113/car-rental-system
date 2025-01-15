@@ -3,7 +3,7 @@
 
     if (!isset($_SESSION['login_user']))
     {
-        header("location:/car-rental-system/registered-user/user-login/user-login-page.html");
+        header("location:/car-rental-system/registered-user/user-login/user-login-page.php");
         exit;
     }
 
@@ -15,6 +15,7 @@
     echo '
         <link rel="stylesheet" type="text/css" href="/car-rental-system/registered-user/profile-management/cancel-booking-css.css"> 
         <div class="main">
+            <p>
     ';
 
     if (isset($_POST['booking_id']))
@@ -75,9 +76,10 @@
                 Error: '.$conn->error;  
         }
 
-        echo '
+        echo '  
+                </>
+                <a href="/car-rental-system/registered-user/profile-management/view-bookings.php">Go back</a> 
             </div>
-            <button><a href="/car-rental-system/registered-user/profile-management/view-bookings.php">Go back</a></button> 
         ';
     } else
         header("location:/car-rental-system/registered-user/profile-management/view-bookings.php"); 

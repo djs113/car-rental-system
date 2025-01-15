@@ -3,7 +3,7 @@
 
     if (!isset($_SESSION['login_user']))
     {
-        header("location:/car-rental-system/registered-user/user-login/user-login-page.html");
+        header("location:/car-rental-system/registered-user/user-login/user-login-page.php");
         exit;
     }
 
@@ -57,7 +57,10 @@
 
                     <input type="hidden" id="card_id" name="card_id" value="'.$res['card_id'].'" />
 
-                    <input type="submit" class="submit"value="Modify" /> 
+                    <div class="buttons">
+                        <input type="submit" class="submit" value="Modify" />
+                        <a href="/car-rental-system/registered-user/profile-management/view-cards.php">Go back</a>
+                    </div>        
                 </form>
             </div>
         ';

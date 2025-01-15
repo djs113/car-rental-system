@@ -39,12 +39,12 @@
                 <label for="contact_number_2">Contact number 2: </label><p>'.$contact_number_2.'</p>
                 <br><br>
 
-                <label for="address">Address: </label><p>'.$address.'</p>
+                <label for="address">Address: </label><p id="address">'.$address.'</p>
                 <br><br>
-            </div>
 
-            <button><a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go back</a></button>
+                <a href="/car-rental-system/registered-user/vehicle-search/vehicle-search-form.php">Go back</a>
+            </div>
         ';
     } else
-        header("location:/car-rental-system/registered-user/user-login/user-login-page.html");
+        header("location:/car-rental-system/registered-user/user-login/user-login-page.php");
 ?>
